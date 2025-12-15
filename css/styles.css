@@ -1085,6 +1085,11 @@ em { font-style: italic; }
     max-width: 100%;
   }
 
+  .content-wrapper.column.profile-photo {
+    align-items: center;
+    margin-right: 0;
+  }
+
   .content-wrapper.column.title {
     align-items: flex-start;
     width: 100%;
@@ -1336,6 +1341,10 @@ em { font-style: italic; }
     flex: 1;
     padding-top: 0;
     padding-bottom: 0;
+  }
+
+  .content-wrapper.column.profile-photo {
+    align-items: center;
   }
 
   .section-title.major-section {
