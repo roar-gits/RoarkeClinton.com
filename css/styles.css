@@ -1071,7 +1071,6 @@ em { font-style: italic; }
   .content-wrapper.column.title {
     align-items: flex-start;
     width: 100%;
-    margin-bottom: 3vw;
   }
 
   .title-wrapper {
