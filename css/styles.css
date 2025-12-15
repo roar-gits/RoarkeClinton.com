@@ -267,9 +267,7 @@ em { font-style: italic; }
   color: #ff4363;
 }
 
-.nav-link-text.header.cta-link {
-  color: var(--indian-red);
-}
+/* .cta-link has no special color in Webflow - inherits from .nav-link-text.header */
 
 /* --------------------------------------------------------------------------
    Container
