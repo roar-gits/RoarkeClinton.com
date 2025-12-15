@@ -345,12 +345,8 @@ em { font-style: italic; }
 
 .content-wrapper.column {
   flex: 0 auto;
-  justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  max-width: 500px;
-  height: auto;
-  min-height: 50px;
 }
 
 .content-wrapper.column.info {
