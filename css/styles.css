@@ -1332,6 +1332,12 @@ em { font-style: italic; }
     align-self: center;
   }
 
+  .contact-card-wrapper {
+    flex: 1;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   .section-title.major-section {
     padding-bottom: 1vw;
     font-size: 5.75vw;
