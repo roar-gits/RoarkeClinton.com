@@ -7,7 +7,7 @@
    -------------------------------------------------------------------------- */
 
 @font-face {
-  font-family: 'Manrope';
+  font-family: 'Manrope Variablefont Wght';
   src: url('../fonts/Manrope-VariableFont_wght.ttf') format('truetype');
   font-weight: 200 800;
   font-style: normal;
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  font-family: 'RC Brand';
+  font-family: 'Rc Brand Font';
   src: url('../fonts/RC-BRAND-FONT.woff') format('woff');
   font-weight: 400;
   font-style: normal;
@@ -104,7 +104,7 @@ body {
   color: #333132;
   letter-spacing: 0.005em;
   background-color: transparent;
-  font-family: 'Manrope', sans-serif;
+  font-family: Manrope Variablefont Wght, sans-serif;
   font-size: 17px;
   line-height: 1.7em;
   -webkit-font-smoothing: antialiased;
@@ -916,7 +916,7 @@ em { font-style: italic; }
   background-color: #fff;
   justify-content: flex-start;
   align-items: center;
-  font-family: 'Manrope', sans-serif;
+  font-family: Manrope Variablefont Wght, sans-serif;
   font-size: 22px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: left;
