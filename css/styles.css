@@ -1275,6 +1275,10 @@ em { font-style: italic; }
     height: 28vw;
   }
 
+  .content-wrapper.column.title {
+    align-self: center;
+  }
+
   .page-title.home-pg {
     text-align: center;
     font-size: 7.25vw;
