@@ -463,7 +463,6 @@ em { font-style: italic; }
 .contact-button {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .contact-button.in-page {
