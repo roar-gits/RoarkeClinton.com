@@ -1122,6 +1122,9 @@ em { font-style: italic; }
 
   .contact-button.in-page {
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: none;
   }
 
   .brandlogos {
@@ -1319,6 +1322,10 @@ em { font-style: italic; }
   .horizontal-spreader {
     max-width: 100%;
     height: 0;
+  }
+
+  .contact-button.in-page {
+    align-self: center;
   }
 
   .section-title.major-section {
