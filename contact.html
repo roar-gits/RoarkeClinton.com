@@ -48,162 +48,148 @@
     gtag('config', 'G-7VT7B20J3Y');
   </script>
 </head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header__inner">
-        <a href="/" class="brand">
-          <img src="images/RoarkeClinton-small-0.jpg" alt="Roarke Clinton" class="brand__image" width="40" height="40">
-          <span class="brand__text">Roarke Clinton</span>
+<body class="page">
+  <!-- Navbar -->
+  <div class="navbar-symbol simple">
+    <div class="div-block-94">
+      <a href="/" class="brandwrapper w-inline-block">
+        <img src="images/RoarkeClinton-small-0.jpg" loading="eager" width="Auto" sizes="(max-width: 479px) 8vw, 34px" alt="Roarke Clinton" srcset="images/RoarkeClinton-small-0.jpg 500w, images/RoarkeClinton-small-0.jpg 800w, images/RoarkeClinton-small-0.jpg 1080w, images/RoarkeClinton-small-0.jpg 2160w" class="image-4">
+        <div class="brand-text">Roarke Clinton</div>
+      </a>
+      <div class="nav-link-wrapper">
+        <a href="index.html" class="nav-link w-inline-block">
+          <div class="nav-link-text header">About</div>
         </a>
-
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span class="nav-toggle__bar"></span>
-          <span class="nav-toggle__bar"></span>
-          <span class="nav-toggle__bar"></span>
-        </button>
-
-        <nav class="nav" role="navigation">
-          <a href="index.html" class="nav__link">About</a>
-          <a href="contact.html" class="nav__link nav__link--cta nav__link--active">Contact</a>
-        </nav>
+        <link rel="prerender" href="/">
+        <a href="contact.html" aria-current="page" class="nav-link w-inline-block w--current">
+          <div class="nav-link-text header cta-link">Contact</div>
+        </a>
+        <link rel="prerender" href="/contact">
       </div>
     </div>
-  </header>
+  </div>
 
-  <main>
-    <!-- Contact Hero -->
-    <section class="contact-hero">
-      <div class="container">
-        <h1 class="contact-hero__title">Get in Touch</h1>
-      </div>
-    </section>
+  <!-- Page Structure -->
+  <div class="page-structure">
+    <div class="container">
+      <div class="section">
+        <div class="content">
+          <div class="vw vertical-splitter top-of-page contact-page"></div>
+          <h1 class="heading-3">Get in touch</h1>
+          <div class="vw vertical-splitter sub-section sub-content"></div>
 
-    <!-- Contact Tabs -->
-    <section class="section">
-      <div class="container container--narrow">
-        <!-- Tab Navigation -->
-        <div class="tabs" role="tablist">
-          <button class="tab tab--active" role="tab" aria-selected="true" aria-controls="message-panel" id="message-tab" data-tab="message">
-            Message
-          </button>
-          <button class="tab" role="tab" aria-selected="false" aria-controls="book-panel" id="book-tab" data-tab="book">
-            Book
-          </button>
-          <button class="tab" role="tab" aria-selected="false" aria-controls="other-panel" id="other-tab" data-tab="other">
-            Other
-          </button>
-        </div>
+          <!-- Tabs Container -->
+          <div class="tabs-container">
+            <!-- Tab Navigation -->
+            <div class="tabs-menu">
+              <button class="tab-text-wrapper tab-link active" data-tab="message">
+                <div class="nav-link-text tab">Message</div>
+              </button>
+              <button class="tab-text-wrapper tab-link" data-tab="book">
+                <div class="nav-link-text tab">Book</div>
+              </button>
+              <button class="tab-text-wrapper tab-link" data-tab="other">
+                <div class="nav-link-text tab">Other</div>
+              </button>
+            </div>
 
-        <!-- Tab Panels -->
-        <!-- Message Tab -->
-        <div class="tab-content tab-content--active" id="message-panel" role="tabpanel" aria-labelledby="message-tab">
-          <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <div class="form__grid">
-              <div class="form__group">
-                <label for="name" class="form__label">Full Name</label>
-                <input type="text" id="name" name="name" class="form__input" placeholder="ex. John Carter" required>
+            <!-- Tab Content -->
+            <div class="tabs-content">
+              <!-- Message Tab -->
+              <div class="tab-pane active" data-tab-content="message">
+                <div class="card form">
+                  <form id="Contact-Form" name="Contact Form" action="https://formspree.io/f/mqaknbep" method="POST">
+                    <div class="w-layout-grid grid-2-columns form">
+                      <div class="field-wrapper">
+                        <label for="Name" class="field-label">Full Name</label>
+                        <input class="input" maxlength="256" name="Name" placeholder="ex. John Carter" type="text" id="Name" required>
+                      </div>
+                      <div class="field-wrapper">
+                        <label for="Email" class="field-label">Email</label>
+                        <input class="input" maxlength="256" name="Email" placeholder="example@email.com" type="email" id="Email" required>
+                      </div>
+                      <div class="field-wrapper">
+                        <label for="Phone" class="field-label">Phone</label>
+                        <input class="input" maxlength="256" name="Phone" placeholder="(123) 456 - 789" type="tel" id="Phone">
+                      </div>
+                      <div class="field-wrapper">
+                        <label for="Subject" class="field-label">Subject</label>
+                        <input class="input" maxlength="256" name="Subject" placeholder="ex. Message Title" type="text" id="Subject" required>
+                      </div>
+                      <div class="field-wrapper full-width">
+                        <label for="Message" class="field-label">Leave me a message</label>
+                        <textarea id="Message" name="Message" maxlength="5000" placeholder="Please type your message here..." required class="text-area"></textarea>
+                      </div>
+                      <div class="field-wrapper full-width submit-wrapper">
+                        <input type="submit" class="nav-link-text cta simple" value="Send Message">
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
 
-              <div class="form__group">
-                <label for="email" class="form__label">Email</label>
-                <input type="email" id="email" name="email" class="form__input" placeholder="example@email.com" required>
+              <!-- Book Tab -->
+              <div class="tab-pane" data-tab-content="book">
+                <div class="card form">
+                  <div class="field-wrapper ctas">
+                    <div class="field-label">Scheduling links</div>
+                    <a href="https://app.reclaim.ai/m/roarke/flexible-quick-meeting" target="_blank" rel="noopener" class="nav-link-text cta simple in-page">Flexible Meeting</a>
+                    <a href="https://app.reclaim.ai/m/roarke/high-priority-meeting" target="_blank" rel="noopener" class="nav-link-text cta simple in-page">Priority Meeting</a>
+                  </div>
+                </div>
               </div>
 
-              <div class="form__group">
-                <label for="phone" class="form__label">Phone</label>
-                <input type="tel" id="phone" name="phone" class="form__input" placeholder="(123) 456-7890">
-              </div>
-
-              <div class="form__group">
-                <label for="subject" class="form__label">Subject</label>
-                <input type="text" id="subject" name="subject" class="form__input" placeholder="ex. Message Title" required>
-              </div>
-
-              <div class="form__group form__group--full">
-                <label for="message" class="form__label">Leave me a message</label>
-                <textarea id="message" name="message" class="form__textarea" placeholder="Please type your message here..." required></textarea>
-              </div>
-
-              <div class="form__group form__group--full form__submit">
-                <button type="submit" class="btn btn--primary">Send Message</button>
+              <!-- Other Tab -->
+              <div class="tab-pane" data-tab-content="other">
+                <div class="card form">
+                  <div class="field-wrapper ctas">
+                    <div class="field-label">Links</div>
+                    <a href="https://www.linkedin.com/in/roarkeclinton/" target="_blank" rel="noopener" class="nav-link-text cta simple in-page">Connect on LinkedIn</a>
+                  </div>
+                </div>
               </div>
             </div>
-          </form>
-        </div>
-
-        <!-- Book Tab -->
-        <div class="tab-content" id="book-panel" role="tabpanel" aria-labelledby="book-tab">
-          <div class="booking-links">
-            <p class="form__label mb-md">Scheduling Links</p>
-            <a href="https://app.reclaim.ai/m/roarke/flexible-quick-meeting" target="_blank" rel="noopener" class="btn btn--primary booking-link">
-              Flexible Meeting
-            </a>
-            <a href="https://app.reclaim.ai/m/roarke/high-priority-meeting" target="_blank" rel="noopener" class="btn btn--outline booking-link">
-              Priority Meeting
-            </a>
-          </div>
-        </div>
-
-        <!-- Other Tab -->
-        <div class="tab-content" id="other-panel" role="tabpanel" aria-labelledby="other-tab">
-          <div class="booking-links">
-            <p class="form__label mb-md">Links</p>
-            <a href="https://www.linkedin.com/in/roarkeclinton/" target="_blank" rel="noopener" class="btn btn--primary booking-link">
-              Connect on LinkedIn
-            </a>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p class="footer__text">
-        Thanks for visiting! | Website by Roarke
-      </p>
-      <p class="footer__text mt-sm">&copy; 2025 Roarke Clinton</p>
+  <div class="thank-you-wrapper">
+    <div class="div-block-89">
+      <div class="div-block-106">
+        <a href="index.html#ProductLeadership" class="outlined-link w-inline-block">
+          <div class="thank-you">Thanks for visiting!</div>
+          <div class="thank-you splitter">|</div>
+          <div class="thank-you">Website by Roarke</div>
+        </a>
+      </div>
+      <div class="copywrite">© 2025 Roarke Clinton</div>
     </div>
-  </footer>
+  </div>
 
-  <!-- JavaScript for tabs and mobile nav -->
+  <!-- Tab functionality -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Mobile nav toggle
-      const navToggle = document.querySelector('.nav-toggle');
-      const nav = document.querySelector('.nav');
+      const tabLinks = document.querySelectorAll('.tab-link');
+      const tabPanes = document.querySelectorAll('.tab-pane');
 
-      if (navToggle && nav) {
-        navToggle.addEventListener('click', function() {
-          const isOpen = nav.classList.toggle('nav--open');
-          navToggle.setAttribute('aria-expanded', isOpen);
-        });
-      }
+      tabLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          const targetTab = this.getAttribute('data-tab');
 
-      // Tab functionality
-      const tabs = document.querySelectorAll('.tab');
-      const panels = document.querySelectorAll('.tab-content');
+          // Update active tab link
+          tabLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
 
-      tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-          const targetPanel = this.getAttribute('data-tab');
-
-          // Update tabs
-          tabs.forEach(t => {
-            t.classList.remove('tab--active');
-            t.setAttribute('aria-selected', 'false');
+          // Update active tab pane
+          tabPanes.forEach(pane => {
+            pane.classList.remove('active');
+            if (pane.getAttribute('data-tab-content') === targetTab) {
+              pane.classList.add('active');
+            }
           });
-          this.classList.add('tab--active');
-          this.setAttribute('aria-selected', 'true');
-
-          // Update panels
-          panels.forEach(panel => {
-            panel.classList.remove('tab-content--active');
-          });
-          document.getElementById(targetPanel + '-panel').classList.add('tab-content--active');
         });
       });
     });
