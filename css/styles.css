@@ -798,6 +798,15 @@ em { font-style: italic; }
   display: flex;
 }
 
+.copywrite:hover {
+  color: #000;
+}
+
+.copywrite.splitter {
+  font-size: 34px;
+  font-weight: 300;
+}
+
 /* --------------------------------------------------------------------------
    Contact Page
    -------------------------------------------------------------------------- */
