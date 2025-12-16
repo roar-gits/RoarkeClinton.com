@@ -858,6 +858,7 @@ em { font-style: italic; }
 .div-block-89 {
   text-align: center;
   justify-content: space-between;
+  align-items: center;
   align-self: center;
   width: 94%;
   margin-top: auto;
