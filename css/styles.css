@@ -351,7 +351,8 @@ em { font-style: italic; }
    -------------------------------------------------------------------------- */
 
 .block {
-  gap: 0;
+  grid-column-gap: 0vw;
+  grid-row-gap: 0vw;
   flex-direction: row-reverse;
   justify-content: center;
   display: flex;
@@ -397,6 +398,15 @@ em { font-style: italic; }
   justify-content: center;
   width: auto;
   margin-right: 0;
+  display: flex;
+}
+
+/* Content wrapper with column class - constrain width */
+.column.content-wrapper {
+  justify-content: flex-start;
+  max-width: 500px;
+  height: auto;
+  min-height: 50px;
 }
 
 /* Title wrapper inside title column */
@@ -1034,6 +1044,11 @@ em { font-style: italic; }
 
   .expertisegrid {
     margin-top: 3vw;
+  }
+
+  .column.content-wrapper {
+    max-width: 100%;
+    margin-bottom: 0;
   }
 
   .copywrite {
