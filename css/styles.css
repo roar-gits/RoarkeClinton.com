@@ -420,7 +420,6 @@ em { font-style: italic; }
 
 /* Content wrapper with column class - constrain width */
 .column.content-wrapper {
-  justify-content: flex-start;
   max-width: 500px;
   height: auto;
   min-height: 50px;
