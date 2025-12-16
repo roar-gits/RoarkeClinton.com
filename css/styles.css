@@ -31,9 +31,10 @@
   --type-display: clamp(2.25rem, 2vw + 1.5rem, 3rem);      /* 36-48px: Page titles, hero name */
   --type-heading: clamp(1.625rem, 1.5vw + 1rem, 2rem);     /* 26-32px: Section headers (h2) */
   --type-subhead: clamp(1.25rem, 1vw + 0.875rem, 1.5rem);  /* 20-24px: Sub-sections, CTAs */
-  --type-body: clamp(1rem, 0.5vw + 0.875rem, 1.25rem);     /* 16-20px: Body text, nav */
-  --type-small: clamp(0.875rem, 0.25vw + 0.75rem, 1rem);   /* 14-16px: Labels, captions */
-  --type-xs: clamp(0.75rem, 0.2vw + 0.65rem, 0.875rem);    /* 12-14px: Metadata, subscripts */
+  --type-body: clamp(1rem, 0.75vw + 0.75rem, 1.375rem);    /* 16-22px: Body text, paragraphs */
+  --type-body-nav: clamp(1rem, 0.25vw + 0.875rem, 1.125rem); /* 16-18px: Nav links */
+  --type-small: clamp(0.875rem, 0.5vw + 0.625rem, 1.125rem); /* 14-18px: Labels, captions */
+  --type-xs: clamp(0.75rem, 0.25vw + 0.625rem, 0.875rem);  /* 12-14px: Metadata, subscripts */
 
   /* Catppuccin Latte Palette - https://catppuccin.com/palette */
   --latte-text: #4c4f69;
@@ -338,7 +339,7 @@ em { font-style: italic; }
   align-items: center;
   height: 100%;
   padding: 0 20px;
-  font-size: var(--type-body);
+  font-size: var(--type-body-nav);
   font-weight: 400;
   text-decoration: none;
   transition: color 0.15s ease-in;
@@ -491,7 +492,7 @@ em { font-style: italic; }
   margin-bottom: 0;
   padding-bottom: 0;
   padding-left: 0;
-  font-size: var(--type-small);
+  font-size: var(--type-body);
   font-weight: 600;
   letter-spacing: 0.05em;
 }
@@ -742,8 +743,9 @@ em { font-style: italic; }
 
 /* Subscript for testimonial attribution */
 .rte-article sub {
-  color: var(--paragraph-gray);
-  font-size: var(--type-xs);
+  color: var(--latte-overlay1);
+  font-size: var(--type-body);
+  font-weight: 400;
   vertical-align: baseline;
 }
 
@@ -806,7 +808,7 @@ em { font-style: italic; }
   white-space: nowrap;
   cursor: pointer;
   padding: 2vw;
-  font-size: var(--type-body);
+  font-size: var(--type-body-nav);
   display: inline-block;
   text-decoration: none;
 }
@@ -956,7 +958,7 @@ em { font-style: italic; }
 
 .nav-link-text.tab {
   padding: 5px 50px;
-  font-size: var(--type-body);
+  font-size: var(--type-body-nav);
 }
 
 .nav-link-text.tab:hover {
