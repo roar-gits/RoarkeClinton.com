@@ -589,37 +589,62 @@ em { font-style: italic; }
 /* Sticky Contact Button (bottom-right of page) */
 .contact-button.sticky-button {
   z-index: 500;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  width: auto;
-  height: auto;
-  font-size: 1em;
   display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   bottom: 30px;
   right: 30px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.contact-button.sticky-button .nav-link-text.cta.simple.sticky {
+/* Icon circle - visible by default */
+.contact-button.sticky-button .contact-icon {
+  width: 56px;
+  height: 56px;
+  background-color: var(--cta);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact-button.sticky-button .contact-icon:hover {
+  transform: scale(1.05);
+}
+
+/* Text - hidden by default */
+.contact-button.sticky-button .contact-text {
+  position: absolute;
+  right: 0;
   background-color: var(--cta);
   color: #fff;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-size: var(--type-body);
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.hi-contact-icon {
-  z-index: 2;
-  cursor: pointer;
-  background-color: #fff;
-  border-radius: 100px;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 80px;
-  font-size: 45px;
-  display: none;
-  position: fixed;
-  inset: auto 30px 30px auto;
-  box-shadow: 0 1px 20px #00000052;
+/* Desktop hover: show text, hide icon */
+@media (hover: hover) {
+  .contact-button.sticky-button:hover .contact-icon {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .contact-button.sticky-button:hover .contact-text {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 /* CTA Button */
