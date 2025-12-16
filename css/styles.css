@@ -546,7 +546,7 @@ em { font-style: italic; }
 .photo {
   object-fit: cover;
   background-color: #fff;
-  border-radius: 22%;
+  border-radius: 50%;
   width: var(--hero-photo-size);
   height: var(--hero-photo-size);
   overflow: hidden;
