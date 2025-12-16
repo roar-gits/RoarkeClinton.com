@@ -27,14 +27,16 @@
    -------------------------------------------------------------------------- */
 
 :root {
-  /* Typography Scale - Major Third (1.25) with clamp() for fluid sizing */
-  --type-display: clamp(2.25rem, 2vw + 1.5rem, 3rem);      /* 36-48px: Page titles, hero name */
-  --type-heading: clamp(1.625rem, 1.5vw + 1rem, 2rem);     /* 26-32px: Section headers (h2) */
-  --type-subhead: clamp(1.25rem, 1vw + 0.875rem, 1.5rem);  /* 20-24px: Sub-sections, CTAs */
-  --type-body: clamp(1rem, 0.75vw + 0.75rem, 1.375rem);    /* 16-22px: Body text, paragraphs */
+  /* Typography Scale - Medium-inspired for optimal readability
+     Key insight: 18px minimum body text, 21px desktop target
+     Never sacrifice readability for aesthetics */
+  --type-display: clamp(2.25rem, 2vw + 1.5rem, 3rem);        /* 36-48px: Page titles, hero name */
+  --type-heading: clamp(1.75rem, 0.5vw + 1.5rem, 2rem);      /* 28-32px: Section headers (h2) */
+  --type-subhead: clamp(1.25rem, 0.75vw + 1rem, 1.625rem);   /* 20-26px: Sub-sections, CTAs */
+  --type-body: clamp(1.125rem, 0.35vw + 1rem, 1.3125rem);    /* 18-21px: Body text - Medium standard */
   --type-body-nav: clamp(1rem, 0.25vw + 0.875rem, 1.125rem); /* 16-18px: Nav links */
-  --type-small: clamp(0.875rem, 0.5vw + 0.625rem, 1.125rem); /* 14-18px: Labels, captions */
-  --type-xs: clamp(0.75rem, 0.25vw + 0.625rem, 0.875rem);  /* 12-14px: Metadata, subscripts */
+  --type-small: clamp(1rem, 0.25vw + 0.875rem, 1.125rem);    /* 16-18px: Labels, captions */
+  --type-xs: clamp(0.875rem, 0.25vw + 0.75rem, 1rem);        /* 14-16px: Metadata, subscripts */
 
   /* Catppuccin Latte Palette - https://catppuccin.com/palette */
   --latte-text: #4c4f69;
