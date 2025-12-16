@@ -31,9 +31,9 @@
   --type-display: clamp(2.25rem, 2vw + 1.5rem, 3rem);      /* 36-48px: Page titles, hero name */
   --type-heading: clamp(1.625rem, 1.5vw + 1rem, 2rem);     /* 26-32px: Section headers (h2) */
   --type-subhead: clamp(1.25rem, 1vw + 0.875rem, 1.5rem);  /* 20-24px: Sub-sections, CTAs */
-  --type-body: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);    /* 16-18px: Body text, nav */
-  --type-small: 0.875rem;                                   /* 14px: Labels, captions */
-  --type-xs: 0.75rem;                                       /* 12px: Metadata, subscripts */
+  --type-body: clamp(1rem, 0.5vw + 0.875rem, 1.25rem);     /* 16-20px: Body text, nav */
+  --type-small: clamp(0.875rem, 0.25vw + 0.75rem, 1rem);   /* 14-16px: Labels, captions */
+  --type-xs: clamp(0.75rem, 0.2vw + 0.65rem, 0.875rem);    /* 12-14px: Metadata, subscripts */
 
   /* Catppuccin Latte Palette - https://catppuccin.com/palette */
   --latte-text: #4c4f69;
