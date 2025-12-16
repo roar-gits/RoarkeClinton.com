@@ -1184,7 +1184,7 @@ input[type="submit"].nav-link-text.cta.simple {
 
 .input:hover,
 .text-area:hover {
-  border-color: var(--latte-overlay1);
+  border-color: var(--latte-blue);
 }
 
 /* Booking/Other tabs content */
@@ -1289,7 +1289,7 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 .newsletter-input:hover {
-  border-color: var(--latte-overlay1);
+  border-color: var(--latte-blue);
 }
 
 .newsletter-input:focus {
