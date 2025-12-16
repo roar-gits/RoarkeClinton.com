@@ -1238,6 +1238,12 @@ input[type="submit"].nav-link-text.cta.simple {
   justify-content: center;
 }
 
+/* Book Tab - vertically center booking cards */
+.card.form:has(.booking-cards) {
+  align-items: center;
+  justify-content: center;
+}
+
 /* Newsletter Section */
 .newsletter-section {
   display: flex;
@@ -1362,10 +1368,13 @@ input[type="submit"].nav-link-text.cta.simple {
   background-color: var(--cta);
   color: #fff;
   padding: 12px 32px;
+  border: none;
   border-radius: 100px;
   font-size: var(--type-body-nav);
   font-weight: 500;
+  font-family: inherit;
   text-decoration: none;
+  cursor: pointer;
   transition: box-shadow 0.2s ease;
 }
 
