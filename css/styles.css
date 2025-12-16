@@ -409,6 +409,7 @@ em { font-style: italic; }
 .content-wrapper.column.profile-photo {
   flex: 0 auto;
   justify-content: center;
+  align-items: center;
   width: auto;
   margin-right: 0;
   display: flex;
