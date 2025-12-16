@@ -236,14 +236,24 @@ em { font-style: italic; }
 }
 
 .nav-link-wrapper {
-  gap: 20px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
   display: flex;
-  align-items: center;
 }
 
 .nav-link {
   z-index: 500;
-  text-decoration: none;
+  border-bottom: 2px solid #0000;
+  border-radius: 10px;
+  flex-direction: row;
+  order: 0;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  font-size: 1em;
+  display: flex;
+  position: relative;
+  overflow: hidden;
 }
 
 .nav-link.w--current {
