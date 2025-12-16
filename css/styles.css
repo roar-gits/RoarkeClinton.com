@@ -389,8 +389,11 @@ em { font-style: italic; }
 
 .content-wrapper.column {
   flex: 0 auto;
+  flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
   width: 100%;
+  display: flex;
 }
 
 .content-wrapper.column.info {
@@ -501,7 +504,7 @@ em { font-style: italic; }
 /* Contact Card / CTA Area */
 .contact-card-wrapper {
   flex-direction: column;
-  flex: 1;
+  flex: 0 0 auto;
   justify-content: center;
   align-items: stretch;
   width: 100%;
