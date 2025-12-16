@@ -1072,7 +1072,7 @@ input[type="submit"].nav-link-text.cta.simple {
 
 /* Form card */
 .card.form {
-  box-shadow: none;
+  box-shadow: 0 2px 7px #0000000f;
   border-radius: 12px;
   align-items: stretch;
   min-height: 580px;
@@ -1213,6 +1213,19 @@ input[type="submit"].nav-link-text.cta.simple {
 
 .booking-icon.priority {
   color: var(--latte-peach);
+}
+
+.booking-icon.linkedin {
+  color: #0a66c2;
+}
+
+/* Single card centering (for Follow tab) */
+.booking-cards.single {
+  justify-content: center;
+}
+
+.booking-cards.single .booking-card {
+  flex: 0 1 400px;
 }
 
 .booking-icon svg {
