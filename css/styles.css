@@ -1050,10 +1050,11 @@ input[type="submit"].nav-link-text.cta.simple {
 .nav-link-text.tab {
   padding: 10px 50px;
   font-size: var(--type-body-nav);
+  transition: color 0.15s ease;
 }
 
 .nav-link-text.tab:hover {
-  color: var(--latte-text);
+  color: var(--latte-blue);
 }
 
 .tabs-content {
