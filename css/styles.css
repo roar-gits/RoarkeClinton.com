@@ -615,7 +615,7 @@ em { font-style: italic; }
 
 .vertical-splitter.top-of-page {
   width: 100%;
-  height: var(--space-xl);
+  height: 10em;
 }
 
 .vertical-splitter.sub-section {
