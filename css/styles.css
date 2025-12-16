@@ -1294,6 +1294,7 @@ em { font-style: italic; }
 
   .companylogowrapper {
     margin-top: clamp(16px, 3vw, 30px);
+    padding: 0 5%;
   }
 
   .brandlogos {
