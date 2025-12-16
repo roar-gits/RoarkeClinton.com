@@ -852,8 +852,8 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 .competencie {
-  text-align: left;
-  justify-content: flex-start;
+  text-align: center;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
