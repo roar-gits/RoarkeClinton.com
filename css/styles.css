@@ -672,6 +672,7 @@ input[type="submit"].nav-link-text.cta.simple {
   cursor: pointer;
   font-family: inherit;
   font-weight: 500;
+  width: auto;
 }
 
 /* In-page CTA buttons (Book/Other tabs) - white style */
@@ -1113,6 +1114,7 @@ input[type="submit"].nav-link-text.cta.simple {
 
 .field-wrapper.submit-wrapper {
   margin-top: 10px;
+  align-items: flex-start;
 }
 
 .field-label {
