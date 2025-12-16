@@ -1136,52 +1136,59 @@ input[type="submit"].nav-link-text.cta.simple {
 
 .input {
   width: 100%;
-  padding: 16px 18px;
-  border: 1px solid #f0f0f0;
+  padding: 14px 16px;
+  border: 1px solid var(--latte-surface1);
   border-radius: 8px;
   font-family: inherit;
-  font-size: 14px;
-  line-height: 16px;
-  min-height: 54px;
-  background-color: #fff;
-  color: #131313;
+  font-size: var(--type-body);
+  line-height: 1.4;
+  min-height: 52px;
+  background-color: var(--latte-base);
+  color: var(--latte-text);
   margin-bottom: 0;
-  box-shadow: 0 2px 6px #0000000f;
-  transition: box-shadow .3s, color .3s, border-color .3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--latte-blue);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.input::placeholder {
+  color: var(--latte-overlay0);
 }
 
 .text-area {
   width: 100%;
-  padding: 16px 18px;
-  border: 1px solid #f0f0f0;
+  padding: 14px 16px;
+  border: 1px solid var(--latte-surface1);
   border-radius: 8px;
   font-family: inherit;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: var(--type-body);
+  line-height: 1.6;
   min-height: 140px;
-  background-color: #fff;
-  box-shadow: 0 2px 6px #0000000f;
-  transition: box-shadow .3s, color .3s, border-color .3s;
+  background-color: var(--latte-base);
+  color: var(--latte-text);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
   resize: vertical;
+}
+
+.text-area:focus {
+  outline: none;
+  border-color: var(--latte-blue);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.text-area::placeholder {
+  color: var(--latte-overlay0);
 }
 
 .input:hover,
 .text-area:hover {
-  border-color: #131313;
-  box-shadow: 0 2px 12px #0000001a;
-}
-
-.input:focus,
-.text-area:focus {
-  color: #131313;
-  border-color: #131313;
-  outline: none;
-}
-
-.input::placeholder,
-.text-area::placeholder {
-  color: #727272;
-  font-size: 16px;
+  border-color: var(--latte-overlay1);
 }
 
 /* Booking/Other tabs content */
@@ -1274,19 +1281,26 @@ input[type="submit"].nav-link-text.cta.simple {
 
 .newsletter-input {
   flex: 1;
-  padding: 12px 16px;
+  padding: 14px 16px;
   font-size: var(--type-body);
   font-family: inherit;
   border: 1px solid var(--latte-surface1);
   border-radius: 8px;
   background: var(--latte-base);
   color: var(--latte-text);
-  transition: border-color 0.2s ease;
+  min-height: 52px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.newsletter-input:hover {
+  border-color: var(--latte-overlay1);
 }
 
 .newsletter-input:focus {
   outline: none;
   border-color: var(--latte-blue);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .newsletter-input::placeholder {
