@@ -1007,9 +1007,9 @@ input[type="submit"].nav-link-text.cta.simple {
 
 .heading-3 {
   text-align: left;
-  font-size: var(--type-heading);
+  font-size: var(--type-display);
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 /* Tabs */
@@ -1656,10 +1656,6 @@ input[type="submit"].nav-link-text.cta.simple {
     grid-column: span 1;
   }
 
-  .heading-3 {
-    text-align: center;
-  }
-
   .field-wrapper.submit-wrapper {
     align-items: stretch;
   }
@@ -1944,10 +1940,6 @@ input[type="submit"].nav-link-text.cta.simple {
   }
 
   /* Contact page responsive adjustments */
-  .heading-3 {
-    text-align: center;
-  }
-
   .input {
     min-height: 54px;
   }
