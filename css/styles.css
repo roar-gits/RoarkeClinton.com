@@ -531,6 +531,7 @@ em { font-style: italic; }
 }
 
 .contact-button.in-page {
+  flex: 0 0 auto;
   flex-flow: column;
   justify-content: flex-start;
   align-self: flex-start;
