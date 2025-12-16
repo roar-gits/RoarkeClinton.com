@@ -50,6 +50,7 @@
   --latte-surface0: #ccd0da;
   --latte-base: #eff1f5;
   --latte-mantle: #e6e9ef;
+  --latte-mantle-light: #ebedf2;
   --latte-crust: #dce0e8;
   --latte-sapphire: #209fb5;
   --latte-blue: #1e66f5;
@@ -778,7 +779,7 @@ em { font-style: italic; }
 }
 
 .cards {
-  background-color: var(--latte-mantle);
+  background-color: var(--latte-mantle-light);
   display: flex;
 }
 
@@ -798,7 +799,7 @@ em { font-style: italic; }
    -------------------------------------------------------------------------- */
 
 .section.sub-nav {
-  background-color: var(--latte-mantle);
+  background-color: transparent;
 }
 
 .subnav {
