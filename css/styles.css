@@ -1198,10 +1198,8 @@ input[type="submit"].nav-link-text.cta.simple {
   align-items: center;
   text-align: center;
   padding: 48px 32px;
-  background: #fff;
-  border: 1px solid #f0f0f0;
+  background: var(--latte-base);
   border-radius: 12px;
-  box-shadow: 0 2px 7px #0000000f;
 }
 
 .booking-icon {
