@@ -633,17 +633,17 @@ em { font-style: italic; }
 
 .companylogowrapper {
   text-align: center;
-  margin-top: clamp(20px, 3vw, 40px);
+  margin-top: clamp(24px, 4vw, 50px);
   padding: 0;
 }
 
 .brandlogos {
   opacity: 0.3;
-  width: 12vw;
-  max-width: 130px;
-  height: 6vw;
-  max-height: 75px;
-  margin: 3vw 2vw 0;
+  width: 10vw;
+  max-width: 120px;
+  height: 5vw;
+  max-height: 70px;
+  margin: 2vw 2vw;
   display: inline-block;
   object-fit: contain;
 }
@@ -1070,13 +1070,14 @@ em { font-style: italic; }
   }
 
   .companylogowrapper {
-    margin-top: -2vw;
+    margin-top: clamp(20px, 3vw, 40px);
   }
 
   .brandlogos {
     width: 13vw;
-    max-width: 130px;
-    height: 6vw;
+    max-width: 140px;
+    height: 6.5vw;
+    max-height: 75px;
     margin: 2vw 2vw;
   }
 
@@ -1196,10 +1197,6 @@ em { font-style: italic; }
     flex: 0 auto;
     justify-content: center;
   }
-
-  .companylogowrapper {
-    margin-top: -2vw;
-  }
 }
 
 /* Mobile Landscape */
@@ -1300,14 +1297,15 @@ em { font-style: italic; }
   }
 
   .companylogowrapper {
-    margin-top: -3vw;
+    margin-top: clamp(16px, 3vw, 30px);
   }
 
   .brandlogos {
-    width: 24vw;
-    height: 7vw;
+    width: 18vw;
+    max-width: none;
+    height: 9vw;
     max-height: none;
-    margin: 4vw 2vw;
+    margin: 2.5vw 2vw;
   }
 
   .vw.horizontal-spreader {
@@ -1453,10 +1451,6 @@ em { font-style: italic; }
     text-align: left;
     margin-bottom: 3vw;
     line-height: 160%;
-  }
-
-  .companylogowrapper {
-    margin-top: -3vw;
   }
 
   .section.sub-nav {
@@ -1627,9 +1621,9 @@ em { font-style: italic; }
   }
 
   .brandlogos {
-    width: 23vw;
-    height: 11vw;
-    margin: 5vw 2.5vw;
+    width: 20vw;
+    height: 10vw;
+    margin: 3vw 2vw;
   }
 
   .rte-article {
