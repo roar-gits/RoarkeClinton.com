@@ -1057,7 +1057,7 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 .nav-link-text.tab:hover {
-  color: var(--latte-maroon);
+  color: var(--neutral--800);
 }
 
 .tabs-content {
