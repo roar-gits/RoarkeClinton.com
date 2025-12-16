@@ -666,6 +666,14 @@ em { font-style: italic; }
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Input submit button reset for CTA styling */
+input[type="submit"].nav-link-text.cta.simple {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+}
+
 /* In-page CTA buttons (Book/Other tabs) - white style */
 .nav-link-text.cta.simple.in-page {
   display: inline-flex;
@@ -1024,13 +1032,13 @@ em { font-style: italic; }
 
 .tab-text-wrapper.active,
 .tab-text-wrapper.w--current {
-  background-color: var(--latte-surface0);
+  background-color: #9999992e;
   border-radius: 12px;
   padding: 0;
 }
 
 .nav-link-text.tab {
-  padding: 5px 50px;
+  padding: 10px 50px;
   font-size: var(--type-body-nav);
 }
 
@@ -1081,10 +1089,16 @@ em { font-style: italic; }
   display: flex;
 }
 
+/* Form element inside card */
+.card.form form {
+  width: 100%;
+}
+
 .grid-2-columns.form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
+  width: 100%;
 }
 
 .field-wrapper {
