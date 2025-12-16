@@ -1057,7 +1057,7 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 .nav-link-text.tab:hover {
-  color: var(--neutral--800);
+  color: var(--blue-link);
 }
 
 .tabs-content {
