@@ -1032,24 +1032,9 @@ em { font-style: italic; }
   gap: 15px;
 }
 
-/* Hero section CTA - white button inside .contact-button.in-page */
-.contact-button.in-page .nav-link-text.cta.simple {
-  color: #000;
-  background-color: #fff;
-  justify-content: center;
-  align-items: center;
-  font-family: Manrope Variablefont Wght, sans-serif;
-  font-size: 22px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Hide spacer inside hero CTA */
+/* Hide spacer inside hero CTA to prevent height growth */
 .contact-button.in-page .vertical-splitter {
   display: none;
-}
-
-.contact-button.in-page .nav-link-text.cta.simple:hover {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* --------------------------------------------------------------------------
