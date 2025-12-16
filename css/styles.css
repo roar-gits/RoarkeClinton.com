@@ -489,8 +489,19 @@ em { font-style: italic; }
 }
 
 .contact-button {
-  display: flex;
+  z-index: 500;
+  flex-direction: row;
+  order: 1;
+  justify-content: flex-end;
+  align-self: flex-end;
   align-items: center;
+  width: auto;
+  height: auto;
+  margin-bottom: 30px;
+  font-size: 1em;
+  display: flex;
+  position: sticky;
+  inset: auto 30px 30px auto;
 }
 
 .contact-button.in-page {
@@ -558,7 +569,7 @@ em { font-style: italic; }
 }
 
 /* Horizontal spreader (spacing between title and photo) */
-.horizontal-spreader {
+.vw.horizontal-spreader {
   width: 6vw;
   max-width: 200px;
 }
@@ -1017,7 +1028,7 @@ em { font-style: italic; }
     margin-left: 2vw;
   }
 
-  .horizontal-spreader {
+  .vw.horizontal-spreader {
     height: auto;
   }
 
@@ -1168,7 +1179,7 @@ em { font-style: italic; }
     margin-right: 2vw;
   }
 
-  .horizontal-spreader {
+  .vw.horizontal-spreader {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -1352,7 +1363,7 @@ em { font-style: italic; }
     font-size: 0.001em;
   }
 
-  .horizontal-spreader {
+  .vw.horizontal-spreader {
     max-width: 100%;
     height: 0;
   }
