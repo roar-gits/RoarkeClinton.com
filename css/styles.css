@@ -1032,9 +1032,13 @@ em { font-style: italic; }
   gap: 15px;
 }
 
-/* Hide spacer inside hero CTA to prevent height growth */
+/* Fix hero CTA spacing - hide vw spacer, use fixed margin instead */
 .contact-button.in-page .vertical-splitter {
   display: none;
+}
+
+.contact-button.in-page {
+  margin-top: 30px;
 }
 
 /* --------------------------------------------------------------------------
