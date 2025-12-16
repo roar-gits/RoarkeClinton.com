@@ -27,6 +27,7 @@
    -------------------------------------------------------------------------- */
 
 :root {
+  /* Colors (from Webflow) */
   --grey: #838383;
   --blue-link: #000;
   --indian-red: #ff4363;
@@ -41,6 +42,18 @@
   --bold-grey: #8d8d8d;
   --paragraph-gray-2: #575757;
   --dim-grey: #585858;
+
+  /* Fluid spacing scale - replaces breakpoint overrides */
+  --space-xs: clamp(8px, 1.5vw, 15px);
+  --space-sm: clamp(15px, 2.5vw, 30px);
+  --space-md: clamp(30px, 5vw, 75px);
+  --space-lg: clamp(60px, 5em, 120px);
+  --space-xl: clamp(80px, 10em, 160px);
+
+  /* Hero section */
+  --hero-gap: clamp(20px, 6vw, 200px);
+  --hero-photo-size: clamp(100px, 20vw, 400px);
+  --cta-gap: clamp(20px, 2.5vw, 40px);
 }
 
 /* --------------------------------------------------------------------------
@@ -364,11 +377,11 @@ em { font-style: italic; }
    -------------------------------------------------------------------------- */
 
 .block {
-  grid-column-gap: 0vw;
-  grid-row-gap: 0vw;
+  display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  display: flex;
+  align-items: center;
+  gap: var(--hero-gap);
 }
 
 .block.centered {
@@ -389,11 +402,10 @@ em { font-style: italic; }
 
 .content-wrapper.column {
   flex: 0 auto;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
   width: 100%;
-  display: flex;
 }
 
 .content-wrapper.column.info {
@@ -493,25 +505,19 @@ em { font-style: italic; }
   object-fit: cover;
   background-color: #fff;
   border-radius: 22%;
-  width: 20vw;
-  max-width: 400px;
-  height: 20vw;
-  max-height: 400px;
+  width: var(--hero-photo-size);
+  height: var(--hero-photo-size);
   overflow: hidden;
 }
 
 /* Contact Card / CTA Area */
 .contact-card-wrapper {
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  align-items: stretch;
+  display: grid;
+  place-items: start;
+  gap: var(--space-xs);
   width: 100%;
   max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 0;
-  display: flex;
+  margin-inline: auto;
 }
 
 .contact-button {
@@ -606,25 +612,21 @@ em { font-style: italic; }
 
 .vertical-splitter {
   width: 100%;
-  height: 5em;
-  max-height: 120px;
+  height: var(--space-lg);
 }
 
 .vertical-splitter.top-of-page {
   width: 100%;
-  height: 10em;
-  max-height: 100%;
+  height: var(--space-xl);
 }
 
 .vertical-splitter.sub-section {
   width: auto;
-  height: 5vw;
-  max-height: 75px;
+  height: var(--space-md);
 }
 
 .vertical-splitter.sub-section.sub-content {
-  height: 2.5vw;
-  max-height: 30px;
+  height: var(--space-sm);
 }
 
 /* --------------------------------------------------------------------------
@@ -1032,13 +1034,13 @@ em { font-style: italic; }
   gap: 15px;
 }
 
-/* Fix hero CTA spacing - hide vw spacer, use fixed margin instead */
+/* Fix hero CTA spacing - hide vw spacer, use fluid margin instead */
 .contact-button.in-page .vertical-splitter {
   display: none;
 }
 
 .contact-button.in-page {
-  margin-top: 30px;
+  margin-top: var(--cta-gap);
 }
 
 /* --------------------------------------------------------------------------
@@ -1061,16 +1063,6 @@ em { font-style: italic; }
   .contact-button.sticky-button {
     opacity: 0;
     pointer-events: none;
-  }
-
-  .block {
-    grid-column-gap: 0vw;
-    grid-row-gap: 0vw;
-  }
-
-  .photo {
-    width: 30vw;
-    height: 30vw;
   }
 
   .page-title.home-pg {
@@ -1238,24 +1230,17 @@ em { font-style: italic; }
     font-size: 16px;
   }
 
-  .photo {
-    width: 45vw;
-    height: 45vw;
-  }
-
   /* Key: block becomes column-reverse on mobile */
   .block {
     flex-direction: column-reverse;
   }
 
-  /* CRITICAL: This centers content vertically in the hero */
   .content-wrapper {
     width: 100%;
     max-width: none;
   }
 
   .content-wrapper.column {
-    justify-content: center;
     align-items: flex-start;
   }
 
@@ -1298,14 +1283,10 @@ em { font-style: italic; }
     font-size: 4vw;
   }
 
-  /* CRITICAL: These styles center the hero card content */
   .contact-card-wrapper {
     text-align: center;
-    align-self: center;
-    align-items: center;
+    place-items: center;
     width: 100%;
-    padding-top: 0;
-    padding-bottom: 0;
   }
 
   .contact-button {
@@ -1331,14 +1312,6 @@ em { font-style: italic; }
     width: 100%;
     max-width: 100%;
     height: auto;
-  }
-
-  .vertical-splitter.top-of-page {
-    height: 8em;
-  }
-
-  .vertical-splitter.sub-section {
-    height: 9vw;
   }
 
   .rte-article {
@@ -1590,11 +1563,6 @@ em { font-style: italic; }
     align-items: center;
   }
 
-  .photo {
-    width: 28vw;
-    height: 28vw;
-  }
-
   .content-wrapper.column.title {
     align-self: center;
   }
@@ -1644,9 +1612,7 @@ em { font-style: italic; }
   }
 
   .contact-card-wrapper {
-    flex: 1;
-    padding-top: 0;
-    padding-bottom: 0;
+    place-items: center;
   }
 
   .content-wrapper.column.profile-photo {
@@ -1664,19 +1630,6 @@ em { font-style: italic; }
     margin-bottom: 5vw;
     margin-left: 2.5vw;
     margin-right: 2.5vw;
-  }
-
-  .vertical-splitter {
-    height: 18vw;
-  }
-
-  .vertical-splitter.sub-section {
-    height: 9vw;
-  }
-
-  .vertical-splitter.sub-section.sub-content {
-    width: 100%;
-    height: 3vw;
   }
 
   .rte-article {
