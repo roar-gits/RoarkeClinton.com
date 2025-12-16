@@ -601,8 +601,8 @@ em { font-style: italic; }
 
 /* Icon circle - visible by default */
 .contact-button.sticky-button .contact-icon {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   background-color: var(--cta);
   border-radius: 50%;
   display: flex;
@@ -617,16 +617,16 @@ em { font-style: italic; }
   transform: scale(1.05);
 }
 
-/* Text - hidden by default */
+/* Text - hidden by default, matches .nav-link-text.cta.simple sizing */
 .contact-button.sticky-button .contact-text {
   position: absolute;
   right: 0;
   background-color: var(--cta);
   color: #fff;
-  padding: 12px 24px;
+  padding: 10px 40px 12px;
   border-radius: 100px;
-  font-size: var(--type-body);
-  font-weight: 500;
+  font-size: var(--type-subhead);
+  line-height: 160%;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
