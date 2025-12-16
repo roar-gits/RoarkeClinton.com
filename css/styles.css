@@ -1143,17 +1143,15 @@ input[type="submit"].nav-link-text.cta.simple {
   font-size: var(--type-body);
   line-height: 1.4;
   min-height: 52px;
-  background-color: var(--latte-base);
+  background-color: #fff;
   color: var(--latte-text);
   margin-bottom: 0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: border-color 0.2s ease;
 }
 
 .input:focus {
   outline: none;
   border-color: var(--latte-blue);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .input::placeholder {
@@ -1169,17 +1167,15 @@ input[type="submit"].nav-link-text.cta.simple {
   font-size: var(--type-body);
   line-height: 1.6;
   min-height: 140px;
-  background-color: var(--latte-base);
+  background-color: #fff;
   color: var(--latte-text);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: border-color 0.2s ease;
   resize: vertical;
 }
 
 .text-area:focus {
   outline: none;
   border-color: var(--latte-blue);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .text-area::placeholder {
@@ -1286,11 +1282,10 @@ input[type="submit"].nav-link-text.cta.simple {
   font-family: inherit;
   border: 1px solid var(--latte-surface1);
   border-radius: 8px;
-  background: var(--latte-base);
+  background: #fff;
   color: var(--latte-text);
   min-height: 52px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: border-color 0.2s ease;
 }
 
 .newsletter-input:hover {
@@ -1300,7 +1295,6 @@ input[type="submit"].nav-link-text.cta.simple {
 .newsletter-input:focus {
   outline: none;
   border-color: var(--latte-blue);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .newsletter-input::placeholder {
