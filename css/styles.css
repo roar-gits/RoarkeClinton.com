@@ -639,11 +639,9 @@ em { font-style: italic; }
 
 .brandlogos {
   opacity: 0.3;
-  width: 10vw;
-  max-width: 120px;
-  height: 5vw;
-  max-height: 70px;
-  margin: 2vw 2vw;
+  width: clamp(90px, 10vw, 120px);
+  height: clamp(45px, 5vw, 60px);
+  margin: clamp(15px, 2vw, 28px);
   display: inline-block;
   object-fit: contain;
 }
@@ -1074,11 +1072,9 @@ em { font-style: italic; }
   }
 
   .brandlogos {
-    width: 13vw;
-    max-width: 140px;
-    height: 6.5vw;
-    max-height: 75px;
-    margin: 2vw 2vw;
+    width: clamp(90px, 13vw, 130px);
+    height: clamp(45px, 6.5vw, 70px);
+    margin: clamp(12px, 2vw, 20px);
   }
 
   .vw.horizontal-spreader {
