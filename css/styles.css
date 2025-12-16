@@ -637,8 +637,9 @@ em { font-style: italic; }
   gap: clamp(16px, 3vw, 40px);
   justify-items: center;
   align-items: center;
+  max-width: 800px;
+  margin: clamp(20px, 3vw, 40px) auto 0;
   padding: 0;
-  margin-top: 1vw;
 }
 
 .brandlogos {
