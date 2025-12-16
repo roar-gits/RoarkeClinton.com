@@ -1227,6 +1227,107 @@ input[type="submit"].nav-link-text.cta.simple {
   color: #0a66c2;
 }
 
+.booking-icon.newsletter {
+  color: var(--latte-mauve);
+}
+
+/* Follow Tab Layout - stack newsletter and social vertically */
+.card.form:has(.newsletter-section) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 32px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 4px;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: var(--type-body);
+  font-family: inherit;
+  border: 1px solid var(--latte-surface1);
+  border-radius: 8px;
+  background: var(--latte-base);
+  color: var(--latte-text);
+  transition: border-color 0.2s ease;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--latte-blue);
+}
+
+.newsletter-input::placeholder {
+  color: var(--latte-overlay0);
+}
+
+/* Social Section */
+.social-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 32px 8px;
+}
+
+.social-divider {
+  width: 100%;
+  max-width: 200px;
+  height: 1px;
+  background-color: #e8e8e8;
+  margin-bottom: 20px;
+}
+
+.social-label {
+  font-size: var(--type-small);
+  color: var(--latte-overlay1);
+  margin-bottom: 16px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--latte-surface0);
+  color: var(--latte-overlay1);
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  background: var(--latte-blue);
+  color: var(--latte-base);
+}
+
+.social-link svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
 /* Single card centering (for Follow tab) */
 .booking-cards.single {
   justify-content: center;
@@ -1771,6 +1872,16 @@ input[type="submit"].nav-link-text.cta.simple {
   .booking-cards:not(.single) .booking-card:first-child {
     border-bottom: 1px solid #e8e8e8;
     padding-bottom: 32px;
+  }
+
+  /* Newsletter form stacks on mobile */
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-section,
+  .social-section {
+    padding: 24px 16px;
   }
 }
 
