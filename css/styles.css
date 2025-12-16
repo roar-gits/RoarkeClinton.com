@@ -1650,6 +1650,23 @@ input[type="submit"].nav-link-text.cta.simple {
     padding-right: 30px;
     line-height: 1.6;
   }
+
+  /* Contact page responsive adjustments */
+  .field-wrapper.full-width {
+    grid-column: span 1;
+  }
+
+  .heading-3 {
+    text-align: center;
+  }
+
+  .field-wrapper.submit-wrapper {
+    align-items: stretch;
+  }
+
+  input[type="submit"].nav-link-text.cta.simple {
+    width: 100%;
+  }
 }
 
 /* Mobile Portrait */
@@ -1924,6 +1941,15 @@ input[type="submit"].nav-link-text.cta.simple {
     align-self: stretch;
     height: 100%;
     padding-top: 1vw;
+  }
+
+  /* Contact page responsive adjustments */
+  .heading-3 {
+    text-align: center;
+  }
+
+  .input {
+    min-height: 54px;
   }
 }
 
