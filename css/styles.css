@@ -1167,9 +1167,9 @@ em { font-style: italic; }
   }
 
   .section-title {
-    padding-top: .4vw;
+    padding-top: 0;
     font-weight: 700;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   .section-title.major-section {
