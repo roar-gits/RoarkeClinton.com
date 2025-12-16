@@ -138,7 +138,7 @@ body {
   color: var(--latte-text);
   letter-spacing: 0.005em;
   background-color: transparent;
-  font-family: Manrope Variablefont Wght, sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 17px;
   line-height: 1.7em;
   -webkit-font-smoothing: antialiased;
