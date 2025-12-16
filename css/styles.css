@@ -417,7 +417,7 @@ em { font-style: italic; }
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  align-items: baseline;
+  align-items: flex-start;
 }
 
 .block.centered {
@@ -453,7 +453,7 @@ em { font-style: italic; }
 .content-wrapper.column.title {
   flex: 1;
   align-items: flex-start;
-  align-self: baseline;
+  align-self: flex-start;
   min-height: auto;
   margin-bottom: 0;
 }
@@ -707,6 +707,15 @@ em { font-style: italic; }
 
 .rte-article.home-pg.bullets {
   margin-top: -2vw;
+}
+
+/* Reset margins for first rte-article to enable baseline alignment with section title */
+.content-wrapper.column.info > .rte-article:first-child {
+  margin-top: 0;
+}
+
+.content-wrapper.column.info > .rte-article:first-child > p:first-child {
+  margin-top: 0;
 }
 
 .rte-article p {
