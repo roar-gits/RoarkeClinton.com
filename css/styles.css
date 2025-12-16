@@ -503,7 +503,7 @@ em { font-style: italic; }
 /* Contact Card / CTA Area */
 .contact-card-wrapper {
   flex-direction: column;
-  flex: 0 0 auto;
+  flex: 1;
   justify-content: center;
   align-items: stretch;
   width: 100%;
@@ -531,7 +531,6 @@ em { font-style: italic; }
 }
 
 .contact-button.in-page {
-  flex: 0 0 auto;
   flex-flow: column;
   justify-content: flex-start;
   align-self: flex-start;
@@ -1041,10 +1040,6 @@ em { font-style: italic; }
   font-family: Manrope Variablefont Wght, sans-serif;
   font-size: 22px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  display: block;
-  width: 100%;
-  max-width: 400px;
 }
 
 .nav-link-text.cta.simple.in-page:hover {
@@ -1654,7 +1649,7 @@ em { font-style: italic; }
   }
 
   .contact-card-wrapper {
-    flex: 0 0 auto;
+    flex: 1;
     padding-top: 0;
     padding-bottom: 0;
   }
