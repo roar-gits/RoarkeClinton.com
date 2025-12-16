@@ -202,6 +202,9 @@ em { font-style: italic; }
 
 .page {
   background-color: var(--latte-base);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* --------------------------------------------------------------------------
@@ -211,7 +214,7 @@ em { font-style: italic; }
 .page-structure {
   z-index: 1;
   flex-direction: column;
-  min-height: 100vh;
+  flex: 1;
   padding-top: 0;
   display: flex;
   position: relative;
