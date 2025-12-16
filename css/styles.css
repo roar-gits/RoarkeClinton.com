@@ -27,21 +27,42 @@
    -------------------------------------------------------------------------- */
 
 :root {
-  /* Colors (from Webflow) */
-  --grey: #838383;
-  --blue-link: #000;
-  --indian-red: #ff4363;
-  --cta: #1f84ff;
-  --neutral-800: #131313;
-  --paragraph-gray: #999;
-  --h1-4-gray: #4c494b;
-  --brand-text: #333132;
-  --white-smoke: #efefef;
-  --dark-slate-grey: #3b3b3b;
-  --header-gray: #999;
-  --bold-grey: #8d8d8d;
-  --paragraph-gray-2: #575757;
-  --dim-grey: #585858;
+  /* Catppuccin Latte Palette - https://catppuccin.com/palette */
+  --latte-text: #4c4f69;
+  --latte-subtext1: #5c5f77;
+  --latte-subtext0: #6c6f85;
+  --latte-overlay2: #7c7f93;
+  --latte-overlay1: #8c8fa1;
+  --latte-overlay0: #9ca0b0;
+  --latte-surface2: #acb0be;
+  --latte-surface1: #bcc0cc;
+  --latte-surface0: #ccd0da;
+  --latte-base: #eff1f5;
+  --latte-mantle: #e6e9ef;
+  --latte-crust: #dce0e8;
+  --latte-sapphire: #209fb5;
+  --latte-blue: #1e66f5;
+  --latte-lavender: #7287fd;
+  --latte-mauve: #8839ef;
+  --latte-maroon: #e64553;
+  --latte-peach: #fe640b;
+  --latte-teal: #179299;
+
+  /* Theme Colors (mapped to Latte) */
+  --grey: var(--latte-overlay1);
+  --blue-link: var(--latte-sapphire);
+  --indian-red: var(--latte-maroon);
+  --cta: var(--latte-blue);
+  --neutral-800: var(--latte-text);
+  --paragraph-gray: var(--latte-overlay0);
+  --h1-4-gray: var(--latte-text);
+  --brand-text: var(--latte-text);
+  --white-smoke: var(--latte-base);
+  --dark-slate-grey: var(--latte-subtext0);
+  --header-gray: var(--latte-overlay0);
+  --bold-grey: var(--latte-overlay1);
+  --paragraph-gray-2: var(--latte-subtext1);
+  --dim-grey: var(--latte-subtext1);
 
   /* Fluid spacing scale - replaces breakpoint overrides */
   --space-xs: clamp(8px, 1.5vw, 15px);
@@ -114,7 +135,7 @@ html {
    -------------------------------------------------------------------------- */
 
 body {
-  color: #333132;
+  color: var(--latte-text);
   letter-spacing: 0.005em;
   background-color: transparent;
   font-family: Manrope Variablefont Wght, sans-serif;
@@ -161,7 +182,7 @@ strong { font-weight: 600; }
 em { font-style: italic; }
 
 .page {
-  background-color: #fafafa;
+  background-color: var(--latte-base);
 }
 
 /* --------------------------------------------------------------------------
@@ -183,7 +204,7 @@ em { font-style: italic; }
 
 .navbar-symbol {
   z-index: 200;
-  background-color: #fafafa;
+  background-color: var(--latte-base);
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
@@ -241,7 +262,7 @@ em { font-style: italic; }
 }
 
 .brand-text {
-  color: #000;
+  color: var(--latte-text);
   text-transform: none;
   flex: 0 auto;
   align-items: center;
@@ -297,7 +318,7 @@ em { font-style: italic; }
 }
 
 .nav-link-text {
-  color: #333132;
+  color: var(--latte-text);
   flex: 0 auto;
   align-items: center;
   height: 100%;
@@ -310,7 +331,7 @@ em { font-style: italic; }
 }
 
 .nav-link-text:hover {
-  color: #ff4363;
+  color: var(--latte-maroon);
 }
 
 .nav-link-text.header:hover {
@@ -727,7 +748,7 @@ em { font-style: italic; }
 }
 
 .cards {
-  background-color: #f3f3f3;
+  background-color: var(--latte-mantle);
   display: flex;
 }
 
@@ -747,7 +768,7 @@ em { font-style: italic; }
    -------------------------------------------------------------------------- */
 
 .section.sub-nav {
-  background-color: #f5f5f5;
+  background-color: var(--latte-mantle);
 }
 
 .subnav {
@@ -765,7 +786,7 @@ em { font-style: italic; }
 }
 
 .project-nav-links {
-  color: #000;
+  color: var(--latte-text);
   white-space: nowrap;
   cursor: pointer;
   padding: 2vw;
@@ -779,7 +800,7 @@ em { font-style: italic; }
 }
 
 .work-nav {
-  color: #000;
+  color: var(--latte-text);
   display: inline-block;
 }
 
@@ -789,7 +810,7 @@ em { font-style: italic; }
 
 .thank-you-wrapper {
   z-index: 0;
-  color: #000;
+  color: var(--latte-text);
   text-align: left;
   flex-direction: column;
   justify-content: center;
@@ -824,7 +845,7 @@ em { font-style: italic; }
 .outlined-link {
   z-index: 0;
   grid-column-gap: 5px;
-  color: #000;
+  color: var(--latte-text);
   cursor: pointer;
   justify-content: flex-start;
   align-items: stretch;
@@ -872,7 +893,7 @@ em { font-style: italic; }
 }
 
 .copywrite:hover {
-  color: #000;
+  color: var(--latte-text);
 }
 
 .copywrite.splitter {
@@ -912,7 +933,7 @@ em { font-style: italic; }
 
 .tab-text-wrapper.active,
 .tab-text-wrapper.w--current {
-  background-color: #e9e9e9;
+  background-color: var(--latte-surface0);
   border-radius: 12px;
   padding: 0;
 }
@@ -923,7 +944,7 @@ em { font-style: italic; }
 }
 
 .nav-link-text.tab:hover {
-  color: #333132;
+  color: var(--latte-text);
 }
 
 .tabs-content {
@@ -991,7 +1012,7 @@ em { font-style: italic; }
 .input, .text-area {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--latte-surface0);
   border-radius: 8px;
   font-family: inherit;
   font-size: 16px;
@@ -999,23 +1020,23 @@ em { font-style: italic; }
 }
 
 .input:hover {
-  border-color: #131313;
+  border-color: var(--latte-text);
 }
 
 .input:focus {
-  color: #131313;
-  border-color: #131313;
+  color: var(--latte-text);
+  border-color: var(--latte-text);
   outline: none;
 }
 
 .text-area:hover {
-  border-color: #131313;
+  border-color: var(--latte-text);
   box-shadow: 0 2px 12px #0000001a;
 }
 
 .text-area:focus {
-  color: #131313;
-  border-color: #131313;
+  color: var(--latte-text);
+  border-color: var(--latte-text);
   outline: none;
 }
 
