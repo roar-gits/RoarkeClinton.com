@@ -381,7 +381,6 @@ em { font-style: italic; }
   flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
-  gap: var(--hero-gap);
 }
 
 .block.centered {
