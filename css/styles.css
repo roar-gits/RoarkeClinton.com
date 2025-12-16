@@ -417,7 +417,7 @@ em { font-style: italic; }
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
 }
 
 .block.centered {
@@ -453,7 +453,7 @@ em { font-style: italic; }
 .content-wrapper.column.title {
   flex: 1;
   align-items: flex-start;
-  align-self: flex-start;
+  align-self: baseline;
   min-height: auto;
   margin-bottom: 0;
 }
