@@ -1042,13 +1042,13 @@ em { font-style: italic; }
 .grid-2-columns.form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 28px;
 }
 
 .field-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .field-wrapper.full-width {
@@ -1060,52 +1060,93 @@ em { font-style: italic; }
 }
 
 .field-label {
-  font-size: var(--type-small);
-  font-weight: 500;
-  color: var(--grey);
+  font-size: 14px;
+  font-weight: 600;
+  color: #131313;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  line-height: 16px;
 }
 
-.input, .text-area {
+.input {
   width: 100%;
-  padding: 12px 16px;
-  border: 1px solid var(--latte-surface0);
+  padding: 16px 18px;
+  border: 1px solid #f0f0f0;
   border-radius: 8px;
   font-family: inherit;
-  font-size: 16px;
-  transition: border-color 0.15s ease;
-}
-
-.input:hover {
-  border-color: var(--latte-text);
-}
-
-.input:focus {
-  color: var(--latte-text);
-  border-color: var(--latte-text);
-  outline: none;
-}
-
-.text-area:hover {
-  border-color: var(--latte-text);
-  box-shadow: 0 2px 12px #0000001a;
-}
-
-.text-area:focus {
-  color: var(--latte-text);
-  border-color: var(--latte-text);
-  outline: none;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 54px;
+  background-color: #fff;
+  color: #131313;
+  margin-bottom: 0;
+  box-shadow: 0 2px 6px #0000000f;
+  transition: box-shadow .3s, color .3s, border-color .3s;
 }
 
 .text-area {
-  min-height: 150px;
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 28px;
+  min-height: 140px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px #0000000f;
+  transition: box-shadow .3s, color .3s, border-color .3s;
   resize: vertical;
+}
+
+.input:hover,
+.text-area:hover {
+  border-color: #131313;
+  box-shadow: 0 2px 12px #0000001a;
+}
+
+.input:focus,
+.text-area:focus {
+  color: #131313;
+  border-color: #131313;
+  outline: none;
+}
+
+.input::placeholder,
+.text-area::placeholder {
+  color: #727272;
+  font-size: 16px;
 }
 
 /* Booking/Other tabs content */
 .field-wrapper.ctas {
   gap: 15px;
+}
+
+/* Form Success/Error Messages */
+.success-message {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 28px;
+  text-align: center;
+  display: none;
+}
+
+.success-message.visible {
+  display: block;
+}
+
+.error-message {
+  color: #727272;
+  text-align: center;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  margin-top: 20px;
+  padding: 20px 24px;
+  display: none;
+}
+
+.error-message.visible {
+  display: block;
 }
 
 /* Fix hero CTA spacing - hide vw spacer, use fluid margin instead */
@@ -1137,6 +1178,20 @@ em { font-style: italic; }
   .contact-button.sticky-button {
     opacity: 0;
     pointer-events: none;
+  }
+
+  /* Form input responsive overrides */
+  .input {
+    border-radius: 6px;
+    min-height: 60px;
+  }
+
+  .text-area {
+    border-radius: 6px;
+  }
+
+  .grid-2-columns.form {
+    grid-row-gap: 18px;
   }
 
   /* Typography handled by clamp() - no overrides needed */

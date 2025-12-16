@@ -134,26 +134,53 @@
                       </div>
                     </div>
                   </form>
+                  <div class="success-message">
+                    <div>Thank you! Your submission has been received!</div>
+                  </div>
+                  <div class="error-message">
+                    <div>Oops! Something went wrong while submitting the form.</div>
+                  </div>
                 </div>
               </div>
 
               <!-- Book Tab -->
               <div class="tab-pane" data-tab-content="book">
-                <div class="card form">
+                <!-- Desktop version -->
+                <div class="card form desktop">
                   <div class="field-wrapper ctas">
                     <div class="field-label">Scheduling links</div>
                     <a href="https://app.reclaim.ai/m/roarke/flexible-quick-meeting" target="_blank" rel="noopener" class="nav-link-text cta simple in-page">Flexible Meeting</a>
                     <a href="https://app.reclaim.ai/m/roarke/high-priority-meeting" target="_blank" rel="noopener" class="nav-link-text cta simple in-page">Priority Meeting</a>
                   </div>
                 </div>
+                <!-- Mobile version (no target="_blank") -->
+                <div class="card form mobile">
+                  <div class="field-wrapper ctas">
+                    <div class="field-label">Scheduling links</div>
+                    <a href="https://app.reclaim.ai/m/roarke/flexible-quick-meeting" class="nav-link-text cta simple in-page">Flexible Meeting</a>
+                    <a href="https://app.reclaim.ai/m/roarke/high-priority-meeting" class="nav-link-text cta simple in-page">Priority Meeting</a>
+                  </div>
+                </div>
               </div>
 
               <!-- Other Tab -->
               <div class="tab-pane" data-tab-content="other">
-                <div class="card form">
-                  <div class="field-wrapper ctas">
-                    <div class="field-label">Links</div>
-                    <a href="https://www.linkedin.com/in/roarkeclinton/" target="_blank" rel="noopener" class="nav-link-text cta simple in-page">Connect on LinkedIn</a>
+                <!-- Desktop version -->
+                <div class="card form desktop">
+                  <div class="field-wrapper">
+                    <div class="field-wrapper ctas">
+                      <div class="field-label">links</div>
+                      <a href="https://www.linkedin.com/in/roarkeclinton/" target="_blank" rel="noopener" class="nav-link-text cta simple in-page">Connect on LinkedIn</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Mobile version (shorter text, no target="_blank") -->
+                <div class="card form mobile">
+                  <div class="field-wrapper">
+                    <div class="field-wrapper ctas">
+                      <div class="field-label">links</div>
+                      <a href="https://www.linkedin.com/in/roarkeclinton/" class="nav-link-text cta simple in-page">LinkedIn</a>
+                    </div>
                   </div>
                 </div>
               </div>
