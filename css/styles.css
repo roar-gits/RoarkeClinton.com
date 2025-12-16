@@ -1187,7 +1187,7 @@ input[type="submit"].nav-link-text.cta.simple {
 /* Booking Cards Layout */
 .booking-cards {
   display: flex;
-  gap: 24px;
+  gap: 48px;
   width: 100%;
 }
 
@@ -1197,15 +1197,25 @@ input[type="submit"].nav-link-text.cta.simple {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 48px 32px;
-  background: var(--latte-base);
-  border-radius: 12px;
+  padding: 24px 32px;
+  position: relative;
+}
+
+/* Vertical divider between booking options on desktop */
+.booking-cards:not(.single) .booking-card:first-child::after {
+  content: "";
+  position: absolute;
+  right: -24px;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background-color: #e8e8e8;
 }
 
 .booking-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 20px;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 24px;
   color: var(--latte-sapphire);
 }
 
@@ -1746,10 +1756,21 @@ input[type="submit"].nav-link-text.cta.simple {
   /* Stack booking cards on mobile */
   .booking-cards {
     flex-direction: column;
+    gap: 32px;
   }
 
   .booking-card {
-    padding: 32px 24px;
+    padding: 24px 16px;
+  }
+
+  /* Hide vertical divider, add horizontal divider on mobile */
+  .booking-cards:not(.single) .booking-card:first-child::after {
+    display: none;
+  }
+
+  .booking-cards:not(.single) .booking-card:first-child {
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 32px;
   }
 }
 
