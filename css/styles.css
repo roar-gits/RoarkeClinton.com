@@ -53,7 +53,7 @@
   /* Hero section */
   --hero-gap: clamp(20px, 6vw, 200px);
   --hero-photo-size: clamp(100px, 20vw, 400px);
-  --cta-gap: clamp(20px, 2.5vw, 40px);
+  --cta-gap: clamp(15px, 2.5vw, 30px);
 }
 
 /* --------------------------------------------------------------------------
@@ -513,7 +513,6 @@ em { font-style: italic; }
 .contact-card-wrapper {
   display: grid;
   place-items: start;
-  gap: var(--space-xs);
   width: 100%;
   max-width: 500px;
   margin-inline: auto;
