@@ -632,22 +632,20 @@ em { font-style: italic; }
    -------------------------------------------------------------------------- */
 
 .companylogowrapper {
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-columns: 1fr;
-  padding-bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(16px, 3vw, 40px);
+  justify-items: center;
+  align-items: center;
+  padding: 0;
+  margin-top: 1vw;
 }
 
 .brandlogos {
   opacity: 0.3;
-  width: 12vw;
+  width: 100%;
   max-width: 130px;
-  height: 6vw;
-  max-height: 75px;
-  margin: 3vw 2vw 0;
-  display: inline-block;
+  aspect-ratio: 2 / 1;
   object-fit: contain;
 }
 
@@ -1072,13 +1070,12 @@ em { font-style: italic; }
     font-size: 3vw;
   }
 
+  .companylogowrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .brandlogos {
-    width: 13vw;
-    max-width: 130px;
-    height: 6vw;
-    margin-bottom: 2vw;
-    margin-left: 2vw;
-    margin-right: 2vw;
+    max-width: 120px;
   }
 
   .vw.horizontal-spreader {
@@ -1300,12 +1297,13 @@ em { font-style: italic; }
     display: none;
   }
 
+  .companylogowrapper {
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(12px, 4vw, 24px);
+  }
+
   .brandlogos {
-    width: 24vw;
-    height: 7vw;
-    margin-bottom: 4vw;
-    margin-left: 2vw;
-    margin-right: 2vw;
+    max-width: 100px;
   }
 
   .vw.horizontal-spreader {
@@ -1625,11 +1623,7 @@ em { font-style: italic; }
   }
 
   .brandlogos {
-    width: 23vw;
-    height: 11vw;
-    margin-bottom: 5vw;
-    margin-left: 2.5vw;
-    margin-right: 2.5vw;
+    max-width: 80px;
   }
 
   .rte-article {
