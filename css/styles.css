@@ -2259,10 +2259,10 @@ input[type="submit"].nav-link-text.cta.simple {
 .category-subnav-inner {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 3%;
+  padding: 12px 3%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -2272,22 +2272,25 @@ input[type="submit"].nav-link-text.cta.simple {
   display: none;
 }
 
+/* Match header nav-link styling */
 .category-link {
   background: none;
   border: none;
-  padding: 16px 24px;
+  border-radius: 10px;
+  padding: 0 20px;
   font-family: inherit;
   font-size: var(--type-body-nav);
-  font-weight: 500;
-  color: var(--latte-subtext1);
+  font-weight: 400;
+  color: var(--latte-text);
   cursor: pointer;
   white-space: nowrap;
-  position: relative;
-  transition: color 0.2s ease;
+  height: auto;
+  line-height: 2.2;
+  transition: color 0.15s ease-in, background-color 0.15s ease;
 }
 
 .category-link:hover {
-  color: var(--latte-text);
+  color: var(--latte-maroon);
 }
 
 .category-link:focus {
@@ -2296,22 +2299,15 @@ input[type="submit"].nav-link-text.cta.simple {
 
 .category-link:focus-visible {
   outline: 2px solid var(--cta);
-  outline-offset: -2px;
+  outline-offset: 2px;
+  border-radius: 10px;
 }
 
+/* Active state matches .nav-link.w--current */
 .category-link.active {
+  background-color: #9999992e;
   color: var(--latte-text);
-  font-weight: 600;
-}
-
-.category-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 24px;
-  right: 24px;
-  height: 2px;
-  background-color: var(--latte-maroon);
+  font-weight: 400;
 }
 
 /* Publication Layout */
@@ -2482,37 +2478,18 @@ input[type="submit"].nav-link-text.cta.simple {
     margin-top: 75px;
   }
 
+  .category-subnav-inner {
+    gap: 15px;
+    padding: 10px 3%;
+  }
+
   .category-link {
-    padding: 14px 20px;
+    padding: 0 15px;
+    line-height: 2;
   }
 
   .publication-container {
     width: 90%;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .category-subnav {
-    margin-top: 65px;
-  }
-
-  .category-subnav-inner {
-    padding: 0 4%;
-  }
-
-  .category-link {
-    padding: 12px 16px;
-    font-size: var(--type-xs);
-  }
-
-  .category-link.active::after {
-    left: 16px;
-    right: 16px;
-  }
-
-  .publication-container {
-    width: 92%;
-    padding-top: var(--space-sm);
   }
 
   .article-card {
@@ -2522,13 +2499,55 @@ input[type="submit"].nav-link-text.cta.simple {
   .article-card.featured {
     padding-bottom: var(--space-md);
   }
+}
+
+@media screen and (max-width: 767px) {
+  .category-subnav {
+    margin-top: 60px;
+  }
+
+  .category-subnav-inner {
+    gap: 10px;
+    padding: 8px 4%;
+  }
+
+  .category-link {
+    padding: 0 12px;
+    font-size: var(--type-xs);
+    line-height: 2;
+  }
+
+  .publication-container {
+    width: 92%;
+    padding-top: var(--space-sm);
+  }
+
+  .article-card {
+    padding: 24px 0;
+  }
+
+  .article-card:first-child {
+    padding-top: 0;
+  }
+
+  .article-card.featured {
+    padding-bottom: 32px;
+  }
 
   .article-card.featured .article-title {
     font-size: var(--type-subhead);
   }
 
+  .article-card-inner {
+    gap: 10px;
+  }
+
   .category-label {
     font-size: 11px;
+  }
+
+  .article-excerpt {
+    font-size: var(--type-small);
   }
 
   /* Show mobile hero CTA on about page */
@@ -2557,20 +2576,59 @@ input[type="submit"].nav-link-text.cta.simple {
 
 @media screen and (max-width: 479px) {
   .category-subnav {
-    margin-top: 60px;
+    margin-top: 55px;
+  }
+
+  .category-subnav-inner {
+    gap: 8px;
+    padding: 6px 3%;
   }
 
   .category-link {
-    padding: 10px 12px;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 1.9;
+    border-radius: 8px;
   }
 
-  .category-link.active::after {
-    left: 12px;
-    right: 12px;
+  .publication-container {
+    width: 90%;
+    padding-top: 20px;
+  }
+
+  .article-card {
+    padding: 20px 0;
+  }
+
+  .article-card.featured {
+    padding-bottom: 28px;
+  }
+
+  .article-card-inner {
+    gap: 8px;
   }
 
   .category-label {
     font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+
+  .article-title {
+    font-size: var(--type-body);
+    line-height: 1.4;
+  }
+
+  .article-card.featured .article-title {
+    font-size: var(--type-body);
+  }
+
+  .article-excerpt {
+    font-size: var(--type-xs);
+    line-height: 1.5;
+  }
+
+  .article-meta {
+    font-size: 12px;
   }
 
   /* Floating button adjustments for small screens */
