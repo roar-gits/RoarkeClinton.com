@@ -2331,6 +2331,24 @@ input[type="submit"].nav-link-text.cta.simple {
   width: 100%;
 }
 
+/* Publication Header */
+.publication-header {
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--latte-surface0);
+}
+
+.publication-header .heading-3 {
+  margin-bottom: 12px;
+}
+
+.publication-tagline {
+  color: var(--latte-subtext1);
+  font-size: var(--type-body);
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* Articles Feed */
 .articles-feed {
   display: flex;
