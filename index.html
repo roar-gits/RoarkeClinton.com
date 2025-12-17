@@ -44,8 +44,8 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Roarke Clinton's Blog",
+    "@type": "WebSite",
+    "name": "Roarke Clinton",
     "url": "https://www.roarkeclinton.com",
     "author": {
       "@type": "Person",
@@ -63,7 +63,7 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-NXLFDG2');</script>
 </head>
-<body class="page">
+<body class="page publication-page">
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- Navbar -->
@@ -74,10 +74,6 @@
         <div class="brand-text">Roarke Clinton</div>
       </a>
       <div class="nav-link-wrapper">
-        <a href="/" aria-current="page" class="nav-link w-inline-block w--current">
-          <div class="nav-link-text header">Blog</div>
-        </a>
-        <link rel="prerender" href="/">
         <a href="about.html" class="nav-link w-inline-block">
           <div class="nav-link-text header">About</div>
         </a>
@@ -90,8 +86,19 @@
     </div>
   </nav>
 
+  <!-- Category Subnav -->
+  <nav class="category-subnav" aria-label="Filter by category">
+    <div class="category-subnav-inner">
+      <button class="category-link active" data-filter="all">All</button>
+      <button class="category-link" data-filter="philosophy">Philosophy</button>
+      <button class="category-link" data-filter="product">Product</button>
+      <button class="category-link" data-filter="environment">Environment</button>
+      <button class="category-link" data-filter="personal">Personal</button>
+    </div>
+  </nav>
+
   <!-- Page Structure -->
-  <main id="main" class="page-structure">
+  <main id="main" class="page-structure publication-layout">
     <!-- Sticky Contact Button -->
     <a href="contact.html" class="contact-button sticky-button">
       <div class="contact-icon">
@@ -103,138 +110,110 @@
       <span class="contact-text">Connect</span>
     </a>
 
-    <div class="container">
-      <!-- Blog Hero Section -->
-      <div class="section blog-hero-section">
-        <div class="content">
-          <div class="vw vertical-splitter top-of-page"></div>
-          <div class="blog-hero">
-            <!-- PLACEHOLDER: Replace with actual intro text -->
-            <h1 class="page-title blog-title">Thoughts & Reflections</h1>
-            <p class="blog-intro">Exploring ideas at the intersection of philosophy, product thinking, and our relationship with the natural world.</p>
-            <!-- Mobile-only Connect CTA -->
-            <div class="blog-hero-cta mobile-only">
-              <a href="contact.html" class="nav-link-text cta simple">Connect</a>
+    <!-- Publication Content -->
+    <div class="publication-container">
+      <div class="publication-content">
+
+        <!-- Articles Feed -->
+        <div class="articles-feed" id="articles-feed">
+
+          <!-- PLACEHOLDER: Article 1 - Philosophy & Environment (Featured) -->
+          <article class="article-card featured" data-tags="philosophy environment">
+            <div class="article-card-inner">
+              <div class="article-category">
+                <span class="category-label category-philosophy">Philosophy</span>
+                <span class="category-label category-environment">Environment</span>
+              </div>
+              <h2 class="article-title">
+                <!-- PLACEHOLDER: Replace with actual title -->
+                <a href="#">Onism: The Awareness of How Little of the World You'll Experience</a>
+              </h2>
+              <p class="article-excerpt">
+                <!-- PLACEHOLDER: Replace with actual excerpt -->
+                Reflecting on the profound feeling of being stuck in just one body, in one place at a time, and how this awareness shapes our relationship with the vast natural world around us.
+              </p>
+              <div class="article-meta">
+                <time datetime="2025-01-15">January 15, 2025</time>
+                <span class="meta-separator">·</span>
+                <span class="read-time">8 min read</span>
+              </div>
             </div>
-          </div>
-          <div class="vw vertical-splitter sub-section"></div>
+          </article>
+
+          <!-- PLACEHOLDER: Article 2 - Product -->
+          <article class="article-card" data-tags="product">
+            <div class="article-card-inner">
+              <div class="article-category">
+                <span class="category-label category-product">Product</span>
+              </div>
+              <h2 class="article-title">
+                <!-- PLACEHOLDER: Replace with actual title -->
+                <a href="#">The Art of Saying No: Product Prioritization in Practice</a>
+              </h2>
+              <p class="article-excerpt">
+                <!-- PLACEHOLDER: Replace with actual excerpt -->
+                After a decade of building products, the hardest skill remains knowing what not to build. Here's how I approach prioritization decisions that matter.
+              </p>
+              <div class="article-meta">
+                <time datetime="2025-01-08">January 8, 2025</time>
+                <span class="meta-separator">·</span>
+                <span class="read-time">6 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PLACEHOLDER: Article 3 - Environment -->
+          <article class="article-card" data-tags="environment">
+            <div class="article-card-inner">
+              <div class="article-category">
+                <span class="category-label category-environment">Environment</span>
+              </div>
+              <h2 class="article-title">
+                <!-- PLACEHOLDER: Replace with actual title -->
+                <a href="#">Lessons from the Forest: What Palm Protectors Taught Me</a>
+              </h2>
+              <p class="article-excerpt">
+                <!-- PLACEHOLDER: Replace with actual excerpt -->
+                Working with Aloha Tree Alliance on reforestation in Hawaii revealed unexpected parallels between ecosystem restoration and building resilient organizations.
+              </p>
+              <div class="article-meta">
+                <time datetime="2024-12-20">December 20, 2024</time>
+                <span class="meta-separator">·</span>
+                <span class="read-time">10 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PLACEHOLDER: Article 4 - Personal & Philosophy -->
+          <article class="article-card" data-tags="personal philosophy">
+            <div class="article-card-inner">
+              <div class="article-category">
+                <span class="category-label category-personal">Personal</span>
+                <span class="category-label category-philosophy">Philosophy</span>
+              </div>
+              <h2 class="article-title">
+                <!-- PLACEHOLDER: Replace with actual title -->
+                <a href="#">Proamory: Rethinking How We Relate to Each Other</a>
+              </h2>
+              <p class="article-excerpt">
+                <!-- PLACEHOLDER: Replace with actual excerpt -->
+                An exploration of intentional relationships and the philosophy of loving openly and honestly in all forms of human connection.
+              </p>
+              <div class="article-meta">
+                <time datetime="2024-12-10">December 10, 2024</time>
+                <span class="meta-separator">·</span>
+                <span class="read-time">12 min read</span>
+              </div>
+            </div>
+          </article>
+
         </div>
-      </div>
 
-      <!-- Filter Bar -->
-      <div class="section filter-section">
-        <div class="content">
-          <div class="filter-bar" role="group" aria-label="Filter posts by category">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="philosophy">Philosophy</button>
-            <button class="filter-btn" data-filter="product">Product</button>
-            <button class="filter-btn" data-filter="environment">Environment</button>
-            <button class="filter-btn" data-filter="personal">Personal</button>
-          </div>
-          <div class="vw vertical-splitter sub-section"></div>
+        <!-- No results message (hidden by default) -->
+        <div class="no-articles-message" id="no-articles-message" hidden>
+          <p>No articles found in this category.</p>
         </div>
-      </div>
 
-      <!-- Blog Posts Grid -->
-      <div class="section blog-posts-section">
-        <div class="content">
-          <div class="blog-grid" id="blog-grid">
-
-            <!-- PLACEHOLDER: Post 1 - Philosophy & Environment -->
-            <article class="post-card" data-tags="philosophy environment">
-              <div class="post-card-content">
-                <div class="post-meta">
-                  <time datetime="2025-01-15">January 15, 2025</time>
-                  <div class="post-tags">
-                    <span class="post-tag tag-philosophy">Philosophy</span>
-                    <span class="post-tag tag-environment">Environment</span>
-                  </div>
-                </div>
-                <h2 class="post-title">
-                  <!-- PLACEHOLDER: Replace with actual post title -->
-                  <a href="#">Onism: The Awareness of How Little of the World You'll Experience</a>
-                </h2>
-                <p class="post-excerpt">
-                  <!-- PLACEHOLDER: Replace with actual excerpt -->
-                  Reflecting on the profound feeling of being stuck in just one body, in one place at a time, and how this awareness shapes our relationship with the vast natural world around us.
-                </p>
-                <a href="#" class="post-read-more">Read more</a>
-              </div>
-            </article>
-
-            <!-- PLACEHOLDER: Post 2 - Product -->
-            <article class="post-card" data-tags="product">
-              <div class="post-card-content">
-                <div class="post-meta">
-                  <time datetime="2025-01-08">January 8, 2025</time>
-                  <div class="post-tags">
-                    <span class="post-tag tag-product">Product</span>
-                  </div>
-                </div>
-                <h2 class="post-title">
-                  <!-- PLACEHOLDER: Replace with actual post title -->
-                  <a href="#">The Art of Saying No: Product Prioritization in Practice</a>
-                </h2>
-                <p class="post-excerpt">
-                  <!-- PLACEHOLDER: Replace with actual excerpt -->
-                  After a decade of building products, the hardest skill remains knowing what not to build. Here's how I approach prioritization decisions that matter.
-                </p>
-                <a href="#" class="post-read-more">Read more</a>
-              </div>
-            </article>
-
-            <!-- PLACEHOLDER: Post 3 - Environment -->
-            <article class="post-card" data-tags="environment">
-              <div class="post-card-content">
-                <div class="post-meta">
-                  <time datetime="2024-12-20">December 20, 2024</time>
-                  <div class="post-tags">
-                    <span class="post-tag tag-environment">Environment</span>
-                  </div>
-                </div>
-                <h2 class="post-title">
-                  <!-- PLACEHOLDER: Replace with actual post title -->
-                  <a href="#">Lessons from the Forest: What Palm Protectors Taught Me</a>
-                </h2>
-                <p class="post-excerpt">
-                  <!-- PLACEHOLDER: Replace with actual excerpt -->
-                  Working with Aloha Tree Alliance on reforestation in Hawaii revealed unexpected parallels between ecosystem restoration and building resilient organizations.
-                </p>
-                <a href="#" class="post-read-more">Read more</a>
-              </div>
-            </article>
-
-            <!-- PLACEHOLDER: Post 4 - Personal & Philosophy -->
-            <article class="post-card" data-tags="personal philosophy">
-              <div class="post-card-content">
-                <div class="post-meta">
-                  <time datetime="2024-12-10">December 10, 2024</time>
-                  <div class="post-tags">
-                    <span class="post-tag tag-personal">Personal</span>
-                    <span class="post-tag tag-philosophy">Philosophy</span>
-                  </div>
-                </div>
-                <h2 class="post-title">
-                  <!-- PLACEHOLDER: Replace with actual post title -->
-                  <a href="#">Proamory: Rethinking How We Relate to Each Other</a>
-                </h2>
-                <p class="post-excerpt">
-                  <!-- PLACEHOLDER: Replace with actual excerpt -->
-                  An exploration of intentional relationships and the philosophy of loving openly and honestly in all forms of human connection.
-                </p>
-                <a href="#" class="post-read-more">Read more</a>
-              </div>
-            </article>
-
-          </div>
-
-          <!-- No results message (hidden by default) -->
-          <div class="no-posts-message" id="no-posts-message" hidden>
-            <p>No posts found for this category. Check back soon!</p>
-          </div>
-
-          <div class="vw vertical-splitter"></div>
-        </div>
       </div>
     </div>
   </main>
@@ -253,7 +232,7 @@
     </div>
   </footer>
 
-  <!-- Tag filtering script -->
+  <!-- Category filtering script -->
   <script src="js/filter.js"></script>
 </body>
 </html>

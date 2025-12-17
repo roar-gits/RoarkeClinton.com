@@ -1,37 +1,36 @@
 /**
- * Blog Post Tag Filtering
+ * Publication Category Filtering
  *
- * Simple vanilla JavaScript for filtering blog posts by tag/category.
- * Posts are shown/hidden based on their data-tags attribute.
+ * Filters articles by category using the sticky subnav.
+ * Articles are shown/hidden based on their data-tags attribute.
  *
  * Usage:
- * - Each post card should have: data-tags="tag1 tag2"
- * - Filter buttons should have: data-filter="tagname" or data-filter="all"
- * - The "all" filter shows all posts
- *
- * This will be replaced/enhanced when a CMS is added later.
+ * - Each article card should have: data-tags="tag1 tag2"
+ * - Category links should have: data-filter="tagname" or data-filter="all"
+ * - The "all" filter shows all articles
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const postCards = document.querySelectorAll('.post-card');
-  const noPostsMessage = document.getElementById('no-posts-message');
+  // Support both old (filter-btn) and new (category-link) class names
+  const categoryLinks = document.querySelectorAll('.category-link, .filter-btn');
+  const articleCards = document.querySelectorAll('.article-card, .post-card');
+  const noArticlesMessage = document.getElementById('no-articles-message') || document.getElementById('no-posts-message');
 
-  // Exit early if no filter buttons found (e.g., on non-blog pages)
-  if (filterButtons.length === 0) return;
+  // Exit early if no category links found
+  if (categoryLinks.length === 0) return;
 
   /**
-   * Filter posts by the selected tag
-   * @param {string} filter - The tag to filter by, or 'all' for all posts
+   * Filter articles by the selected category
+   * @param {string} filter - The category to filter by, or 'all' for all articles
    */
-  function filterPosts(filter) {
+  function filterArticles(filter) {
     let visibleCount = 0;
 
-    postCards.forEach(function(card) {
+    articleCards.forEach(function(card) {
       const tags = card.getAttribute('data-tags') || '';
       const tagArray = tags.split(' ').filter(Boolean);
 
-      // Show post if filter is 'all' or if post has the matching tag
+      // Show article if filter is 'all' or if article has the matching tag
       const shouldShow = filter === 'all' || tagArray.includes(filter);
 
       if (shouldShow) {
@@ -44,47 +43,47 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // Show/hide "no posts" message
-    if (noPostsMessage) {
+    // Show/hide "no articles" message
+    if (noArticlesMessage) {
       if (visibleCount === 0) {
-        noPostsMessage.hidden = false;
+        noArticlesMessage.hidden = false;
       } else {
-        noPostsMessage.hidden = true;
+        noArticlesMessage.hidden = true;
       }
     }
   }
 
   /**
-   * Update active state on filter buttons
-   * @param {HTMLElement} activeButton - The button that was clicked
+   * Update active state on category links
+   * @param {HTMLElement} activeLink - The link that was clicked
    */
-  function updateActiveButton(activeButton) {
-    filterButtons.forEach(function(btn) {
-      btn.classList.remove('active');
-      btn.setAttribute('aria-pressed', 'false');
+  function updateActiveLink(activeLink) {
+    categoryLinks.forEach(function(link) {
+      link.classList.remove('active');
+      link.setAttribute('aria-pressed', 'false');
     });
-    activeButton.classList.add('active');
-    activeButton.setAttribute('aria-pressed', 'true');
+    activeLink.classList.add('active');
+    activeLink.setAttribute('aria-pressed', 'true');
   }
 
-  // Add click handlers to filter buttons
-  filterButtons.forEach(function(button) {
+  // Add click handlers to category links
+  categoryLinks.forEach(function(link) {
     // Set initial aria-pressed state
-    button.setAttribute('aria-pressed', button.classList.contains('active') ? 'true' : 'false');
+    link.setAttribute('aria-pressed', link.classList.contains('active') ? 'true' : 'false');
 
-    button.addEventListener('click', function() {
+    link.addEventListener('click', function() {
       const filter = this.getAttribute('data-filter');
-      updateActiveButton(this);
-      filterPosts(filter);
+      updateActiveLink(this);
+      filterArticles(filter);
     });
   });
 
-  // Add keyboard navigation for filter bar
-  const filterBar = document.querySelector('.filter-bar');
-  if (filterBar) {
-    filterBar.addEventListener('keydown', function(e) {
-      const buttons = Array.from(filterButtons);
-      const currentIndex = buttons.indexOf(document.activeElement);
+  // Add keyboard navigation for category subnav
+  const categoryNav = document.querySelector('.category-subnav-inner, .filter-bar');
+  if (categoryNav) {
+    categoryNav.addEventListener('keydown', function(e) {
+      const links = Array.from(categoryLinks);
+      const currentIndex = links.indexOf(document.activeElement);
 
       if (currentIndex === -1) return;
 
@@ -93,22 +92,22 @@ document.addEventListener('DOMContentLoaded', function() {
         case 'ArrowRight':
         case 'ArrowDown':
           e.preventDefault();
-          newIndex = (currentIndex + 1) % buttons.length;
-          buttons[newIndex].focus();
+          newIndex = (currentIndex + 1) % links.length;
+          links[newIndex].focus();
           break;
         case 'ArrowLeft':
         case 'ArrowUp':
           e.preventDefault();
-          newIndex = (currentIndex - 1 + buttons.length) % buttons.length;
-          buttons[newIndex].focus();
+          newIndex = (currentIndex - 1 + links.length) % links.length;
+          links[newIndex].focus();
           break;
         case 'Home':
           e.preventDefault();
-          buttons[0].focus();
+          links[0].focus();
           break;
         case 'End':
           e.preventDefault();
-          buttons[buttons.length - 1].focus();
+          links[links.length - 1].focus();
           break;
       }
     });
