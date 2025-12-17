@@ -8,20 +8,23 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Connect - Roarke Clinton">
-  <meta property="og:description" content="Connect with Roarke Clinton.">
+  <meta property="og:description" content="Connect with Roarke Clinton. Send a message, book a meeting, or subscribe to the newsletter.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.roarkeclinton.com/contact">
+  <meta property="og:url" content="https://www.roarkeclinton.com/contact.html">
+  <meta property="og:image" content="https://www.roarkeclinton.com/images/RoarkeClinton-small-0.jpg">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Connect - Roarke Clinton">
+  <meta name="twitter:description" content="Connect with Roarke Clinton. Send a message, book a meeting, or subscribe to the newsletter.">
+  <meta name="twitter:image" content="https://www.roarkeclinton.com/images/RoarkeClinton-small-0.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/webclip.png">
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://www.roarkeclinton.com/contact">
+  <link rel="canonical" href="https://www.roarkeclinton.com/contact.html">
 
   <!-- Google Fonts - Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,34 +40,24 @@
   <!-- Facebook Domain Verification -->
   <meta name="facebook-domain-verification" content="n5ks2zd5slq6kz6s0g1zvuozky5lus">
 
-  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager (includes GA4: G-7VT7B20J3Y) -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-NXLFDG2');</script>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VT7B20J3Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7VT7B20J3Y');
-  </script>
 </head>
 <body class="page">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
   <!-- Navbar -->
-  <div class="navbar-symbol simple">
+  <nav class="navbar-symbol simple" aria-label="Main navigation">
     <div class="div-block-94">
       <a href="/" class="brandwrapper w-inline-block">
-        <img src="images/RoarkeClinton-small-0.jpg" loading="eager" width="Auto" sizes="(max-width: 479px) 8vw, 34px" alt="Roarke Clinton" srcset="images/RoarkeClinton-small-0.jpg 500w, images/RoarkeClinton-small-0.jpg 800w, images/RoarkeClinton-small-0.jpg 1080w, images/RoarkeClinton-small-0.jpg 2160w" class="image-4">
+        <img src="images/RoarkeClinton-small-0.jpg" loading="eager" width="34" height="34" alt="Roarke Clinton" class="image-4">
         <div class="brand-text">Roarke Clinton</div>
       </a>
       <div class="nav-link-wrapper">
-        <a href="posts.html" class="nav-link hide w-inline-block">
-          <div class="nav-link-text header">Blog</div>
-        </a>
         <a href="/" class="nav-link w-inline-block">
           <div class="nav-link-text header">About</div>
         </a>
@@ -72,14 +65,13 @@
         <a href="contact.html" aria-current="page" class="nav-link w-inline-block w--current">
           <div class="nav-link-text header cta-link">Connect</div>
         </a>
-        <link rel="prerender" href="/contact">
+        <link rel="prerender" href="contact.html">
       </div>
     </div>
-    <a href="qr-code.html" class="qr-code-link-block w-inline-block"></a>
-  </div>
+  </nav>
 
   <!-- Page Structure -->
-  <div class="page-structure">
+  <main id="main" class="page-structure">
     <div class="container">
       <div class="section">
         <div class="content">
@@ -91,24 +83,25 @@
           <!-- Tabs Container -->
           <div class="tabs-container">
             <!-- Tab Navigation -->
-            <div class="tabs-menu">
-              <button class="tab-text-wrapper tab-link active" data-tab="message">
-                <div class="nav-link-text tab">Message</div>
+            <div class="tabs-menu" role="tablist" aria-label="Contact options">
+              <button class="tab-text-wrapper tab-link active" data-tab="message" role="tab" aria-selected="true" aria-controls="panel-message" id="tab-message">
+                <span class="nav-link-text tab">Message</span>
               </button>
-              <button class="tab-text-wrapper tab-link" data-tab="book">
-                <div class="nav-link-text tab">Book</div>
+              <button class="tab-text-wrapper tab-link" data-tab="book" role="tab" aria-selected="false" aria-controls="panel-book" id="tab-book">
+                <span class="nav-link-text tab">Book</span>
               </button>
-              <button class="tab-text-wrapper tab-link" data-tab="follow">
-                <div class="nav-link-text tab">Follow</div>
+              <button class="tab-text-wrapper tab-link" data-tab="follow" role="tab" aria-selected="false" aria-controls="panel-follow" id="tab-follow">
+                <span class="nav-link-text tab">Follow</span>
               </button>
             </div>
 
             <!-- Tab Content -->
             <div class="tabs-content">
               <!-- Message Tab -->
-              <div class="tab-pane active" data-tab-content="message">
+              <div class="tab-pane active" data-tab-content="message" role="tabpanel" id="panel-message" aria-labelledby="tab-message" tabindex="0">
                 <div class="card form">
                   <form id="Contact-Form" name="Contact Form" action="https://formspree.io/f/mqaknbep" method="POST">
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="w-layout-grid grid-2-columns form">
                       <div class="field-wrapper">
                         <label for="Name" class="field-label">Name</label>
@@ -141,41 +134,43 @@
               </div>
 
               <!-- Book Tab -->
-              <div class="tab-pane" data-tab-content="book">
+              <div class="tab-pane" data-tab-content="book" role="tabpanel" id="panel-book" aria-labelledby="tab-book" tabindex="0">
                 <div class="card form">
                   <div class="booking-cards">
                     <div class="booking-card">
                       <div class="booking-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
                       </div>
                       <div class="booking-title">Flexible Meeting</div>
                       <div class="booking-desc">Find a time that works for both of us</div>
-                      <a href="https://app.reclaim.ai/m/roarke/flexible-quick-meeting" target="_blank" rel="noopener" class="booking-cta">Schedule</a>
+                      <a href="https://app.reclaim.ai/m/roarke/flexible-quick-meeting" target="_blank" rel="noopener noreferrer" class="booking-cta">Schedule</a>
                     </div>
                     <div class="booking-card">
                       <div class="booking-icon priority">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
                       </div>
                       <div class="booking-title">Priority Meeting</div>
                       <div class="booking-desc">For time-sensitive discussions</div>
-                      <a href="https://app.reclaim.ai/m/roarke/high-priority-meeting" target="_blank" rel="noopener" class="booking-cta">Schedule</a>
+                      <a href="https://app.reclaim.ai/m/roarke/high-priority-meeting" target="_blank" rel="noopener noreferrer" class="booking-cta">Schedule</a>
                     </div>
                   </div>
                 </div>
               </div>
 
               <!-- Follow Tab -->
-              <div class="tab-pane" data-tab-content="follow">
+              <div class="tab-pane" data-tab-content="follow" role="tabpanel" id="panel-follow" aria-labelledby="tab-follow" tabindex="0">
                 <div class="card form">
                   <!-- Newsletter Signup (Primary) -->
                   <div class="newsletter-section">
                     <div class="booking-icon newsletter">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     </div>
                     <div class="booking-title">Newsletter</div>
                     <div class="booking-desc">Get occasional updates on projects and insights</div>
                     <form class="newsletter-form" action="https://formspree.io/f/xwpkgjkd" method="POST">
-                      <input type="email" name="email" placeholder="your@email.com" required class="newsletter-input">
+                      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                      <label for="newsletter-email" class="visually-hidden">Email address</label>
+                      <input type="email" name="email" id="newsletter-email" placeholder="your@email.com" required class="newsletter-input">
                       <button type="submit" class="booking-cta">Subscribe</button>
                     </form>
                   </div>
@@ -185,8 +180,8 @@
                     <div class="social-divider"></div>
                     <div class="social-label">Or connect on</div>
                     <div class="social-links">
-                      <a href="https://www.linkedin.com/in/roarkeclinton/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                      <a href="https://www.linkedin.com/in/roarkeclinton/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                       </a>
                     </div>
                   </div>
@@ -197,10 +192,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
   <!-- Footer -->
-  <div class="thank-you-wrapper">
+  <footer class="thank-you-wrapper">
     <div class="div-block-89">
       <div class="div-block-106">
         <a href="index.html#ProductLeadership" class="outlined-link w-inline-block">
@@ -211,30 +206,78 @@
       </div>
       <div class="copywrite">© 2025 Roarke Clinton</div>
     </div>
-  </div>
+  </footer>
 
-  <!-- Tab functionality -->
+  <!-- Tab functionality with keyboard accessibility -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const tabLinks = document.querySelectorAll('.tab-link');
-      const tabPanes = document.querySelectorAll('.tab-pane');
+      const tabList = document.querySelector('[role="tablist"]');
+      const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+      const tabPanes = document.querySelectorAll('[role="tabpanel"]');
 
-      tabLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          const targetTab = this.getAttribute('data-tab');
-
-          // Update active tab link
-          tabLinks.forEach(l => l.classList.remove('active'));
-          this.classList.add('active');
-
-          // Update active tab pane
-          tabPanes.forEach(pane => {
-            pane.classList.remove('active');
-            if (pane.getAttribute('data-tab-content') === targetTab) {
-              pane.classList.add('active');
-            }
-          });
+      function activateTab(tab) {
+        // Deactivate all tabs
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+          t.setAttribute('tabindex', '-1');
         });
+
+        // Activate the selected tab
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        tab.setAttribute('tabindex', '0');
+        tab.focus();
+
+        // Show the corresponding panel
+        const targetTab = tab.getAttribute('data-tab');
+        tabPanes.forEach(pane => {
+          pane.classList.remove('active');
+          if (pane.getAttribute('data-tab-content') === targetTab) {
+            pane.classList.add('active');
+          }
+        });
+      }
+
+      // Click handler
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => activateTab(tab));
+      });
+
+      // Keyboard navigation
+      tabList.addEventListener('keydown', function(e) {
+        const currentIndex = tabs.indexOf(document.activeElement);
+        let newIndex;
+
+        switch (e.key) {
+          case 'ArrowRight':
+          case 'ArrowDown':
+            e.preventDefault();
+            newIndex = (currentIndex + 1) % tabs.length;
+            activateTab(tabs[newIndex]);
+            break;
+          case 'ArrowLeft':
+          case 'ArrowUp':
+            e.preventDefault();
+            newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+            activateTab(tabs[newIndex]);
+            break;
+          case 'Home':
+            e.preventDefault();
+            activateTab(tabs[0]);
+            break;
+          case 'End':
+            e.preventDefault();
+            activateTab(tabs[tabs.length - 1]);
+            break;
+        }
+      });
+
+      // Initialize tabindex for non-active tabs
+      tabs.forEach((tab, index) => {
+        if (!tab.classList.contains('active')) {
+          tab.setAttribute('tabindex', '-1');
+        }
       });
     });
   </script>
