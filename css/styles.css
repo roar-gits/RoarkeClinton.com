@@ -1494,10 +1494,7 @@ input[type="submit"].nav-link-text.cta.simple {
     align-items: center;
   }
 
-  .contact-button.sticky-button {
-    opacity: 0;
-    pointer-events: none;
-  }
+  /* Sticky button stays visible on tablet - will be overridden by mobile styles */
 
   /* Form input responsive overrides */
   .input {
@@ -2241,5 +2238,318 @@ input[type="submit"].nav-link-text.cta.simple {
   }
   .mobile-only {
     display: block;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Blog Page Styles
+   -------------------------------------------------------------------------- */
+
+/* Blog Hero */
+.blog-hero {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.blog-title {
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
+.blog-intro {
+  color: var(--latte-subtext1);
+  font-size: var(--type-body);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+.blog-hero-cta {
+  margin-top: var(--space-sm);
+}
+
+/* Filter Bar */
+.filter-section {
+  padding-top: 0;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.filter-btn {
+  background-color: transparent;
+  border: 1px solid var(--latte-surface1);
+  border-radius: 100px;
+  padding: 10px 24px;
+  font-family: inherit;
+  font-size: var(--type-body-nav);
+  font-weight: 500;
+  color: var(--latte-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--latte-blue);
+  color: var(--latte-blue);
+}
+
+.filter-btn:focus {
+  outline: none;
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--cta);
+  outline-offset: 2px;
+}
+
+.filter-btn.active {
+  background-color: var(--cta);
+  border-color: var(--cta);
+  color: #fff;
+}
+
+.filter-btn.active:hover {
+  background-color: var(--latte-sapphire);
+  border-color: var(--latte-sapphire);
+  color: #fff;
+}
+
+/* Blog Grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* Post Card */
+.post-card {
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.post-card.hidden {
+  display: none;
+}
+
+.post-card-content {
+  padding: 28px 32px;
+}
+
+/* Post Meta */
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.post-meta time {
+  font-size: var(--type-xs);
+  color: var(--latte-overlay1);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.post-tag {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background-color: var(--latte-surface0);
+  color: var(--latte-subtext1);
+}
+
+/* Tag color variations */
+.post-tag.tag-philosophy {
+  background-color: #f3e8ff;
+  color: var(--latte-mauve);
+}
+
+.post-tag.tag-product {
+  background-color: #dbeafe;
+  color: var(--latte-blue);
+}
+
+.post-tag.tag-environment {
+  background-color: #d1fae5;
+  color: var(--latte-teal);
+}
+
+.post-tag.tag-personal {
+  background-color: #fee2e2;
+  color: var(--latte-maroon);
+}
+
+/* Post Title */
+.post-title {
+  font-size: var(--type-subhead);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.post-title a {
+  color: var(--latte-text);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.post-title a:hover {
+  color: var(--latte-blue);
+}
+
+/* Post Excerpt */
+.post-excerpt {
+  font-size: var(--type-body);
+  color: var(--latte-subtext1);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Read More Link */
+.post-read-more {
+  font-size: var(--type-body-nav);
+  font-weight: 500;
+  color: var(--latte-blue);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.post-read-more:hover {
+  color: var(--latte-sapphire);
+  text-decoration: underline;
+}
+
+/* No Posts Message */
+.no-posts-message {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.no-posts-message p {
+  font-size: var(--type-body);
+  color: var(--latte-overlay1);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Hero CTA for About Page
+   -------------------------------------------------------------------------- */
+
+.mobile-hero-cta {
+  display: none;
+  margin-top: var(--space-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Blog Page Responsive Styles
+   -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 991px) {
+  .blog-grid {
+    gap: 24px;
+  }
+
+  .post-card-content {
+    padding: 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .filter-bar {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 18px;
+    font-size: var(--type-xs);
+  }
+
+  .post-card-content {
+    padding: 20px;
+  }
+
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Show mobile hero CTA on about page */
+  .mobile-hero-cta {
+    display: block;
+  }
+
+  /* Hide the desktop in-page CTA */
+  .contact-button.in-page:not(.mobile-hero-cta) {
+    display: none;
+  }
+
+  /* Show floating Connect button on mobile */
+  .contact-button.sticky-button {
+    opacity: 1;
+    pointer-events: auto;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .contact-button.sticky-button .contact-icon {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .filter-bar {
+    gap: 6px;
+  }
+
+  .filter-btn {
+    padding: 6px 14px;
+  }
+
+  .post-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .post-card-content {
+    padding: 16px;
+  }
+
+  /* Floating button adjustments for small screens */
+  .contact-button.sticky-button {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .contact-button.sticky-button .contact-icon {
+    width: 50px;
+    height: 50px;
   }
 }
