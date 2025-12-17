@@ -2290,7 +2290,7 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 .category-link:hover {
-  color: var(--latte-maroon);
+  color: var(--blue-link);
 }
 
 .category-link:focus {
