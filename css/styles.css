@@ -274,6 +274,9 @@ em { font-style: italic; }
   font-size: 1em;
   display: flex;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .navbar-symbol.simple {
