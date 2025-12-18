@@ -2850,7 +2850,7 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 .post-content blockquote {
-  margin: 8px 0;
+  margin: 4px 0 20px 0;  /* Tight to summary above, space before "What it measures" */
   padding: 12px 20px;
   border-left: 4px solid var(--latte-sapphire);
   background-color: var(--latte-mantle);
