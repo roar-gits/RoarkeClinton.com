@@ -2860,7 +2860,7 @@ input[type="submit"].nav-link-text.cta.simple {
 
 .post-content blockquote {
   margin: 0 0 28px 0;  /* Flush with summary, clear space before explanation */
-  padding: 6px 20px 12px 20px;  /* Tighter top to pair with summary above */
+  padding: 14px 20px;  /* Top padding matches line-height spacing (~14px) */
   border-left: 4px solid var(--latte-sapphire);
   background-color: var(--latte-mantle);
   border-radius: 0 8px 8px 0;
