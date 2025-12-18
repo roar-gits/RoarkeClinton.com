@@ -2801,6 +2801,10 @@ input[type="submit"].nav-link-text.cta.simple {
   margin-bottom: 0;
 }
 
+.post-content p:has(+ blockquote) {
+  margin-bottom: 0.25em;  /* Tight pairing: summary → formula */
+}
+
 .post-content h2 {
   font-size: var(--type-heading);
   font-weight: 700;
