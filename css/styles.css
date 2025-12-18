@@ -3023,6 +3023,57 @@ input[type="submit"].nav-link-text.cta.simple {
   transform: translateY(-10px);
 }
 
+/* Metrics Layout - Two Column with Sidebar */
+.post-page:has(.metrics-layout) .post-container {
+  max-width: 920px;
+}
+
+.metrics-layout {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 32px;
+}
+
+.metrics-sidebar {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.metrics-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.metrics-nav-item {
+  padding: 8px 0;
+  font-size: var(--type-xs);
+  color: var(--latte-subtext1);
+  cursor: pointer;
+  transition: color 0.15s ease;
+  border-bottom: 1px solid var(--latte-surface0);
+}
+
+.metrics-nav-item:last-child {
+  border-bottom: none;
+}
+
+.metrics-nav-item:hover {
+  color: var(--latte-sapphire);
+}
+
+.metrics-nav-item.active {
+  color: var(--latte-sapphire);
+  font-weight: 600;
+}
+
+.metrics-main {
+  min-width: 0;
+}
+
 /* Tag Description - Educational context for each filter */
 .tag-description {
   max-height: 0;
@@ -3195,6 +3246,18 @@ input[type="submit"].nav-link-text.cta.simple {
   .post-container {
     width: 90%;
     padding-top: calc(var(--space-xl) * 0.8);
+  }
+
+  .post-page:has(.metrics-layout) .post-container {
+    max-width: 680px;
+  }
+
+  .metrics-layout {
+    display: block;
+  }
+
+  .metrics-sidebar {
+    display: none;
   }
 
   .post-hero {

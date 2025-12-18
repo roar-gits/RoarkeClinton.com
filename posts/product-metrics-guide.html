@@ -87,9 +87,16 @@
           <div class="tag-description" aria-live="polite"></div>
         </div>
 
+        <div class="metrics-layout">
+          <nav class="metrics-sidebar" aria-label="Metrics navigation">
+            <ul class="metrics-nav-list">
+              <!-- Populated by JS -->
+            </ul>
+          </nav>
+          <div class="metrics-main">
         <div class="metrics-container">
 
-        <section class="metric-card" data-tags="growth,engagement,health" data-name="Daily Active Users">
+        <section class="metric-card" id="metric-dau" data-tags="growth,engagement,health" data-name="Daily Active Users">
         <h3>Daily Active Users (DAU)</h3>
         <p><em>Unique users who engage with your product in a single day.</em></p>
         <blockquote>DAU = Unique users with ≥1 qualifying action per day</blockquote>
@@ -102,7 +109,7 @@
         <p><strong>In practice</strong>: After launching push notifications, a productivity app saw DAU jump 40% in week one. But sessions per user dropped from 3.2 to 1.8. <strong>Users opened the app more but did less each time.</strong> The team shifted to weekly digest notifications, which recovered session depth while maintaining the DAU gain.</p>
         </section>
 
-        <section class="metric-card" data-tags="engagement,retention" data-name="Sessions Per User">
+        <section class="metric-card" id="metric-spu" data-tags="engagement,retention" data-name="Sessions Per User">
         <h3>Sessions Per User (SPU)</h3>
         <p><em>How often users return to your product in a given period.</em></p>
         <blockquote>SPU = Total sessions / Total unique users</blockquote>
@@ -115,7 +122,7 @@
         <p><strong>In practice</strong>: A news app saw SPU rise from 1.4 to 2.1 after launching personalized feeds, but average session duration dropped 30%. <strong>Users were snacking on headlines rather than reading articles.</strong> The team added a "deep read" mode and saw both metrics improve together.</p>
         </section>
 
-        <section class="metric-card" data-tags="growth,leading" data-name="Activation Rate">
+        <section class="metric-card" id="metric-activation" data-tags="growth,leading" data-name="Activation Rate">
         <h3>Activation Rate</h3>
         <p><em>Percentage of new users who reach a meaningful first milestone.</em></p>
         <blockquote>Activation Rate = (Users who activated / Total new users) × 100%</blockquote>
@@ -128,7 +135,7 @@
         <p><strong>In practice</strong>: A project management tool defined activation as "create first project." After reducing the setup flow from 8 steps to 3, activation rose from 34% to 52%. But when they analyzed retention, <strong>users who also invited a teammate had 3× better retention</strong>, so they added teammate invitation to their activation definition.</p>
         </section>
 
-        <section class="metric-card" data-tags="growth,monetization,health" data-name="Monthly Recurring Revenue">
+        <section class="metric-card" id="metric-mrr" data-tags="growth,monetization,health" data-name="Monthly Recurring Revenue">
         <h3>Monthly Recurring Revenue (MRR)</h3>
         <p><em>Total predictable monthly revenue from subscriptions.</em></p>
         <blockquote>MRR = Sum of each customer's monthly subscription value</blockquote>
@@ -141,7 +148,7 @@
         <p><strong>In practice</strong>: A B2B SaaS company saw MRR grow 8% month-over-month, but when they decomposed it, <strong>70% came from expansion revenue and only 30% from new sales</strong>. They doubled down on upsell features while rebuilding their top-of-funnel acquisition.</p>
         </section>
 
-        <section class="metric-card" data-tags="monetization,health" data-name="Average Revenue Per User">
+        <section class="metric-card" id="metric-arpu" data-tags="monetization,health" data-name="Average Revenue Per User">
         <h3>Average Revenue Per User (ARPU)</h3>
         <p><em>Revenue generated per user over a period.</em></p>
         <blockquote>ARPU = Total revenue / Total users</blockquote>
@@ -154,7 +161,7 @@
         <p><strong>In practice</strong>: A streaming service launched a lower-priced ad-supported tier, causing ARPU to drop from $14 to $11. But total revenue grew 40% because the subscriber base doubled. <strong>The ARPU decline was intentional, a trade-off for market expansion.</strong></p>
         </section>
 
-        <section class="metric-card" data-tags="monetization,retention" data-name="Lifetime Value">
+        <section class="metric-card" id="metric-ltv" data-tags="monetization,retention" data-name="Lifetime Value">
         <h3>Lifetime Value (LTV)</h3>
         <p><em>Total projected revenue from a customer over their entire relationship.</em></p>
         <blockquote>LTV = ARPU × Gross Margin % × (1 / Churn Rate)<br>E-commerce: Avg. order value × Purchase frequency × Avg. customer lifespan</blockquote>
@@ -167,7 +174,7 @@
         <p><strong>In practice</strong>: An e-commerce company launched a loyalty program and saw LTV rise from $180 to $245, a 36% increase. But CAC also rose 25% because the loyalty program's marketing costs weren't attributed. <strong>When they calculated LTV:CAC, it only improved from 2.4:1 to 2.6:1</strong>, prompting them to optimize the program's costs.</p>
         </section>
 
-        <section class="metric-card" data-tags="retention,leading,health" data-name="Net Promoter Score">
+        <section class="metric-card" id="metric-nps" data-tags="retention,leading,health" data-name="Net Promoter Score">
         <h3>Net Promoter Score (NPS)</h3>
         <p><em>How likely customers are to recommend you. Benchmark: 30+ good, 50+ excellent, 70+ world-class.</em></p>
         <blockquote>NPS = % Promoters − % Detractors (ranges from −100 to +100)</blockquote>
@@ -180,7 +187,7 @@
         <p><strong>In practice</strong>: A hospitality app redesigned its booking flow and saw NPS jump from 32 to 48. But when they segmented by user type, <strong>power users' NPS actually dropped</strong> (they missed removed shortcuts). The team added back keyboard shortcuts for frequent bookers while keeping the simplified flow for casual users.</p>
         </section>
 
-        <section class="metric-card" data-tags="retention,leading" data-name="Customer Satisfaction Rate">
+        <section class="metric-card" id="metric-csat" data-tags="retention,leading" data-name="Customer Satisfaction Rate">
         <h3>Customer Satisfaction Rate (CSAT)</h3>
         <p><em>Satisfaction with a specific interaction. Target: 80%+ for B2C, 90%+ for B2B enterprise.</em></p>
         <blockquote>CSAT = (Satisfied responses / Total responses) × 100%</blockquote>
@@ -193,7 +200,7 @@
         <p><strong>In practice</strong>: An online education platform added video transcripts and saw course CSAT rise from 72% to 86%. But completion rates didn't improve. <strong>Learners were more satisfied but using transcripts to skim rather than engage.</strong> They redesigned transcripts as a supplement rather than an alternative to video.</p>
         </section>
 
-        <section class="metric-card" data-tags="retention,health" data-name="Customer Retention Rate">
+        <section class="metric-card" id="metric-crr" data-tags="retention,health" data-name="Customer Retention Rate">
         <h3>Customer Retention Rate (CRR)</h3>
         <p><em>Percentage of existing customers who stay. Target: 90%+ monthly for subscriptions.</em></p>
         <blockquote>CRR = ((Customers at end − New customers) / Customers at start) × 100%</blockquote>
@@ -206,7 +213,7 @@
         <p><strong>In practice</strong>: A fitness app saw CRR drop from 85% to 78% after adding new workout types. <strong>The new content overwhelmed the home screen, and existing users couldn't find their saved workouts.</strong> Restoring a "My Workouts" quick-access tab recovered retention to 87%.</p>
         </section>
 
-        <section class="metric-card" data-tags="retention,health,leading" data-name="Customer Churn Rate">
+        <section class="metric-card" id="metric-churn" data-tags="retention,health,leading" data-name="Customer Churn Rate">
         <h3>Customer Churn Rate</h3>
         <p><em>Percentage of customers who leave. Target: &lt;5% annual for B2B SaaS, 5-7% monthly for B2C.</em></p>
         <blockquote>Churn Rate = (Customers lost during period / Customers at start) × 100%</blockquote>
@@ -219,7 +226,7 @@
         <p><strong>In practice</strong>: An online learning platform saw monthly churn spike from 6% to 11% after a price increase. But when they segmented by engagement, high-engagement users actually churned less. <strong>The spike came from "zombie" subscribers who rarely used the product.</strong> The team let them churn and focused on converting engaged free users instead.</p>
         </section>
 
-        <section class="metric-card" data-tags="growth,engagement" data-name="Conversion Rate">
+        <section class="metric-card" id="metric-conversion" data-tags="growth,engagement" data-name="Conversion Rate">
         <h3>Conversion Rate</h3>
         <p><em>Percentage of users who complete a goal action. Benchmarks: 2-3% e-commerce, 15-25% SaaS trial-to-paid.</em></p>
         <blockquote>Conversion Rate = (Users who completed action / Users who could have) × 100%</blockquote>
@@ -232,7 +239,7 @@
         <p><strong>In practice</strong>: An e-commerce site simplified checkout from 5 pages to 1 and saw conversion jump from 2.1% to 3.4%. But average order value dropped 15%. <strong>Users were impulse-buying smaller items.</strong> They added a "frequently bought together" prompt, which recovered AOV while keeping most of the conversion gain.</p>
         </section>
 
-        <section class="metric-card" data-tags="engagement,leading" data-name="Feature Adoption Rate">
+        <section class="metric-card" id="metric-far" data-tags="engagement,leading" data-name="Feature Adoption Rate">
         <h3>Feature Adoption Rate (FAR)</h3>
         <p><em>Percentage of eligible users who use a feature. Target: 50%+ for core features, 10-30% for secondary.</em></p>
         <blockquote>FAR = (Users who used the feature / Eligible users exposed to it) × 100%</blockquote>
@@ -245,7 +252,7 @@
         <p><strong>In practice</strong>: A project management tool launched a time-tracking feature with 45% adoption in week one, dropping to 12% by week four. <strong>Users liked the idea but found manual time entry tedious.</strong> The team added automatic tracking, and adoption stabilized at 38%: lower than the spike but sustainable.</p>
         </section>
 
-        <section class="metric-card" data-tags="growth,monetization,leading" data-name="Product-Qualified Leads">
+        <section class="metric-card" id="metric-pql" data-tags="growth,monetization,leading" data-name="Product-Qualified Leads">
         <h3>Product-Qualified Leads (PQLs)</h3>
         <p><em>Users whose product engagement signals conversion likelihood. Quality over quantity.</em></p>
         <blockquote>PQLs = Count of users meeting predefined engagement criteria<br>PQL Rate = (PQLs / Total trial or free users) × 100%</blockquote>
@@ -258,7 +265,7 @@
         <p><strong>In practice</strong>: A SaaS company defined PQLs as "created 3+ projects and invited 1+ teammates." Sales closed 35% of PQLs vs. 8% of all trial users. When they added "used integration feature" to the criteria, <strong>PQL volume dropped 40% but close rate jumped to 52%</strong>. Better targeting made their sales team more efficient.</p>
         </section>
 
-        <section class="metric-card" data-tags="engagement,leading" data-name="Time-to-Value">
+        <section class="metric-card" id="metric-ttv" data-tags="engagement,leading" data-name="Time-to-Value">
         <h3>Time-to-Value (TTV)</h3>
         <p><em>Time from signup to first "aha moment." Target: first session for consumer, hours/days for B2B.</em></p>
         <blockquote>TTV = Median time from signup to first value event</blockquote>
@@ -271,7 +278,7 @@
         <p><strong>In practice</strong>: A budgeting app had a median TTV of 4 days because users signed up but didn't link accounts until later. They added a "quick demo mode" with sample data so users could explore immediately. <strong>TTV for demo users was 8 minutes, and those users linked real accounts at 2× the rate.</strong></p>
         </section>
 
-        <section class="metric-card" data-tags="growth,monetization" data-name="Customer Acquisition Cost">
+        <section class="metric-card" id="metric-cac" data-tags="growth,monetization" data-name="Customer Acquisition Cost">
         <h3>Customer Acquisition Cost (CAC)</h3>
         <p><em>Total cost to acquire a paying customer. The key ratio: LTV:CAC should be 3:1 or better.</em></p>
         <blockquote>CAC = (Sales + Marketing costs) / New customers acquired</blockquote>
@@ -285,6 +292,8 @@
         </section>
 
         </div><!-- /.metrics-container -->
+          </div><!-- /.metrics-main -->
+        </div><!-- /.metrics-layout -->
 
         <h2>Conclusion</h2>
         <p>Metrics are only useful when they drive decisions. The best product teams don't just track these numbers; they connect them. LTV only matters relative to CAC. DAU means little without retention context. Activation predicts churn. Use this guide as a reference, but remember: the goal isn't perfect measurement. It's building a product people love, and metrics are just how you check if you're getting there.</p>
@@ -334,6 +343,7 @@
     const container = document.querySelector('.metrics-container');
     const cards = document.querySelectorAll('.metric-card');
     const tagDescEl = document.querySelector('.tag-description');
+    const sidebarNav = document.querySelector('.metrics-nav-list');
 
     let currentFilter = 'all';
 
@@ -393,6 +403,7 @@
         currentFilter = btn.dataset.filter;
         applyFilter();
         updateTagDescription();
+        updateSidebar();
       });
     });
 
@@ -433,6 +444,35 @@
         }
       });
     }
+
+    // Sidebar navigation
+    function updateSidebar() {
+      const visibleCards = Array.from(cards).filter(card => {
+        if (currentFilter === 'all') return true;
+        const tags = card.dataset.tags.split(',');
+        return tags.includes(currentFilter);
+      });
+
+      sidebarNav.innerHTML = visibleCards.map(card => {
+        const name = card.dataset.name;
+        const id = card.id;
+        return `<li class="metrics-nav-item" data-target="${id}">${name}</li>`;
+      }).join('');
+    }
+
+    // Click handler for sidebar navigation
+    sidebarNav.addEventListener('click', (e) => {
+      if (e.target.classList.contains('metrics-nav-item')) {
+        const targetId = e.target.dataset.target;
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+
+    // Initial sidebar population
+    updateSidebar();
 
   })();
   </script>
