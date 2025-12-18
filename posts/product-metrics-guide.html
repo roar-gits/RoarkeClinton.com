@@ -83,9 +83,6 @@
               <button class="filter-btn" data-filter="leading">Leading</button>
               <button class="filter-btn" data-filter="health">Health</button>
             </div>
-            <div class="sort-group">
-              <button class="sort-btn" data-sort="asc">A-Z <span class="sort-arrow">↓</span></button>
-            </div>
           </div>
           <div class="tag-description" aria-live="polite"></div>
         </div>
@@ -334,13 +331,11 @@
   <script>
   (function() {
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const sortBtn = document.querySelector('.sort-btn');
     const container = document.querySelector('.metrics-container');
     const cards = document.querySelectorAll('.metric-card');
     const tagDescEl = document.querySelector('.tag-description');
 
     let currentFilter = 'all';
-    let sortAsc = true;
 
     // Tag descriptions - educational context for each filter
     const tagDescriptions = {
@@ -439,34 +434,6 @@
       });
     }
 
-    // Sort functionality
-    const sortArrow = sortBtn.querySelector('.sort-arrow');
-    sortBtn.addEventListener('click', () => {
-      sortAsc = !sortAsc;
-      sortArrow.textContent = sortAsc ? '↓' : '↑';
-      sortBtn.classList.toggle('desc', !sortAsc);
-      applySort();
-    });
-
-    function applySort() {
-      const cardsArray = Array.from(cards);
-
-      cardsArray.sort((a, b) => {
-        const nameA = a.dataset.name.toLowerCase();
-        const nameB = b.dataset.name.toLowerCase();
-
-        if (sortAsc) {
-          return nameA.localeCompare(nameB);
-        } else {
-          return nameB.localeCompare(nameA);
-        }
-      });
-
-      // Reorder in DOM
-      cardsArray.forEach(card => {
-        container.appendChild(card);
-      });
-    }
   })();
   </script>
 </body>
