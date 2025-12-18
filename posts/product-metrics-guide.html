@@ -84,7 +84,7 @@
               <button class="filter-btn" data-filter="health">Health</button>
             </div>
             <div class="sort-group">
-              <button class="sort-btn" data-sort="asc">A-Z</button>
+              <button class="sort-btn" data-sort="asc">A-Z <span class="sort-arrow">↓</span></button>
             </div>
           </div>
           <div class="tag-description" aria-live="polite"></div>
@@ -440,9 +440,10 @@
     }
 
     // Sort functionality
+    const sortArrow = sortBtn.querySelector('.sort-arrow');
     sortBtn.addEventListener('click', () => {
       sortAsc = !sortAsc;
-      sortBtn.textContent = sortAsc ? 'A-Z ↑' : 'Z-A ↓';
+      sortArrow.textContent = sortAsc ? '↓' : '↑';
       sortBtn.classList.toggle('desc', !sortAsc);
       applySort();
     });

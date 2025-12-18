@@ -2934,7 +2934,7 @@ input[type="submit"].nav-link-text.cta.simple {
 
 .controls-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
   width: 100%;
@@ -3002,13 +3002,16 @@ input[type="submit"].nav-link-text.cta.simple {
 
 /* Metric Card */
 .metric-card {
-  padding: var(--space-sm) 0;
-  border-bottom: 1px solid var(--latte-surface0);
+  background-color: #fff;
+  border-radius: 12px;
+  padding: var(--space-sm);
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .metric-card:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .metric-card.hidden {
