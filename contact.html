@@ -287,28 +287,70 @@
     });
   </script>
 
-  <!-- Spam protection: time-based validation -->
+  <!-- Spam protection: multi-layer bot detection -->
   <script>
     (function() {
       const pageLoadTime = Date.now();
-      const MIN_SUBMIT_TIME = 3000; // 3 seconds minimum
+      const MIN_SUBMIT_TIME = 3000;
 
-      // Set timestamps on load
+      // Interaction signals (bots typically fail these)
+      const signals = {
+        mouseMove: false,
+        keyPress: false,
+        fieldFocus: false,
+        scroll: false,
+        touch: false
+      };
+
+      // Track human interactions
+      document.addEventListener('mousemove', () => signals.mouseMove = true, { once: true });
+      document.addEventListener('keydown', () => signals.keyPress = true, { once: true });
+      document.addEventListener('scroll', () => signals.scroll = true, { once: true });
+      document.addEventListener('touchstart', () => signals.touch = true, { once: true });
+
+      // Track form field focus
+      document.querySelectorAll('input, textarea').forEach(el => {
+        el.addEventListener('focus', () => signals.fieldFocus = true, { once: true });
+      });
+
+      // Set timestamps
       document.getElementById('contact-timestamp').value = pageLoadTime;
       document.getElementById('newsletter-timestamp').value = pageLoadTime;
 
-      // Validate submission timing
-      function validateTiming(e) {
+      // Validate human behavior
+      function validateHuman(e) {
         const elapsed = Date.now() - pageLoadTime;
+
+        // Check 1: Headless browser detection
+        if (navigator.webdriver) {
+          e.preventDefault();
+          return false;
+        }
+
+        // Check 2: Time elapsed
         if (elapsed < MIN_SUBMIT_TIME) {
           e.preventDefault();
           return false;
         }
+
+        // Check 3: At least one interaction signal
+        const hasInteraction = signals.mouseMove || signals.touch || signals.keyPress;
+        if (!hasInteraction) {
+          e.preventDefault();
+          return false;
+        }
+
+        // Check 4: Field was focused (user actually clicked into form)
+        if (!signals.fieldFocus) {
+          e.preventDefault();
+          return false;
+        }
+
         return true;
       }
 
-      document.getElementById('Contact-Form').addEventListener('submit', validateTiming);
-      document.getElementById('Newsletter-Form').addEventListener('submit', validateTiming);
+      document.getElementById('Contact-Form').addEventListener('submit', validateHuman);
+      document.getElementById('Newsletter-Form').addEventListener('submit', validateHuman);
     })();
   </script>
 </body>
