@@ -74,9 +74,27 @@
       <div class="post-content">
         <p class="post-lead">Product metrics tell you whether your product is working, and where it isn't. This guide covers 15 essential metrics across engagement, revenue, retention, and growth. Each entry includes what the metric measures, how to calculate it, what movement means, and a practical example showing how teams use it to make decisions.</p>
 
-        <h2>User Engagement Metrics</h2>
+        <div class="metrics-controls">
+          <div class="filter-group">
+            <span class="filter-label">Filter:</span>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="growth">Growth</button>
+            <button class="filter-btn" data-filter="engagement">Engagement</button>
+            <button class="filter-btn" data-filter="retention">Retention</button>
+            <button class="filter-btn" data-filter="monetization">Monetization</button>
+            <button class="filter-btn" data-filter="leading">Leading</button>
+            <button class="filter-btn" data-filter="health">Health</button>
+          </div>
+          <div class="sort-group">
+            <span class="sort-label">Sort:</span>
+            <button class="sort-btn" data-sort="asc">A-Z</button>
+          </div>
+        </div>
 
-        <h3>1. Daily Active Users (DAU)</h3>
+        <div class="metrics-container">
+
+        <section class="metric-card" data-tags="growth,engagement,health" data-name="Daily Active Users">
+        <h3>Daily Active Users (DAU)</h3>
         <p><em>Unique users who engage with your product in a single day.</em></p>
         <blockquote>DAU = Unique users with ≥1 qualifying action per day</blockquote>
         <p><strong>What it measures</strong>: Count of unique users with at least one qualifying action in a 24-hour period. What counts as "active" is product-specific: it might be logging in, viewing content, or completing a core action like sending a message.</p>
@@ -86,8 +104,10 @@
           <li><strong>Falling</strong>: Could signal product issues, seasonality, or a shift in user behavior. Segment by cohort to identify whether it's new user acquisition or existing user engagement that's declining.</li>
         </ul>
         <p><strong>In practice</strong>: After launching push notifications, a productivity app saw DAU jump 40% in week one. But sessions per user dropped from 3.2 to 1.8. <strong>Users opened the app more but did less each time.</strong> The team shifted to weekly digest notifications, which recovered session depth while maintaining the DAU gain.</p>
+        </section>
 
-        <h3>2. Sessions Per User (SPU)</h3>
+        <section class="metric-card" data-tags="engagement,retention" data-name="Sessions Per User">
+        <h3>Sessions Per User (SPU)</h3>
         <p><em>How often users return to your product in a given period.</em></p>
         <blockquote>SPU = Total sessions / Total unique users</blockquote>
         <p><strong>What it measures</strong>: Average number of separate sessions per user over a given period. A session typically ends after 30 minutes of inactivity, though this varies by platform.</p>
@@ -97,8 +117,10 @@
           <li><strong>Falling</strong>: Users may be consolidating activity into fewer, longer sessions (not necessarily bad) or losing interest. Cross-reference with session duration to distinguish these cases.</li>
         </ul>
         <p><strong>In practice</strong>: A news app saw SPU rise from 1.4 to 2.1 after launching personalized feeds, but average session duration dropped 30%. <strong>Users were snacking on headlines rather than reading articles.</strong> The team added a "deep read" mode and saw both metrics improve together.</p>
+        </section>
 
-        <h3>3. Activation Rate</h3>
+        <section class="metric-card" data-tags="growth,leading" data-name="Activation Rate">
+        <h3>Activation Rate</h3>
         <p><em>Percentage of new users who reach a meaningful first milestone.</em></p>
         <blockquote>Activation Rate = (Users who activated / Total new users) × 100%</blockquote>
         <p><strong>What it measures</strong>: Percentage of new users who complete a predefined action that correlates with long-term retention. The "activation event" varies by product: it might be completing a profile, making a first post, or experiencing a core feature.</p>
@@ -108,10 +130,10 @@
           <li><strong>Falling</strong>: Check for friction in onboarding, unclear value props, or technical issues. Also verify your activation event still correlates with retention, as it may need updating as your product evolves.</li>
         </ul>
         <p><strong>In practice</strong>: A project management tool defined activation as "create first project." After reducing the setup flow from 8 steps to 3, activation rose from 34% to 52%. But when they analyzed retention, <strong>users who also invited a teammate had 3× better retention</strong>, so they added teammate invitation to their activation definition.</p>
+        </section>
 
-        <h2>Financial Metrics</h2>
-
-        <h3>4. Monthly Recurring Revenue (MRR)</h3>
+        <section class="metric-card" data-tags="growth,monetization,health" data-name="Monthly Recurring Revenue">
+        <h3>Monthly Recurring Revenue (MRR)</h3>
         <p><em>Total predictable monthly revenue from subscriptions.</em></p>
         <blockquote>MRR = Sum of each customer's monthly subscription value</blockquote>
         <p><strong>What it measures</strong>: Sum of all active subscription revenue, normalized to a monthly value. For annual plans, divide by 12. MRR is the heartbeat metric for subscription businesses.</p>
@@ -121,8 +143,10 @@
           <li><strong>Falling</strong>: Churn and downgrades are outpacing new business. Calculate Net MRR (New + Expansion − Churn − Contraction) to see the full picture.</li>
         </ul>
         <p><strong>In practice</strong>: A B2B SaaS company saw MRR grow 8% month-over-month, but when they decomposed it, <strong>70% came from expansion revenue and only 30% from new sales</strong>. They doubled down on upsell features while rebuilding their top-of-funnel acquisition.</p>
+        </section>
 
-        <h3>5. Average Revenue Per User (ARPU)</h3>
+        <section class="metric-card" data-tags="monetization,health" data-name="Average Revenue Per User">
+        <h3>Average Revenue Per User (ARPU)</h3>
         <p><em>Revenue generated per user over a period.</em></p>
         <blockquote>ARPU = Total revenue / Total users</blockquote>
         <p><strong>What it measures</strong>: Revenue per user over a specific period, typically monthly. Clarify whether you're measuring paying users only (ARPPU) or all users including free tier, as these are very different numbers.</p>
@@ -132,8 +156,10 @@
           <li><strong>Falling</strong>: Could indicate successful expansion into a lower-price segment (growth dilution), increased discounting, or downgrades. Segment by customer tier to understand the cause.</li>
         </ul>
         <p><strong>In practice</strong>: A streaming service launched a lower-priced ad-supported tier, causing ARPU to drop from $14 to $11. But total revenue grew 40% because the subscriber base doubled. <strong>The ARPU decline was intentional, a trade-off for market expansion.</strong></p>
+        </section>
 
-        <h3>6. Lifetime Value (LTV)</h3>
+        <section class="metric-card" data-tags="monetization,retention" data-name="Lifetime Value">
+        <h3>Lifetime Value (LTV)</h3>
         <p><em>Total projected revenue from a customer over their entire relationship.</em></p>
         <blockquote>LTV = ARPU × Gross Margin % × (1 / Churn Rate)<br>E-commerce: Avg. order value × Purchase frequency × Avg. customer lifespan</blockquote>
         <p><strong>What it measures</strong>: Projected total revenue from a customer over their entire relationship with your product. LTV is an estimate based on historical patterns.</p>
@@ -143,10 +169,10 @@
           <li><strong>Falling</strong>: Investigate whether it's driven by shorter lifespans (retention problem), lower spending (engagement or pricing problem), or both. Segment by acquisition channel, as some sources may deliver lower-quality customers.</li>
         </ul>
         <p><strong>In practice</strong>: An e-commerce company launched a loyalty program and saw LTV rise from $180 to $245, a 36% increase. But CAC also rose 25% because the loyalty program's marketing costs weren't attributed. <strong>When they calculated LTV:CAC, it only improved from 2.4:1 to 2.6:1</strong>, prompting them to optimize the program's costs.</p>
+        </section>
 
-        <h2>Customer Satisfaction Metrics</h2>
-
-        <h3>7. Net Promoter Score (NPS)</h3>
+        <section class="metric-card" data-tags="retention,leading,health" data-name="Net Promoter Score">
+        <h3>Net Promoter Score (NPS)</h3>
         <p><em>How likely customers are to recommend you. Benchmark: 30+ good, 50+ excellent, 70+ world-class.</em></p>
         <blockquote>NPS = % Promoters − % Detractors (ranges from −100 to +100)</blockquote>
         <p><strong>What it measures</strong>: A loyalty metric based on one question: "How likely are you to recommend us?" (0-10 scale). Respondents are grouped as Promoters (9-10), Passives (7-8), or Detractors (0-6).</p>
@@ -156,8 +182,10 @@
           <li><strong>Falling</strong>: Investigate qualitative feedback from Detractors. A small NPS drop may reflect a vocal minority; a sustained decline signals systemic issues.</li>
         </ul>
         <p><strong>In practice</strong>: A hospitality app redesigned its booking flow and saw NPS jump from 32 to 48. But when they segmented by user type, <strong>power users' NPS actually dropped</strong> (they missed removed shortcuts). The team added back keyboard shortcuts for frequent bookers while keeping the simplified flow for casual users.</p>
+        </section>
 
-        <h3>8. Customer Satisfaction Rate (CSAT)</h3>
+        <section class="metric-card" data-tags="retention,leading" data-name="Customer Satisfaction Rate">
+        <h3>Customer Satisfaction Rate (CSAT)</h3>
         <p><em>Satisfaction with a specific interaction. Target: 80%+ for B2C, 90%+ for B2B enterprise.</em></p>
         <blockquote>CSAT = (Satisfied responses / Total responses) × 100%</blockquote>
         <p><strong>What it measures</strong>: Satisfaction score for a specific interaction or experience, typically via a survey ("How satisfied were you?" on a 1-5 scale). Unlike NPS, which gauges overall loyalty, CSAT is best for evaluating specific touchpoints.</p>
@@ -167,10 +195,10 @@
           <li><strong>Falling</strong>: Something changed in that touchpoint. Because CSAT is context-specific, you can often pinpoint the issue. Compare before/after when you make changes.</li>
         </ul>
         <p><strong>In practice</strong>: An online education platform added video transcripts and saw course CSAT rise from 72% to 86%. But completion rates didn't improve. <strong>Learners were more satisfied but using transcripts to skim rather than engage.</strong> They redesigned transcripts as a supplement rather than an alternative to video.</p>
+        </section>
 
-        <h2>Retention Metrics</h2>
-
-        <h3>9. Customer Retention Rate (CRR)</h3>
+        <section class="metric-card" data-tags="retention,health" data-name="Customer Retention Rate">
+        <h3>Customer Retention Rate (CRR)</h3>
         <p><em>Percentage of existing customers who stay. Target: 90%+ monthly for subscriptions.</em></p>
         <blockquote>CRR = ((Customers at end − New customers) / Customers at start) × 100%</blockquote>
         <p><strong>What it measures</strong>: Percentage of existing customers who remain active over a period. The key is excluding new customers: you're measuring whether people who were already customers stayed.</p>
@@ -180,8 +208,10 @@
           <li><strong>Falling</strong>: Something is driving existing customers away. Segment by cohort, tenure, and usage patterns to find who's leaving and when. Early-tenure churn points to onboarding issues; late-tenure churn suggests value erosion.</li>
         </ul>
         <p><strong>In practice</strong>: A fitness app saw CRR drop from 85% to 78% after adding new workout types. <strong>The new content overwhelmed the home screen, and existing users couldn't find their saved workouts.</strong> Restoring a "My Workouts" quick-access tab recovered retention to 87%.</p>
+        </section>
 
-        <h3>10. Customer Churn Rate</h3>
+        <section class="metric-card" data-tags="retention,health,leading" data-name="Customer Churn Rate">
+        <h3>Customer Churn Rate</h3>
         <p><em>Percentage of customers who leave. Target: &lt;5% annual for B2B SaaS, 5-7% monthly for B2C.</em></p>
         <blockquote>Churn Rate = (Customers lost during period / Customers at start) × 100%</blockquote>
         <p><strong>What it measures</strong>: Percentage of customers who cancel or stop using your product over a period. Churn is the inverse of retention (Churn + Retention = 100%), but tracking both provides different analytical lenses.</p>
@@ -191,10 +221,10 @@
           <li><strong>Falling</strong>: Your product is stickier. Track revenue churn alongside customer churn, since losing many small customers may hurt less than losing a few large ones.</li>
         </ul>
         <p><strong>In practice</strong>: An online learning platform saw monthly churn spike from 6% to 11% after a price increase. But when they segmented by engagement, high-engagement users actually churned less. <strong>The spike came from "zombie" subscribers who rarely used the product.</strong> The team let them churn and focused on converting engaged free users instead.</p>
+        </section>
 
-        <h2>Conversion Metrics</h2>
-
-        <h3>11. Conversion Rate</h3>
+        <section class="metric-card" data-tags="growth,engagement" data-name="Conversion Rate">
+        <h3>Conversion Rate</h3>
         <p><em>Percentage of users who complete a goal action. Benchmarks: 2-3% e-commerce, 15-25% SaaS trial-to-paid.</em></p>
         <blockquote>Conversion Rate = (Users who completed action / Users who could have) × 100%</blockquote>
         <p><strong>What it measures</strong>: Percentage of users who complete a specific goal action. "Conversion" is context-dependent: it might mean signing up, subscribing, purchasing, or completing any defined step. Always specify what you're measuring (visitor-to-signup, trial-to-paid).</p>
@@ -204,10 +234,10 @@
           <li><strong>Falling</strong>: Something is blocking users. Use funnel analysis to find the drop-off point. Also check for audience mix shifts, as different traffic sources convert at different rates.</li>
         </ul>
         <p><strong>In practice</strong>: An e-commerce site simplified checkout from 5 pages to 1 and saw conversion jump from 2.1% to 3.4%. But average order value dropped 15%. <strong>Users were impulse-buying smaller items.</strong> They added a "frequently bought together" prompt, which recovered AOV while keeping most of the conversion gain.</p>
+        </section>
 
-        <h2>Product Usage Metrics</h2>
-
-        <h3>12. Feature Adoption Rate (FAR)</h3>
+        <section class="metric-card" data-tags="engagement,leading" data-name="Feature Adoption Rate">
+        <h3>Feature Adoption Rate (FAR)</h3>
         <p><em>Percentage of eligible users who use a feature. Target: 50%+ for core features, 10-30% for secondary.</em></p>
         <blockquote>FAR = (Users who used the feature / Eligible users exposed to it) × 100%</blockquote>
         <p><strong>What it measures</strong>: Percentage of eligible users who use a specific feature. "Eligible" is key: measure against users who could use the feature (had access, saw it), not your entire user base.</p>
@@ -217,8 +247,10 @@
           <li><strong>Falling</strong>: Initial curiosity may be wearing off. Track whether users who try the feature continue using it (feature retention), not just first use.</li>
         </ul>
         <p><strong>In practice</strong>: A project management tool launched a time-tracking feature with 45% adoption in week one, dropping to 12% by week four. <strong>Users liked the idea but found manual time entry tedious.</strong> The team added automatic tracking, and adoption stabilized at 38%: lower than the spike but sustainable.</p>
+        </section>
 
-        <h3>13. Product-Qualified Leads (PQLs)</h3>
+        <section class="metric-card" data-tags="growth,monetization,leading" data-name="Product-Qualified Leads">
+        <h3>Product-Qualified Leads (PQLs)</h3>
         <p><em>Users whose product engagement signals conversion likelihood. Quality over quantity.</em></p>
         <blockquote>PQLs = Count of users meeting predefined engagement criteria<br>PQL Rate = (PQLs / Total trial or free users) × 100%</blockquote>
         <p><strong>What it measures</strong>: Users who have demonstrated meaningful product engagement that correlates with conversion likelihood. Unlike marketing-qualified leads (based on content engagement), PQLs are qualified by actual product usage.</p>
@@ -228,8 +260,10 @@
           <li><strong>Falling</strong>: Fewer users are engaging deeply. Check if onboarding is broken, if traffic quality has declined, or if product changes have made the "aha moment" harder to reach.</li>
         </ul>
         <p><strong>In practice</strong>: A SaaS company defined PQLs as "created 3+ projects and invited 1+ teammates." Sales closed 35% of PQLs vs. 8% of all trial users. When they added "used integration feature" to the criteria, <strong>PQL volume dropped 40% but close rate jumped to 52%</strong>. Better targeting made their sales team more efficient.</p>
+        </section>
 
-        <h3>14. Time-to-Value (TTV)</h3>
+        <section class="metric-card" data-tags="engagement,leading" data-name="Time-to-Value">
+        <h3>Time-to-Value (TTV)</h3>
         <p><em>Time from signup to first "aha moment." Target: first session for consumer, hours/days for B2B.</em></p>
         <blockquote>TTV = Median time from signup to first value event</blockquote>
         <p><strong>What it measures</strong>: Elapsed time from signup to a user's first meaningful value moment. You must define what "value" means for your product: completing a task, achieving a result, or reaching an "aha moment" feature. Use median to avoid outliers skewing results.</p>
@@ -239,10 +273,10 @@
           <li><strong>Longer</strong>: Friction in onboarding, unclear value prop, or complex setup requirements. Map the user journey step-by-step to find where time is lost.</li>
         </ul>
         <p><strong>In practice</strong>: A budgeting app had a median TTV of 4 days because users signed up but didn't link accounts until later. They added a "quick demo mode" with sample data so users could explore immediately. <strong>TTV for demo users was 8 minutes, and those users linked real accounts at 2× the rate.</strong></p>
+        </section>
 
-        <h2>Customer Acquisition Metrics</h2>
-
-        <h3>15. Customer Acquisition Cost (CAC)</h3>
+        <section class="metric-card" data-tags="growth,monetization" data-name="Customer Acquisition Cost">
+        <h3>Customer Acquisition Cost (CAC)</h3>
         <p><em>Total cost to acquire a paying customer. The key ratio: LTV:CAC should be 3:1 or better.</em></p>
         <blockquote>CAC = (Sales + Marketing costs) / New customers acquired</blockquote>
         <p><strong>What it measures</strong>: Total cost to acquire a new paying customer, including marketing spend, sales salaries, tools, and overhead allocated to acquisition. Decide whether to include just direct costs (blended CAC) or fully-loaded costs including salaries.</p>
@@ -252,6 +286,9 @@
           <li><strong>Rising</strong>: Competition is intensifying, or you've saturated easy-to-reach audiences. Segment by channel, as some channels scale poorly. If LTV rises faster than CAC, rising costs can still be profitable.</li>
         </ul>
         <p><strong>In practice</strong>: A SaaS company saw paid search CAC rise from $120 to $180 over six months as competition increased. Content marketing CAC was $95 but took 6 months to show results. <strong>They maintained paid search for immediate pipeline while investing in content for long-term CAC reduction.</strong> Blended CAC stabilized at $135.</p>
+        </section>
+
+        </div><!-- /.metrics-container -->
 
         <h2>Conclusion</h2>
         <p>Metrics are only useful when they drive decisions. The best product teams don't just track these numbers; they connect them. LTV only matters relative to CAC. DAU means little without retention context. Activation predicts churn. Use this guide as a reference, but remember: the goal isn't perfect measurement. It's building a product people love, and metrics are just how you check if you're getting there.</p>
@@ -294,5 +331,74 @@
       <div class="copywrite">&copy; 2025 Roarke Clinton</div>
     </div>
   </footer>
+
+  <script>
+  (function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const sortBtn = document.querySelector('.sort-btn');
+    const container = document.querySelector('.metrics-container');
+    const cards = document.querySelectorAll('.metric-card');
+
+    let currentFilter = 'all';
+    let sortAsc = true;
+
+    // Filter functionality
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active state
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        currentFilter = btn.dataset.filter;
+        applyFilter();
+      });
+    });
+
+    function applyFilter() {
+      cards.forEach(card => {
+        const tags = card.dataset.tags.split(',');
+        const shouldShow = currentFilter === 'all' || tags.includes(currentFilter);
+
+        if (shouldShow) {
+          card.classList.remove('hidden');
+          card.classList.remove('fade-out');
+        } else {
+          card.classList.add('fade-out');
+          setTimeout(() => {
+            card.classList.add('hidden');
+          }, 300);
+        }
+      });
+    }
+
+    // Sort functionality
+    sortBtn.addEventListener('click', () => {
+      sortAsc = !sortAsc;
+      sortBtn.textContent = sortAsc ? 'A-Z ↑' : 'Z-A ↓';
+      sortBtn.classList.toggle('desc', !sortAsc);
+      applySort();
+    });
+
+    function applySort() {
+      const cardsArray = Array.from(cards);
+
+      cardsArray.sort((a, b) => {
+        const nameA = a.dataset.name.toLowerCase();
+        const nameB = b.dataset.name.toLowerCase();
+
+        if (sortAsc) {
+          return nameA.localeCompare(nameB);
+        } else {
+          return nameB.localeCompare(nameA);
+        }
+      });
+
+      // Reorder in DOM
+      cardsArray.forEach(card => {
+        container.appendChild(card);
+      });
+    }
+  })();
+  </script>
 </body>
 </html>

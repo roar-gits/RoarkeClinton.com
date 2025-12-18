@@ -2919,6 +2919,128 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 /* --------------------------------------------------------------------------
+   Metrics Catalog - Filter/Sort Controls
+   -------------------------------------------------------------------------- */
+
+.metrics-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: var(--space-md) 0;
+  padding: 16px 20px;
+  background-color: var(--latte-mantle);
+  border-radius: 12px;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-label,
+.sort-label {
+  font-size: var(--type-small);
+  font-weight: 600;
+  color: var(--latte-subtext0);
+  margin-right: 4px;
+}
+
+.filter-btn,
+.sort-btn {
+  padding: 6px 14px;
+  font-size: var(--type-xs);
+  font-weight: 500;
+  color: var(--latte-subtext1);
+  background-color: transparent;
+  border: 1px solid var(--latte-surface1);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.sort-btn:hover {
+  background-color: var(--latte-surface0);
+  border-color: var(--latte-surface2);
+}
+
+.filter-btn.active {
+  background-color: var(--latte-sapphire);
+  color: white;
+  border-color: var(--latte-sapphire);
+}
+
+.sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sort-btn .sort-arrow {
+  font-size: 0.85em;
+  transition: transform 0.2s ease;
+}
+
+.sort-btn.desc .sort-arrow {
+  transform: rotate(180deg);
+}
+
+.sort-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Metrics Container */
+.metrics-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Metric Card */
+.metric-card {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--latte-surface0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.metric-card:last-child {
+  border-bottom: none;
+}
+
+.metric-card.hidden {
+  display: none;
+}
+
+.metric-card.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 767px) {
+  .metrics-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .sort-group {
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 8px;
+    border-top: 1px solid var(--latte-surface0);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Post Footer
    -------------------------------------------------------------------------- */
 
