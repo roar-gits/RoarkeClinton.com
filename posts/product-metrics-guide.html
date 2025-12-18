@@ -77,166 +77,166 @@
         <h2>User Engagement Metrics</h2>
 
         <h3>1. Daily Active Users (DAU)</h3>
-        <p><strong>Definition</strong>: The count of unique users who perform at least one qualifying action within a 24-hour period. What counts as "active" is product-specific: it might be logging in, viewing content, or completing a core action like sending a message.</p>
-        <p><strong>Formula</strong>: DAU = Count of unique users with ≥1 qualifying action in a day</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Unique users who engage with your product in a single day.</em></p>
+        <p><strong>What it measures</strong>: Count of unique users with at least one qualifying action in a 24-hour period. What counts as "active" is product-specific: it might be logging in, viewing content, or completing a core action like sending a message. Formula: DAU = unique users with ≥1 action per day.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising DAU</strong>: Indicates growing engagement, but verify sustainability. A viral spike that fades within 7-14 days signals temporary interest, not real growth. Pair with retention metrics.</li>
-          <li><strong>Falling DAU</strong>: Could signal product issues, seasonality, or a shift in user behavior. Segment by cohort to identify whether it's new user acquisition or existing user engagement that's declining.</li>
+          <li><strong>Rising</strong>: Indicates growing engagement, but verify sustainability. A viral spike that fades within 7-14 days signals temporary interest, not real growth. Pair with retention metrics.</li>
+          <li><strong>Falling</strong>: Could signal product issues, seasonality, or a shift in user behavior. Segment by cohort to identify whether it's new user acquisition or existing user engagement that's declining.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: After launching push notifications, a productivity app saw DAU jump 40% in week one. But sessions per user dropped from 3.2 to 1.8. Users opened the app more but did less each time. The team shifted to weekly digest notifications, which recovered session depth while maintaining the DAU gain.</p>
+        <p><strong>In practice</strong>: After launching push notifications, a productivity app saw DAU jump 40% in week one. But sessions per user dropped from 3.2 to 1.8. <strong>Users opened the app more but did less each time.</strong> The team shifted to weekly digest notifications, which recovered session depth while maintaining the DAU gain.</p>
 
         <h3>2. Sessions Per User (SPU)</h3>
-        <p><strong>Definition</strong>: Average number of separate sessions per user over a given period. A session typically ends after 30 minutes of inactivity, though this threshold varies by analytics platform and can be customized.</p>
-        <p><strong>Formula</strong>: SPU = Total sessions / Total unique users (over the same period)</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>How often users return to your product in a given period.</em></p>
+        <p><strong>What it measures</strong>: Average number of separate sessions per user over a given period. A session typically ends after 30 minutes of inactivity, though this varies by platform. Formula: SPU = Total sessions / Total unique users.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising SPU</strong>: Users are returning more frequently, a sign of habit formation. High-frequency products (messaging, social) should target 3+ daily sessions; lower-frequency products (finance, travel) may see 2-4 weekly.</li>
-          <li><strong>Falling SPU</strong>: Users may be consolidating activity into fewer, longer sessions (not necessarily bad) or losing interest. Cross-reference with session duration to distinguish these cases.</li>
+          <li><strong>Rising</strong>: Users are returning more frequently, a sign of habit formation. High-frequency products (messaging, social) should target 3+ daily sessions; lower-frequency products (finance, travel) may see 2-4 weekly.</li>
+          <li><strong>Falling</strong>: Users may be consolidating activity into fewer, longer sessions (not necessarily bad) or losing interest. Cross-reference with session duration to distinguish these cases.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: A news app saw SPU rise from 1.4 to 2.1 after launching personalized feeds, but average session duration dropped 30%. Users were snacking on headlines rather than reading articles. The team added a "deep read" mode and saw both metrics improve together.</p>
+        <p><strong>In practice</strong>: A news app saw SPU rise from 1.4 to 2.1 after launching personalized feeds, but average session duration dropped 30%. <strong>Users were snacking on headlines rather than reading articles.</strong> The team added a "deep read" mode and saw both metrics improve together.</p>
 
         <h3>3. Activation Rate</h3>
-        <p><strong>Definition</strong>: Percentage of new users who complete a predefined action that correlates with long-term retention. The "activation event" varies by product: it might be completing a profile, making a first post, or experiencing a core feature.</p>
-        <p><strong>Formula</strong>: Activation Rate = (Users who completed activation event / Total new users) × 100%</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Percentage of new users who reach a meaningful first milestone.</em></p>
+        <p><strong>What it measures</strong>: Percentage of new users who complete a predefined action that correlates with long-term retention. The "activation event" varies by product: it might be completing a profile, making a first post, or experiencing a core feature. Formula: (Users who activated / Total new users) × 100%.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising Activation</strong>: Onboarding is working. More users are reaching the "aha moment." Strong products typically see 20-40% activation within the first session; exceptional ones reach 60%+.</li>
-          <li><strong>Falling Activation</strong>: Check for friction in onboarding, unclear value props, or technical issues. Also verify your activation event still correlates with retention, as it may need updating as your product evolves.</li>
+          <li><strong>Rising</strong>: Onboarding is working. More users are reaching the "aha moment." Strong products typically see 20-40% activation within the first session; exceptional ones reach 60%+.</li>
+          <li><strong>Falling</strong>: Check for friction in onboarding, unclear value props, or technical issues. Also verify your activation event still correlates with retention, as it may need updating as your product evolves.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: A project management tool defined activation as "create first project." After reducing the setup flow from 8 steps to 3, activation rose from 34% to 52%. But when they analyzed retention, they found users who also invited a teammate had 3× better retention, so they added teammate invitation to their activation definition.</p>
+        <p><strong>In practice</strong>: A project management tool defined activation as "create first project." After reducing the setup flow from 8 steps to 3, activation rose from 34% to 52%. But when they analyzed retention, <strong>users who also invited a teammate had 3× better retention</strong>, so they added teammate invitation to their activation definition.</p>
 
         <h2>Financial Metrics</h2>
 
         <h3>4. Monthly Recurring Revenue (MRR)</h3>
-        <p><strong>Definition</strong>: Total predictable revenue from all active subscriptions, normalized to a monthly value. For annual plans, divide by 12. MRR is the heartbeat metric for subscription businesses.</p>
-        <p><strong>Formula</strong>: MRR = Sum of (each customer's monthly subscription value)</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Total predictable monthly revenue from subscriptions.</em></p>
+        <p><strong>What it measures</strong>: Sum of all active subscription revenue, normalized to a monthly value. For annual plans, divide by 12. MRR is the heartbeat metric for subscription businesses. Formula: MRR = sum of each customer's monthly subscription value.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising MRR</strong>: Growth is coming from new customers (New MRR), existing customers upgrading (Expansion MRR), or both. Break down MRR by source to understand what's driving growth.</li>
-          <li><strong>Falling MRR</strong>: Churn and downgrades are outpacing new business. Calculate Net MRR (New + Expansion − Churn − Contraction) to see the full picture.</li>
+          <li><strong>Rising</strong>: Growth is coming from new customers (New MRR), existing customers upgrading (Expansion MRR), or both. Break down MRR by source to understand what's driving growth.</li>
+          <li><strong>Falling</strong>: Churn and downgrades are outpacing new business. Calculate Net MRR (New + Expansion − Churn − Contraction) to see the full picture.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: A B2B SaaS company saw MRR grow 8% month-over-month, but when they decomposed it, 70% came from expansion revenue (existing customers upgrading) and only 30% from new sales. They doubled down on upsell features while rebuilding their top-of-funnel acquisition.</p>
+        <p><strong>In practice</strong>: A B2B SaaS company saw MRR grow 8% month-over-month, but when they decomposed it, <strong>70% came from expansion revenue and only 30% from new sales</strong>. They doubled down on upsell features while rebuilding their top-of-funnel acquisition.</p>
 
         <h3>5. Average Revenue Per User (ARPU)</h3>
-        <p><strong>Definition</strong>: Revenue generated per user over a specific period, typically monthly. Clarify whether you're measuring paying users only (ARPPU) or all users including free tier, as these are very different numbers.</p>
-        <p><strong>Formula</strong>: ARPU = Total revenue / Total users (over the same period)</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Revenue generated per user over a period.</em></p>
+        <p><strong>What it measures</strong>: Revenue per user over a specific period, typically monthly. Clarify whether you're measuring paying users only (ARPPU) or all users including free tier, as these are very different numbers. Formula: ARPU = Total revenue / Total users.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising ARPU</strong>: Users are paying more through upgrades, add-ons, or price increases. But watch for declining user count: ARPU can rise while total revenue falls if you're losing lower-value customers.</li>
-          <li><strong>Falling ARPU</strong>: Could indicate successful expansion into a lower-price segment (growth dilution), increased discounting, or downgrades. Segment by customer tier to understand the cause.</li>
+          <li><strong>Rising</strong>: Users are paying more through upgrades, add-ons, or price increases. But watch for declining user count: ARPU can rise while total revenue falls if you're losing lower-value customers.</li>
+          <li><strong>Falling</strong>: Could indicate successful expansion into a lower-price segment (growth dilution), increased discounting, or downgrades. Segment by customer tier to understand the cause.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: A streaming service launched a lower-priced ad-supported tier, causing ARPU to drop from $14 to $11. But total revenue grew 40% because the subscriber base doubled. The ARPU decline was intentional, a trade-off for market expansion.</p>
+        <p><strong>In practice</strong>: A streaming service launched a lower-priced ad-supported tier, causing ARPU to drop from $14 to $11. But total revenue grew 40% because the subscriber base doubled. <strong>The ARPU decline was intentional, a trade-off for market expansion.</strong></p>
 
         <h3>6. Lifetime Value (LTV)</h3>
-        <p><strong>Definition</strong>: Projected total revenue from a customer over their entire relationship with your product. LTV is an estimate based on historical patterns, so it's only as accurate as your ability to predict future behavior.</p>
-        <p><strong>Formula</strong>: LTV = ARPU × Gross Margin % × (1 / Churn Rate). Alternative for e-commerce: Avg. order value × Purchase frequency × Avg. customer lifespan. Use the formula that matches your business model.</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Total projected revenue from a customer over their entire relationship.</em></p>
+        <p><strong>What it measures</strong>: Projected total revenue from a customer over their entire relationship with your product. LTV is an estimate based on historical patterns. Formula: ARPU × Gross Margin % × (1 / Churn Rate), or for e-commerce: Avg. order value × Purchase frequency × Avg. customer lifespan.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising LTV</strong>: Customers are staying longer, spending more, or both. The critical ratio is LTV:CAC. Most healthy businesses target at least 3:1 (every dollar spent acquiring a customer returns three dollars).</li>
-          <li><strong>Falling LTV</strong>: Investigate whether it's driven by shorter lifespans (retention problem), lower spending (engagement or pricing problem), or both. Segment by acquisition channel, as some sources may deliver lower-quality customers.</li>
+          <li><strong>Rising</strong>: Customers are staying longer, spending more, or both. The critical ratio is LTV:CAC. Most healthy businesses target at least 3:1 (every dollar spent acquiring a customer returns three dollars).</li>
+          <li><strong>Falling</strong>: Investigate whether it's driven by shorter lifespans (retention problem), lower spending (engagement or pricing problem), or both. Segment by acquisition channel, as some sources may deliver lower-quality customers.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: An e-commerce company launched a loyalty program and saw LTV rise from $180 to $245, a 36% increase. But CAC also rose 25% because the loyalty program's marketing costs weren't attributed. When they calculated LTV:CAC, it only improved from 2.4:1 to 2.6:1. This modest gain prompted them to optimize the program's costs.</p>
+        <p><strong>In practice</strong>: An e-commerce company launched a loyalty program and saw LTV rise from $180 to $245, a 36% increase. But CAC also rose 25% because the loyalty program's marketing costs weren't attributed. <strong>When they calculated LTV:CAC, it only improved from 2.4:1 to 2.6:1</strong>, prompting them to optimize the program's costs.</p>
 
         <h2>Customer Satisfaction Metrics</h2>
 
         <h3>7. Net Promoter Score (NPS)</h3>
-        <p><strong>Definition</strong>: A loyalty metric based on one question: "How likely are you to recommend us?" (0-10 scale). Respondents are grouped as Promoters (9-10), Passives (7-8), or Detractors (0-6).</p>
-        <p><strong>Formula</strong>: NPS = % Promoters − % Detractors (ranges from −100 to +100)</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>How likely customers are to recommend you. Benchmark: 30+ good, 50+ excellent, 70+ world-class.</em></p>
+        <p><strong>What it measures</strong>: A loyalty metric based on one question: "How likely are you to recommend us?" (0-10 scale). Respondents are grouped as Promoters (9-10), Passives (7-8), or Detractors (0-6). Formula: NPS = % Promoters − % Detractors (ranges from −100 to +100).</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising NPS</strong>: Improving loyalty. Scores above 0 are positive, above 30 is good, above 50 is excellent, and above 70 is world-class. But NPS varies by industry, so compare to competitors rather than absolute benchmarks.</li>
-          <li><strong>Falling NPS</strong>: Investigate qualitative feedback from Detractors. A small NPS drop may reflect a vocal minority; a sustained decline signals systemic issues.</li>
+          <li><strong>Rising</strong>: Improving loyalty. But NPS varies by industry, so compare to competitors rather than absolute benchmarks.</li>
+          <li><strong>Falling</strong>: Investigate qualitative feedback from Detractors. A small NPS drop may reflect a vocal minority; a sustained decline signals systemic issues.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: A hospitality app redesigned its booking flow and saw NPS jump from 32 to 48. But when they segmented by user type, power users' NPS actually dropped (they missed removed shortcuts). The team added back keyboard shortcuts for frequent bookers while keeping the simplified flow for casual users.</p>
+        <p><strong>In practice</strong>: A hospitality app redesigned its booking flow and saw NPS jump from 32 to 48. But when they segmented by user type, <strong>power users' NPS actually dropped</strong> (they missed removed shortcuts). The team added back keyboard shortcuts for frequent bookers while keeping the simplified flow for casual users.</p>
 
         <h3>8. Customer Satisfaction Rate (CSAT)</h3>
-        <p><strong>Definition</strong>: Satisfaction score for a specific interaction or experience, typically via a survey ("How satisfied were you?" on a 1-5 scale). Unlike NPS, which gauges overall loyalty, CSAT is best for evaluating specific touchpoints.</p>
-        <p><strong>Formula</strong>: CSAT = (Satisfied responses [typically 4-5] / Total responses) × 100%</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Satisfaction with a specific interaction. Target: 80%+ for B2C, 90%+ for B2B enterprise.</em></p>
+        <p><strong>What it measures</strong>: Satisfaction score for a specific interaction or experience, typically via a survey ("How satisfied were you?" on a 1-5 scale). Unlike NPS, which gauges overall loyalty, CSAT is best for evaluating specific touchpoints. Formula: CSAT = (Satisfied responses / Total responses) × 100%.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising CSAT</strong>: The specific experience you're measuring is improving. Target 80%+ for most B2C products; B2B enterprise often expects 90%+. Watch response rates, as low participation can skew results toward extremes.</li>
-          <li><strong>Falling CSAT</strong>: Something changed in that touchpoint. Because CSAT is context-specific, you can often pinpoint the issue. Compare before/after when you make changes.</li>
+          <li><strong>Rising</strong>: The specific experience you're measuring is improving. Watch response rates, as low participation can skew results toward extremes.</li>
+          <li><strong>Falling</strong>: Something changed in that touchpoint. Because CSAT is context-specific, you can often pinpoint the issue. Compare before/after when you make changes.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: An online education platform added video transcripts and saw course CSAT rise from 72% to 86%. But completion rates didn't improve. When they dug deeper, they found learners were more satisfied but using transcripts to skim rather than engage. They redesigned transcripts as a supplement rather than an alternative to video.</p>
+        <p><strong>In practice</strong>: An online education platform added video transcripts and saw course CSAT rise from 72% to 86%. But completion rates didn't improve. <strong>Learners were more satisfied but using transcripts to skim rather than engage.</strong> They redesigned transcripts as a supplement rather than an alternative to video.</p>
 
         <h2>Retention Metrics</h2>
 
         <h3>9. Customer Retention Rate (CRR)</h3>
-        <p><strong>Definition</strong>: Percentage of existing customers who remain active over a period. The key is excluding new customers: you're measuring whether people who were already customers stayed, not overall customer count.</p>
-        <p><strong>Formula</strong>: CRR = ((Customers at end − New customers acquired) / Customers at start) × 100%</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Percentage of existing customers who stay. Target: 90%+ monthly for subscriptions.</em></p>
+        <p><strong>What it measures</strong>: Percentage of existing customers who remain active over a period. The key is excluding new customers: you're measuring whether people who were already customers stayed. Formula: CRR = ((Customers at end − New customers) / Customers at start) × 100%.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising CRR</strong>: Your existing customers are stickier. For subscription businesses, target 90%+ monthly retention (which compounds to ~72% annually). Even small retention improvements compound dramatically over time.</li>
-          <li><strong>Falling CRR</strong>: Something is driving existing customers away. Segment by cohort, tenure, and usage patterns to find who's leaving and when. Early-tenure churn points to onboarding issues; late-tenure churn suggests value erosion.</li>
+          <li><strong>Rising</strong>: Your existing customers are stickier. Even small retention improvements compound dramatically over time.</li>
+          <li><strong>Falling</strong>: Something is driving existing customers away. Segment by cohort, tenure, and usage patterns to find who's leaving and when. Early-tenure churn points to onboarding issues; late-tenure churn suggests value erosion.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: A fitness app saw CRR drop from 85% to 78% after adding new workout types. Analysis showed the new content overwhelmed the home screen, and existing users couldn't find their saved workouts. Restoring a "My Workouts" quick-access tab recovered retention to 87%.</p>
+        <p><strong>In practice</strong>: A fitness app saw CRR drop from 85% to 78% after adding new workout types. <strong>The new content overwhelmed the home screen, and existing users couldn't find their saved workouts.</strong> Restoring a "My Workouts" quick-access tab recovered retention to 87%.</p>
 
         <h3>10. Customer Churn Rate</h3>
-        <p><strong>Definition</strong>: Percentage of customers who cancel or stop using your product over a period. Churn is the inverse of retention (Churn + Retention = 100%), but tracking both provides different analytical lenses.</p>
-        <p><strong>Formula</strong>: Churn Rate = (Customers lost during period / Customers at start of period) × 100%</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Percentage of customers who leave. Target: &lt;5% annual for B2B SaaS, 5-7% monthly for B2C.</em></p>
+        <p><strong>What it measures</strong>: Percentage of customers who cancel or stop using your product over a period. Churn is the inverse of retention (Churn + Retention = 100%), but tracking both provides different analytical lenses. Formula: Churn Rate = (Customers lost during period / Customers at start of period) × 100%.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising Churn</strong>: Customers are leaving faster. B2B SaaS typically targets &lt;5% annual churn; B2C subscriptions often see 5-7% monthly. But context matters. Some churn is healthy if you're shedding low-fit customers.</li>
-          <li><strong>Falling Churn</strong>: Your product is stickier. Track revenue churn alongside customer churn, since losing many small customers may hurt less than losing a few large ones.</li>
+          <li><strong>Rising</strong>: Customers are leaving faster. Context matters: some churn is healthy if you're shedding low-fit customers.</li>
+          <li><strong>Falling</strong>: Your product is stickier. Track revenue churn alongside customer churn, since losing many small customers may hurt less than losing a few large ones.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: An online learning platform saw monthly churn spike from 6% to 11% after a price increase. But when they segmented by engagement, high-engagement users actually churned less (they valued the content). The spike came from "zombie" subscribers who rarely used the product. The team let them churn and focused on converting engaged free users instead.</p>
+        <p><strong>In practice</strong>: An online learning platform saw monthly churn spike from 6% to 11% after a price increase. But when they segmented by engagement, high-engagement users actually churned less. <strong>The spike came from "zombie" subscribers who rarely used the product.</strong> The team let them churn and focused on converting engaged free users instead.</p>
 
         <h2>Conversion Metrics</h2>
 
         <h3>11. Conversion Rate</h3>
-        <p><strong>Definition</strong>: Percentage of users who complete a specific goal action. "Conversion" is context-dependent: it might mean signing up, subscribing, purchasing, or completing any defined step. Always specify what you're measuring, such as visitor-to-signup or trial-to-paid.</p>
-        <p><strong>Formula</strong>: Conversion Rate = (Users who completed action / Users who could have) × 100%</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Percentage of users who complete a goal action. Benchmarks: 2-3% e-commerce, 15-25% SaaS trial-to-paid.</em></p>
+        <p><strong>What it measures</strong>: Percentage of users who complete a specific goal action. "Conversion" is context-dependent: it might mean signing up, subscribing, purchasing, or completing any defined step. Always specify what you're measuring (visitor-to-signup, trial-to-paid). Formula: Conversion Rate = (Users who completed action / Users who could have) × 100%.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising Conversion</strong>: Your funnel is more effective. But check volume, since optimizing for conversion can sometimes attract lower-intent visitors who inflate the denominator. E-commerce: 2-3% is typical; SaaS trial-to-paid: 15-25% is strong.</li>
-          <li><strong>Falling Conversion</strong>: Something is blocking users. Use funnel analysis to find the drop-off point. Also check for audience mix shifts, as different traffic sources convert at different rates.</li>
+          <li><strong>Rising</strong>: Your funnel is more effective. But check volume: optimizing for conversion can sometimes attract lower-intent visitors who inflate the denominator.</li>
+          <li><strong>Falling</strong>: Something is blocking users. Use funnel analysis to find the drop-off point. Also check for audience mix shifts, as different traffic sources convert at different rates.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: An e-commerce site simplified checkout from 5 pages to 1 and saw conversion jump from 2.1% to 3.4%. But average order value dropped 15% as users were impulse-buying smaller items. They added a "frequently bought together" prompt, which recovered AOV while keeping most of the conversion gain.</p>
+        <p><strong>In practice</strong>: An e-commerce site simplified checkout from 5 pages to 1 and saw conversion jump from 2.1% to 3.4%. But average order value dropped 15%. <strong>Users were impulse-buying smaller items.</strong> They added a "frequently bought together" prompt, which recovered AOV while keeping most of the conversion gain.</p>
 
         <h2>Product Usage Metrics</h2>
 
         <h3>12. Feature Adoption Rate (FAR)</h3>
-        <p><strong>Definition</strong>: Percentage of eligible users who use a specific feature. "Eligible" is key: measure against users who could use the feature (e.g., had access, saw it), not your entire user base.</p>
-        <p><strong>Formula</strong>: FAR = (Users who used the feature / Eligible users exposed to it) × 100%</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Percentage of eligible users who use a feature. Target: 50%+ for core features, 10-30% for secondary.</em></p>
+        <p><strong>What it measures</strong>: Percentage of eligible users who use a specific feature. "Eligible" is key: measure against users who could use the feature (had access, saw it), not your entire user base. Formula: FAR = (Users who used the feature / Eligible users exposed to it) × 100%.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising FAR</strong>: The feature is finding its audience. Core features should target 50%+ adoption; secondary features might see 10-30%. Low adoption isn't always bad, as some features are for power users only.</li>
-          <li><strong>Falling FAR</strong>: Initial curiosity may be wearing off. Track whether users who try the feature continue using it (feature retention), not just first use.</li>
+          <li><strong>Rising</strong>: The feature is finding its audience. Low adoption isn't always bad, as some features are for power users only.</li>
+          <li><strong>Falling</strong>: Initial curiosity may be wearing off. Track whether users who try the feature continue using it (feature retention), not just first use.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: A project management tool launched a time-tracking feature with 45% adoption in week one, dropping to 12% by week four. Users liked the idea but found manual time entry tedious. The team added automatic tracking, and adoption stabilized at 38%, lower than the spike but sustainable.</p>
+        <p><strong>In practice</strong>: A project management tool launched a time-tracking feature with 45% adoption in week one, dropping to 12% by week four. <strong>Users liked the idea but found manual time entry tedious.</strong> The team added automatic tracking, and adoption stabilized at 38%: lower than the spike but sustainable.</p>
 
         <h3>13. Product-Qualified Leads (PQLs)</h3>
-        <p><strong>Definition</strong>: Users who have demonstrated meaningful product engagement that correlates with conversion likelihood. Unlike marketing-qualified leads (based on content engagement), PQLs are qualified by actual product usage.</p>
-        <p><strong>Formula</strong>: PQLs = Count of users meeting predefined engagement criteria. PQL Rate = (PQLs / Total trial or free users) × 100% if you want a ratio.</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Users whose product engagement signals conversion likelihood. Quality over quantity.</em></p>
+        <p><strong>What it measures</strong>: Users who have demonstrated meaningful product engagement that correlates with conversion likelihood. Unlike marketing-qualified leads (based on content engagement), PQLs are qualified by actual product usage. Formula: PQLs = Count of users meeting predefined engagement criteria. PQL Rate = (PQLs / Total trial or free users) × 100% if you want a ratio.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Rising PQLs</strong>: More users are reaching meaningful engagement, which is good for pipeline. Refine your PQL criteria so sales focuses on the highest-potential users. Track PQL-to-paid conversion to validate your criteria.</li>
-          <li><strong>Falling PQLs</strong>: Fewer users are engaging deeply. Check if onboarding is broken, if traffic quality has declined, or if product changes have made the "aha moment" harder to reach.</li>
+          <li><strong>Rising</strong>: More users are reaching meaningful engagement, which is good for pipeline. Track PQL-to-paid conversion to validate your criteria.</li>
+          <li><strong>Falling</strong>: Fewer users are engaging deeply. Check if onboarding is broken, if traffic quality has declined, or if product changes have made the "aha moment" harder to reach.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: A SaaS company defined PQLs as "created 3+ projects and invited 1+ teammates." Sales closed 35% of PQLs vs. 8% of all trial users. When they added "used integration feature" to the criteria, PQL volume dropped 40% but close rate jumped to 52%. Better targeting made their sales team more efficient.</p>
+        <p><strong>In practice</strong>: A SaaS company defined PQLs as "created 3+ projects and invited 1+ teammates." Sales closed 35% of PQLs vs. 8% of all trial users. When they added "used integration feature" to the criteria, <strong>PQL volume dropped 40% but close rate jumped to 52%</strong>. Better targeting made their sales team more efficient.</p>
 
         <h3>14. Time-to-Value (TTV)</h3>
-        <p><strong>Definition</strong>: The elapsed time from signup to a user's first meaningful value moment. You must define what "value" means for your product: it might be completing a task, achieving a result, or reaching an "aha moment" feature.</p>
-        <p><strong>Formula</strong>: TTV = Median (or average) time from signup to first value event. Use median to avoid outliers skewing results.</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Time from signup to first "aha moment." Target: first session for consumer, hours/days for B2B.</em></p>
+        <p><strong>What it measures</strong>: Elapsed time from signup to a user's first meaningful value moment. You must define what "value" means for your product: completing a task, achieving a result, or reaching an "aha moment" feature. Formula: TTV = Median time from signup to first value event. Use median to avoid outliers skewing results.</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Shorter TTV</strong>: Users reach value faster, which strongly correlates with retention. Best-in-class products aim for value within the first session. For complex B2B tools, hours or days may be acceptable; for consumer apps, minutes is the target.</li>
-          <li><strong>Longer TTV</strong>: Friction in onboarding, unclear value prop, or complex setup requirements. Map the user journey step-by-step to find where time is lost.</li>
+          <li><strong>Shorter</strong>: Users reach value faster, which strongly correlates with retention. Best-in-class products aim for value within the first session.</li>
+          <li><strong>Longer</strong>: Friction in onboarding, unclear value prop, or complex setup requirements. Map the user journey step-by-step to find where time is lost.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: A budgeting app had a median TTV of 4 days because users signed up but didn't link accounts until later. They added a "quick demo mode" with sample data so users could explore immediately. TTV for demo users was 8 minutes, and those users linked real accounts at 2× the rate of users who waited.</p>
+        <p><strong>In practice</strong>: A budgeting app had a median TTV of 4 days because users signed up but didn't link accounts until later. They added a "quick demo mode" with sample data so users could explore immediately. <strong>TTV for demo users was 8 minutes, and those users linked real accounts at 2× the rate.</strong></p>
 
         <h2>Customer Acquisition Metrics</h2>
 
         <h3>15. Customer Acquisition Cost (CAC)</h3>
-        <p><strong>Definition</strong>: The total cost to acquire a new paying customer, including marketing spend, sales salaries, tools, and overhead allocated to acquisition. Decide whether to include just direct costs (blended CAC) or fully-loaded costs including salaries.</p>
-        <p><strong>Formula</strong>: CAC = (Sales + Marketing costs) / New customers acquired (over the same period)</p>
-        <p><strong>Interpretation</strong>:</p>
+        <p><em>Total cost to acquire a paying customer. The key ratio: LTV:CAC should be 3:1 or better.</em></p>
+        <p><strong>What it measures</strong>: Total cost to acquire a new paying customer, including marketing spend, sales salaries, tools, and overhead allocated to acquisition. Decide whether to include just direct costs (blended CAC) or fully-loaded costs including salaries. Formula: CAC = (Sales + Marketing costs) / New customers acquired (over the same period).</p>
+        <p><strong>What to watch</strong>:</p>
         <ul>
-          <li><strong>Falling CAC</strong>: Acquisition is more efficient, but verify quality. Cheaper customers may churn faster or spend less. Pair with LTV to ensure you're not sacrificing long-term value for short-term efficiency.</li>
-          <li><strong>Rising CAC</strong>: Competition is intensifying, or you've saturated easy-to-reach audiences. Segment by channel, as some channels scale poorly. The key ratio is LTV:CAC; if LTV rises faster than CAC, rising costs can still be profitable.</li>
+          <li><strong>Falling</strong>: Acquisition is more efficient, but verify quality. Cheaper customers may churn faster or spend less. Pair with LTV to ensure you're not sacrificing long-term value.</li>
+          <li><strong>Rising</strong>: Competition is intensifying, or you've saturated easy-to-reach audiences. Segment by channel, as some channels scale poorly. If LTV rises faster than CAC, rising costs can still be profitable.</li>
         </ul>
-        <p><strong>Real-World Scenario</strong>: A SaaS company saw paid search CAC rise from $120 to $180 over six months as competition increased. Content marketing CAC was $95 but took 6 months to show results. They maintained paid search for immediate pipeline while investing in content for long-term CAC reduction. Blended CAC stabilized at $135.</p>
+        <p><strong>In practice</strong>: A SaaS company saw paid search CAC rise from $120 to $180 over six months as competition increased. Content marketing CAC was $95 but took 6 months to show results. <strong>They maintained paid search for immediate pipeline while investing in content for long-term CAC reduction.</strong> Blended CAC stabilized at $135.</p>
 
         <h2>Conclusion</h2>
         <p>Metrics are only useful when they drive decisions. The best product teams don't just track these numbers; they connect them. LTV only matters relative to CAC. DAU means little without retention context. Activation predicts churn. Use this guide as a reference, but remember: the goal isn't perfect measurement. It's building a product people love, and metrics are just how you check if you're getting there.</p>
