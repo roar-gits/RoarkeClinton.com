@@ -2924,14 +2924,20 @@ input[type="submit"].nav-link-text.cta.simple {
 
 .metrics-controls {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  flex-direction: column;
+  gap: 0;
   margin: var(--space-md) 0;
   padding: 16px 20px;
   background-color: var(--latte-mantle);
   border-radius: 12px;
+}
+
+.controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
 }
 
 .filter-group {
@@ -2939,14 +2945,13 @@ input[type="submit"].nav-link-text.cta.simple {
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
+  flex: 1;
 }
 
-.filter-label,
-.sort-label {
-  font-size: var(--type-small);
-  font-weight: 600;
-  color: var(--latte-subtext0);
-  margin-right: 4px;
+.sort-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .filter-btn,
@@ -2989,12 +2994,6 @@ input[type="submit"].nav-link-text.cta.simple {
   transform: rotate(180deg);
 }
 
-.sort-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
 /* Metrics Container */
 .metrics-container {
   display: flex;
@@ -3027,18 +3026,17 @@ input[type="submit"].nav-link-text.cta.simple {
   overflow: hidden;
   opacity: 0;
   margin: 0;
-  padding: 0 20px;
-  background-color: var(--latte-base);
-  border-left: 3px solid var(--latte-sapphire);
-  border-radius: 0 8px 8px 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  padding: 0;
+  border-top: 1px solid transparent;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease, margin 0.3s ease, border-color 0.3s ease;
 }
 
 .tag-description.visible {
   max-height: 300px;
   opacity: 1;
-  margin: var(--space-sm) 0 var(--space-md) 0;
-  padding: 16px 20px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top-color: var(--latte-surface1);
 }
 
 .tag-desc-header {
@@ -3080,9 +3078,10 @@ input[type="submit"].nav-link-text.cta.simple {
 
 /* Responsive adjustments */
 @media screen and (max-width: 767px) {
-  .metrics-controls {
+  .controls-row {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
   }
 
   .filter-group {
@@ -3092,7 +3091,7 @@ input[type="submit"].nav-link-text.cta.simple {
   .sort-group {
     width: 100%;
     justify-content: flex-start;
-    padding-top: 8px;
+    padding-top: 12px;
     border-top: 1px solid var(--latte-surface0);
   }
 }
