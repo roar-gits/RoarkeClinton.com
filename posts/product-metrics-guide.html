@@ -72,8 +72,6 @@
         <h1 class="post-title">Guide to Product Metrics</h1>
       </header>
       <div class="post-content">
-        <p class="post-lead">Product metrics tell you whether your product is working, and where it isn't. This guide covers 15 essential metrics across engagement, revenue, retention, and growth. Each entry includes what the metric measures, how to calculate it, what movement means, and a practical example showing how teams use it to make decisions.</p>
-
         <div class="metrics-controls">
           <div class="controls-row">
             <div class="filter-group">
@@ -346,6 +344,12 @@
 
     // Tag descriptions - educational context for each filter
     const tagDescriptions = {
+      all: {
+        title: 'All Metrics',
+        question: '15 essential product metrics',
+        description: 'Product metrics tell you whether your product is working, and where it isn\'t. This guide covers metrics across engagement, revenue, retention, and growth. Each entry includes what the metric measures, how to calculate it, what movement means, and a practical example showing how teams use it to make decisions.',
+        useCase: null
+      },
       growth: {
         title: 'Growth Metrics',
         question: 'Are we scaling?',
@@ -398,24 +402,25 @@
     });
 
     function updateTagDescription() {
-      if (currentFilter === 'all') {
-        tagDescEl.classList.remove('visible');
-        tagDescEl.innerHTML = '';
-      } else {
-        const desc = tagDescriptions[currentFilter];
-        if (desc) {
-          tagDescEl.innerHTML = `
-            <div class="tag-desc-header">
-              <span class="tag-desc-title">${desc.title}</span>
-              <span class="tag-desc-question">${desc.question}</span>
-            </div>
-            <p class="tag-desc-text">${desc.description}</p>
-            <p class="tag-desc-usecase"><strong>When to use:</strong> ${desc.useCase}</p>
-          `;
-          tagDescEl.classList.add('visible');
-        }
+      const desc = tagDescriptions[currentFilter];
+      if (desc) {
+        const useCaseHtml = desc.useCase
+          ? `<p class="tag-desc-usecase"><strong>When to use:</strong> ${desc.useCase}</p>`
+          : '';
+        tagDescEl.innerHTML = `
+          <div class="tag-desc-header">
+            <span class="tag-desc-title">${desc.title}</span>
+            <span class="tag-desc-question">${desc.question}</span>
+          </div>
+          <p class="tag-desc-text">${desc.description}</p>
+          ${useCaseHtml}
+        `;
+        tagDescEl.classList.add('visible');
       }
     }
+
+    // Show description on page load
+    updateTagDescription();
 
     function applyFilter() {
       cards.forEach(card => {
