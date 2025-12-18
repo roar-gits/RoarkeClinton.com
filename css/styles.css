@@ -2802,7 +2802,7 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 .post-content p:has(+ blockquote) {
-  margin-bottom: 0.25em;  /* Tight pairing: summary → formula */
+  margin-bottom: 0;  /* Flush pairing: summary → formula */
 }
 
 .post-content h2 {
