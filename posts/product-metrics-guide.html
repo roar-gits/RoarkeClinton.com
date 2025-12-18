@@ -91,6 +91,8 @@
           </div>
         </div>
 
+        <div class="tag-description" aria-live="polite"></div>
+
         <div class="metrics-container">
 
         <section class="metric-card" data-tags="growth,engagement,health" data-name="Daily Active Users">
@@ -338,9 +340,50 @@
     const sortBtn = document.querySelector('.sort-btn');
     const container = document.querySelector('.metrics-container');
     const cards = document.querySelectorAll('.metric-card');
+    const tagDescEl = document.querySelector('.tag-description');
 
     let currentFilter = 'all';
     let sortAsc = true;
+
+    // Tag descriptions - educational context for each filter
+    const tagDescriptions = {
+      growth: {
+        title: 'Growth Metrics',
+        question: 'Are we scaling?',
+        description: 'Track user acquisition, revenue expansion, and market penetration. These metrics answer whether your product is gaining momentum and reaching new users effectively.',
+        useCase: 'Board decks, investor updates, weekly growth reviews'
+      },
+      engagement: {
+        title: 'Engagement Metrics',
+        question: 'Are users active?',
+        description: 'Measure how deeply users interact with your product. High engagement signals product-market fit; declining engagement often precedes churn by weeks or months.',
+        useCase: 'Product health dashboards, feature prioritization'
+      },
+      retention: {
+        title: 'Retention Metrics',
+        question: 'Are users staying?',
+        description: 'Show whether users stick around after their first experience. Even small retention improvements compound dramatically—a 5% increase can boost profits 25-95%.',
+        useCase: 'Cohort analysis, churn prevention initiatives'
+      },
+      monetization: {
+        title: 'Monetization Metrics',
+        question: 'Are we making money?',
+        description: 'Track how effectively you convert users into revenue. These metrics reveal pricing power, willingness to pay, and unit economics that determine business viability.',
+        useCase: 'Pricing decisions, revenue forecasting, unit economics'
+      },
+      leading: {
+        title: 'Leading Indicators',
+        question: 'What predicts success?',
+        description: 'Predict future outcomes before they show in lagging metrics like revenue. A drop in these metrics today signals problems 30-60 days out, giving you time to intervene.',
+        useCase: 'Early warning systems, proactive intervention, North Star tracking'
+      },
+      health: {
+        title: 'Health Metrics',
+        question: 'Is the business sustainable?',
+        description: 'The vital signs executives and investors watch most closely. These metrics answer whether your business model is working and can sustain long-term growth.',
+        useCase: 'Executive dashboards, investor updates, strategic planning'
+      }
+    };
 
     // Filter functionality
     filterBtns.forEach(btn => {
@@ -351,8 +394,29 @@
 
         currentFilter = btn.dataset.filter;
         applyFilter();
+        updateTagDescription();
       });
     });
+
+    function updateTagDescription() {
+      if (currentFilter === 'all') {
+        tagDescEl.classList.remove('visible');
+        tagDescEl.innerHTML = '';
+      } else {
+        const desc = tagDescriptions[currentFilter];
+        if (desc) {
+          tagDescEl.innerHTML = `
+            <div class="tag-desc-header">
+              <span class="tag-desc-title">${desc.title}</span>
+              <span class="tag-desc-question">${desc.question}</span>
+            </div>
+            <p class="tag-desc-text">${desc.description}</p>
+            <p class="tag-desc-usecase"><strong>When to use:</strong> ${desc.useCase}</p>
+          `;
+          tagDescEl.classList.add('visible');
+        }
+      }
+    }
 
     function applyFilter() {
       cards.forEach(card => {
