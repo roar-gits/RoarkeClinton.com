@@ -105,6 +105,7 @@
                 <div class="card form">
                   <form id="Contact-Form" name="Contact Form" action="https://formspree.io/f/mqaknbep" method="POST">
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="_timestamp" id="contact-timestamp">
                     <div class="w-layout-grid grid-2-columns form">
                       <div class="field-wrapper">
                         <label for="Name" class="field-label">Name</label>
@@ -170,8 +171,9 @@
                     </div>
                     <div class="booking-title">Newsletter</div>
                     <div class="booking-desc">Get occasional updates on projects and insights</div>
-                    <form class="newsletter-form" action="https://formspree.io/f/xwpkgjkd" method="POST">
+                    <form class="newsletter-form" id="Newsletter-Form" action="https://formspree.io/f/xwpkgjkd" method="POST">
                       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                      <input type="hidden" name="_timestamp" id="newsletter-timestamp">
                       <label for="newsletter-email" class="visually-hidden">Email address</label>
                       <input type="email" name="email" id="newsletter-email" placeholder="your@email.com" required class="newsletter-input">
                       <button type="submit" class="booking-cta">Subscribe</button>
@@ -283,6 +285,31 @@
         }
       });
     });
+  </script>
+
+  <!-- Spam protection: time-based validation -->
+  <script>
+    (function() {
+      const pageLoadTime = Date.now();
+      const MIN_SUBMIT_TIME = 3000; // 3 seconds minimum
+
+      // Set timestamps on load
+      document.getElementById('contact-timestamp').value = pageLoadTime;
+      document.getElementById('newsletter-timestamp').value = pageLoadTime;
+
+      // Validate submission timing
+      function validateTiming(e) {
+        const elapsed = Date.now() - pageLoadTime;
+        if (elapsed < MIN_SUBMIT_TIME) {
+          e.preventDefault();
+          return false;
+        }
+        return true;
+      }
+
+      document.getElementById('Contact-Form').addEventListener('submit', validateTiming);
+      document.getElementById('Newsletter-Form').addEventListener('submit', validateTiming);
+    })();
   </script>
 </body>
 </html>
