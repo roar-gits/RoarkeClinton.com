@@ -2840,6 +2840,11 @@ input[type="submit"].nav-link-text.cta.simple {
   padding-left: 28px;
 }
 
+.post-content p + ul,
+.post-content p + ol {
+  margin-top: 0.5em;  /* Tighter when list follows paragraph like "What to watch:" */
+}
+
 .post-content li {
   margin-bottom: 0.75em;
   line-height: 1.6;
@@ -2850,7 +2855,7 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 .post-content blockquote {
-  margin: 4px 0 20px 0;  /* Tight to summary above, space before "What it measures" */
+  margin: 0 0 28px 0;  /* Flush with summary, clear space before explanation */
   padding: 12px 20px;
   border-left: 4px solid var(--latte-sapphire);
   background-color: var(--latte-mantle);
