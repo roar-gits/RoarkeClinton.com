@@ -2813,10 +2813,14 @@ input[type="submit"].nav-link-text.cta.simple {
 .post-content h3 {
   font-size: var(--type-subhead);
   font-weight: 600;
-  margin-top: var(--space-sm);
+  margin-top: var(--space-md);
   margin-bottom: var(--space-xs);
   color: var(--latte-text);
   line-height: 1.4;
+}
+
+.post-content h2 + h3 {
+  margin-top: var(--space-sm);
 }
 
 .post-content a {
@@ -2846,8 +2850,8 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 .post-content blockquote {
-  margin: var(--space-md) 0;
-  padding: var(--space-sm) var(--space-md);
+  margin: 8px 0;
+  padding: 12px 20px;
   border-left: 4px solid var(--latte-sapphire);
   background-color: var(--latte-mantle);
   border-radius: 0 8px 8px 0;
