@@ -557,6 +557,23 @@
     const SCROLL_DELTA = 10; // Require 10px scroll before triggering (prevents momentum jitter)
     let scrollAccumulator = 0;
     let lastDirection = null;
+    const HEADER_HEIGHT = 60;
+
+    // Create placeholder for when quick-nav becomes fixed
+    const quickNavPlaceholder = document.createElement('div');
+    quickNavPlaceholder.className = 'quick-nav-placeholder';
+    quickNav.parentNode.insertBefore(quickNavPlaceholder, quickNav.nextSibling);
+
+    // Track quick-nav's original position (calculated after page load)
+    let quickNavOriginalTop = quickNav.offsetTop;
+    let quickNavStuck = false;
+
+    // Recalculate on resize
+    window.addEventListener('resize', () => {
+      if (!quickNavStuck) {
+        quickNavOriginalTop = quickNav.offsetTop;
+      }
+    });
 
     function handleScroll() {
       // Only apply on mobile
@@ -566,12 +583,33 @@
           document.body.classList.remove('header-hidden');
           headerHidden = false;
         }
+        // Remove stuck state on desktop
+        if (quickNavStuck) {
+          quickNav.classList.remove('quick-nav-stuck');
+          quickNavPlaceholder.classList.remove('active');
+          quickNavStuck = false;
+        }
         scrollAccumulator = 0;
         lastDirection = null;
         return;
       }
 
       const currentScrollY = window.scrollY;
+
+      // Check if quick-nav should be stuck (scrolled past its original position)
+      const stickThreshold = quickNavOriginalTop - HEADER_HEIGHT;
+      if (currentScrollY > stickThreshold && !quickNavStuck) {
+        quickNav.classList.add('quick-nav-stuck');
+        quickNavPlaceholder.classList.add('active');
+        quickNavStuck = true;
+      } else if (currentScrollY <= stickThreshold && quickNavStuck) {
+        quickNav.classList.remove('quick-nav-stuck');
+        quickNavPlaceholder.classList.remove('active');
+        quickNavStuck = false;
+        // Recalculate original position
+        quickNavOriginalTop = quickNav.offsetTop;
+      }
+
       const delta = currentScrollY - lastScrollY;
 
       // Skip if no movement

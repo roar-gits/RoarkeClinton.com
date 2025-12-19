@@ -3493,16 +3493,31 @@ input[type="submit"].nav-link-text.cta.simple {
     padding-top: var(--space-md);
   }
 
-  /* Mobile sticky quick-nav */
+  /* Mobile quick-nav - switches to fixed when stuck */
   .metrics-quick-nav {
     display: flex;
-    position: sticky;
-    top: 60px; /* Below mobile header */
-    z-index: 201; /* Above header's 200 - always visible */
-    background: var(--latte-base); /* Page background */
+    z-index: 201; /* Above header's 200 */
+    background: var(--latte-base);
     padding: 12px 0;
     margin: 0 0 16px;
-    transition: top 0.3s ease 0.3s; /* Delay matches header animation */
+  }
+
+  /* When stuck (scrolled past natural position) */
+  .metrics-quick-nav.quick-nav-stuck {
+    position: fixed;
+    top: 60px; /* Below header */
+    left: 0;
+    right: 0;
+    width: 92%; /* Match post-container */
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 12px 0;
+    transition: top 0.3s ease;
+  }
+
+  /* When header is hidden, quick-nav at top */
+  body.header-hidden .metrics-quick-nav.quick-nav-stuck {
+    top: 0;
   }
 
   .metrics-quick-nav .quick-nav-fade {
@@ -3513,10 +3528,14 @@ input[type="submit"].nav-link-text.cta.simple {
     background: var(--latte-base);
   }
 
-  /* When header is hidden, quick-nav slides to top */
-  body.header-hidden .metrics-quick-nav {
-    top: 0;
-    transition-delay: 0s; /* Immediate when hiding */
+  /* Placeholder when quick-nav is fixed (prevents layout shift) */
+  .quick-nav-placeholder {
+    height: 52px; /* Match quick-nav height */
+    display: none;
+  }
+
+  .quick-nav-placeholder.active {
+    display: block;
   }
 
   /* Hide-on-scroll header */
