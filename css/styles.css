@@ -3384,10 +3384,6 @@ input[type="submit"].nav-link-text.cta.simple {
     display: none;
   }
 
-  .metrics-quick-nav {
-    display: flex;
-  }
-
   .post-hero {
     width: calc(100% + 6vw);
     margin-left: -3vw;
@@ -3456,6 +3452,49 @@ input[type="submit"].nav-link-text.cta.simple {
   .post-footer {
     margin-top: var(--space-lg);
     padding-top: var(--space-md);
+  }
+
+  /* Mobile sticky quick-nav */
+  .metrics-quick-nav {
+    display: flex;
+    position: sticky;
+    top: 60px; /* Below mobile header */
+    z-index: 100;
+    background: var(--latte-base); /* Page background */
+    padding: 12px 0;
+    margin: 0 0 16px;
+    transition: top 0.3s ease;
+  }
+
+  .metrics-quick-nav .quick-nav-fade {
+    background: linear-gradient(to right, transparent 0%, var(--latte-base) 70%);
+  }
+
+  .metrics-quick-nav .quick-nav-toggle {
+    background: var(--latte-base);
+  }
+
+  /* When header is hidden, quick-nav slides to top */
+  body.header-hidden .metrics-quick-nav {
+    top: 0;
+  }
+
+  /* Hide-on-scroll header */
+  .navbar-symbol {
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-symbol.header-hidden {
+    transform: translateY(-100%);
+  }
+
+  /* Adjust scroll margin for metric cards with sticky quick-nav */
+  .metric-card {
+    scroll-margin-top: 132px; /* header (60px) + quick-nav (~40px) + buffer */
+  }
+
+  body.header-hidden .metric-card {
+    scroll-margin-top: 52px; /* quick-nav only + buffer */
   }
 }
 

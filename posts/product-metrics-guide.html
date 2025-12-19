@@ -84,23 +84,22 @@
               <button class="filter-btn" data-filter="health">Health</button>
             </div>
           </div>
-
-          <!-- Mobile quick navigation -->
-          <div class="metrics-quick-nav">
-            <div class="quick-nav-scroll">
-              <div class="quick-nav-items">
-                <!-- Populated by JS -->
-              </div>
-            </div>
-            <div class="quick-nav-fade"></div>
-            <button class="quick-nav-toggle" aria-expanded="false" aria-label="Show all metrics">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-          </div>
-
           <div class="tag-description" aria-live="polite"></div>
+        </div>
+
+        <!-- Mobile sticky quick navigation -->
+        <div class="metrics-quick-nav">
+          <div class="quick-nav-scroll">
+            <div class="quick-nav-items">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+          <div class="quick-nav-fade"></div>
+          <button class="quick-nav-toggle" aria-expanded="false" aria-label="Show all metrics">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
         </div>
 
         <div class="metrics-layout">
@@ -548,6 +547,47 @@
       quickNavToggle.setAttribute('aria-expanded', isExpanded);
       quickNavToggle.setAttribute('aria-label', isExpanded ? 'Collapse metrics list' : 'Show all metrics');
     });
+
+    // Mobile header hide-on-scroll
+    const header = document.querySelector('.navbar-symbol');
+    let lastScrollY = 0;
+    let headerHidden = false;
+    const scrollThreshold = 50;
+    const mobileBreakpoint = 767;
+
+    function handleScroll() {
+      // Only apply on mobile
+      if (window.innerWidth > mobileBreakpoint) {
+        // Reset header state when above mobile breakpoint
+        if (headerHidden) {
+          header.classList.remove('header-hidden');
+          document.body.classList.remove('header-hidden');
+          headerHidden = false;
+        }
+        return;
+      }
+
+      const currentScrollY = window.scrollY;
+      const scrollingDown = currentScrollY > lastScrollY;
+
+      // Hide header when scrolling down past threshold
+      if (scrollingDown && currentScrollY > scrollThreshold && !headerHidden) {
+        header.classList.add('header-hidden');
+        document.body.classList.add('header-hidden');
+        headerHidden = true;
+      }
+      // Show header when scrolling up
+      else if (!scrollingDown && headerHidden) {
+        header.classList.remove('header-hidden');
+        document.body.classList.remove('header-hidden');
+        headerHidden = false;
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
 
     // Initial sidebar population
     updateSidebar();
