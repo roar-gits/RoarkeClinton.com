@@ -3502,7 +3502,7 @@ input[type="submit"].nav-link-text.cta.simple {
     background: var(--latte-base); /* Page background */
     padding: 12px 0;
     margin: 0 0 16px;
-    transition: top 0.3s ease;
+    transition: top 0.3s ease 0.3s; /* Delay matches header animation */
   }
 
   .metrics-quick-nav .quick-nav-fade {
@@ -3516,6 +3516,7 @@ input[type="submit"].nav-link-text.cta.simple {
   /* When header is hidden, quick-nav slides to top */
   body.header-hidden .metrics-quick-nav {
     top: 0;
+    transition-delay: 0s; /* Immediate when hiding */
   }
 
   /* Hide-on-scroll header */
