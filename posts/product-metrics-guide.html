@@ -84,6 +84,22 @@
               <button class="filter-btn" data-filter="health">Health</button>
             </div>
           </div>
+
+          <!-- Mobile quick navigation -->
+          <div class="metrics-quick-nav">
+            <div class="quick-nav-scroll">
+              <div class="quick-nav-items">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+            <div class="quick-nav-fade"></div>
+            <button class="quick-nav-toggle" aria-expanded="false" aria-label="Show all metrics">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </div>
+
           <div class="tag-description" aria-live="polite"></div>
         </div>
 
@@ -374,6 +390,9 @@
     const cards = document.querySelectorAll('.metric-card');
     const tagDescEl = document.querySelector('.tag-description');
     const sidebarNav = document.querySelector('.metrics-nav-list');
+    const quickNav = document.querySelector('.metrics-quick-nav');
+    const quickNavItems = document.querySelector('.quick-nav-items');
+    const quickNavToggle = document.querySelector('.quick-nav-toggle');
 
     let currentFilter = 'all';
 
@@ -475,7 +494,7 @@
       });
     }
 
-    // Sidebar navigation
+    // Sidebar and quick navigation
     function updateSidebar() {
       const visibleCards = Array.from(cards).filter(card => {
         if (currentFilter === 'all') return true;
@@ -483,10 +502,18 @@
         return tags.includes(currentFilter);
       });
 
+      // Update desktop sidebar
       sidebarNav.innerHTML = visibleCards.map(card => {
         const name = card.dataset.name;
         const id = card.id;
         return `<li class="metrics-nav-item" data-target="${id}">${name}</li>`;
+      }).join('');
+
+      // Update mobile quick-nav
+      quickNavItems.innerHTML = visibleCards.map(card => {
+        const name = card.dataset.name;
+        const id = card.id;
+        return `<button class="quick-nav-item" data-target="${id}">${name}</button>`;
       }).join('');
     }
 
@@ -499,6 +526,27 @@
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
+    });
+
+    // Click handler for quick-nav items
+    quickNavItems.addEventListener('click', (e) => {
+      if (e.target.classList.contains('quick-nav-item')) {
+        const targetId = e.target.dataset.target;
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Collapse after navigation
+          quickNav.classList.remove('expanded');
+          quickNavToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+
+    // Toggle quick-nav expand/collapse
+    quickNavToggle.addEventListener('click', () => {
+      const isExpanded = quickNav.classList.toggle('expanded');
+      quickNavToggle.setAttribute('aria-expanded', isExpanded);
+      quickNavToggle.setAttribute('aria-label', isExpanded ? 'Collapse metrics list' : 'Show all metrics');
     });
 
     // Initial sidebar population
