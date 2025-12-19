@@ -3004,10 +3004,14 @@ input[type="submit"].nav-link-text.cta.simple {
 .metric-card {
   background-color: #fff;
   border-radius: 12px;
-  padding: 8px var(--space-sm) var(--space-sm);
+  padding: 4px var(--space-sm) 16px;
   margin-bottom: 16px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.metric-card ul {
+  margin-top: 8px;
 }
 
 .metric-card h3 {
