@@ -3498,7 +3498,7 @@ input[type="submit"].nav-link-text.cta.simple {
     display: flex;
     position: sticky;
     top: 60px; /* Below mobile header */
-    z-index: 100;
+    z-index: 201; /* Above header's 200 - always visible */
     background: var(--latte-base); /* Page background */
     padding: 12px 0;
     margin: 0 0 16px;
@@ -3516,11 +3516,6 @@ input[type="submit"].nav-link-text.cta.simple {
   /* When header is hidden, quick-nav slides to top */
   body.header-hidden .metrics-quick-nav {
     top: 0;
-  }
-
-  /* When header is appearing, keep quick-nav visible above header during transition */
-  body.header-appearing .metrics-quick-nav {
-    z-index: 250; /* Above header's 200 during transition */
   }
 
   /* Hide-on-scroll header */

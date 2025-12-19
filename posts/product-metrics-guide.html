@@ -548,49 +548,65 @@
       quickNavToggle.setAttribute('aria-label', isExpanded ? 'Collapse metrics list' : 'Show all metrics');
     });
 
-    // Mobile header hide-on-scroll
+    // Mobile header hide-on-scroll with delta threshold
     const header = document.querySelector('.navbar-symbol');
     let lastScrollY = 0;
     let headerHidden = false;
     const scrollThreshold = 50;
     const mobileBreakpoint = 767;
+    const SCROLL_DELTA = 10; // Require 10px scroll before triggering (prevents momentum jitter)
+    let scrollAccumulator = 0;
+    let lastDirection = null;
 
     function handleScroll() {
       // Only apply on mobile
       if (window.innerWidth > mobileBreakpoint) {
-        // Reset header state when above mobile breakpoint
         if (headerHidden) {
           header.classList.remove('header-hidden');
           document.body.classList.remove('header-hidden');
           headerHidden = false;
         }
+        scrollAccumulator = 0;
+        lastDirection = null;
         return;
       }
 
       const currentScrollY = window.scrollY;
-      const scrollingDown = currentScrollY > lastScrollY;
+      const delta = currentScrollY - lastScrollY;
 
-      // Hide header when scrolling down past threshold
-      if (scrollingDown && currentScrollY > scrollThreshold && !headerHidden) {
-        header.classList.add('header-hidden');
-        document.body.classList.add('header-hidden');
-        document.body.classList.remove('header-appearing'); // Cleanup if mid-animation
-        headerHidden = true;
-      }
-      // Show header when scrolling up
-      else if (!scrollingDown && headerHidden) {
-        // Add appearing class to delay quick-nav, letting header slide in first
-        document.body.classList.add('header-appearing');
-        header.classList.remove('header-hidden');
-        document.body.classList.remove('header-hidden');
-        headerHidden = false;
-        // Remove appearing class after header animation completes
-        setTimeout(() => {
-          document.body.classList.remove('header-appearing');
-        }, 300);
+      // Skip if no movement
+      if (delta === 0) return;
+
+      // Determine current direction
+      const currentDirection = delta > 0 ? 'down' : 'up';
+
+      // Accumulate scroll in same direction, reset on direction change
+      if (currentDirection === lastDirection) {
+        scrollAccumulator += Math.abs(delta);
+      } else {
+        scrollAccumulator = Math.abs(delta);
+        lastDirection = currentDirection;
       }
 
       lastScrollY = currentScrollY;
+
+      // Only trigger after threshold reached (prevents momentum jitter)
+      if (scrollAccumulator < SCROLL_DELTA) return;
+
+      // Hide header when scrolling down past position threshold
+      if (currentDirection === 'down' && currentScrollY > scrollThreshold && !headerHidden) {
+        header.classList.add('header-hidden');
+        document.body.classList.add('header-hidden');
+        headerHidden = true;
+        scrollAccumulator = 0;
+      }
+      // Show header when scrolling up
+      else if (currentDirection === 'up' && headerHidden) {
+        header.classList.remove('header-hidden');
+        document.body.classList.remove('header-hidden');
+        headerHidden = false;
+        scrollAccumulator = 0;
+      }
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true });
