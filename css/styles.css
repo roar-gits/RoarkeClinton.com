@@ -3505,7 +3505,7 @@ input[type="submit"].nav-link-text.cta.simple {
   /* When stuck (scrolled past natural position) */
   .metrics-quick-nav.quick-nav-stuck {
     position: fixed;
-    top: 60px; /* Below header */
+    top: 95px; /* Below header (measured actual height) */
     left: 0;
     right: 0;
     width: 92%; /* Match post-container */
