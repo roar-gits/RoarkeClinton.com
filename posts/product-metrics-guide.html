@@ -574,13 +574,20 @@
       if (scrollingDown && currentScrollY > scrollThreshold && !headerHidden) {
         header.classList.add('header-hidden');
         document.body.classList.add('header-hidden');
+        document.body.classList.remove('header-appearing'); // Cleanup if mid-animation
         headerHidden = true;
       }
       // Show header when scrolling up
       else if (!scrollingDown && headerHidden) {
+        // Add appearing class to delay quick-nav, letting header slide in first
+        document.body.classList.add('header-appearing');
         header.classList.remove('header-hidden');
         document.body.classList.remove('header-hidden');
         headerHidden = false;
+        // Remove appearing class after header animation completes
+        setTimeout(() => {
+          document.body.classList.remove('header-appearing');
+        }, 300);
       }
 
       lastScrollY = currentScrollY;

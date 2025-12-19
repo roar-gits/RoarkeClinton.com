@@ -3518,6 +3518,11 @@ input[type="submit"].nav-link-text.cta.simple {
     top: 0;
   }
 
+  /* When header is appearing, delay quick-nav so header arrives first */
+  body.header-appearing .metrics-quick-nav {
+    transition-delay: 0.2s;
+  }
+
   /* Hide-on-scroll header */
   .navbar-symbol {
     transition: transform 0.3s ease;
