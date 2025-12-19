@@ -2960,7 +2960,7 @@ input[type="submit"].nav-link-text.cta.simple {
   font-size: var(--type-xs);
   font-weight: 500;
   color: var(--latte-subtext1);
-  background-color: transparent;
+  background-color: #fff;
   border: 1px solid var(--latte-surface1);
   border-radius: 20px;
   cursor: pointer;
@@ -3004,7 +3004,7 @@ input[type="submit"].nav-link-text.cta.simple {
 .metric-card {
   background-color: #fff;
   border-radius: 12px;
-  padding: var(--space-sm);
+  padding: 12px var(--space-sm) var(--space-sm);
   margin-bottom: 16px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   transition: opacity 0.3s ease, transform 0.3s ease;
