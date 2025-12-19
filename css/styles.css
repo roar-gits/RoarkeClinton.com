@@ -2927,7 +2927,7 @@ input[type="submit"].nav-link-text.cta.simple {
   display: flex;
   flex-direction: column;
   gap: 0;
-  margin-top: calc(12px - var(--space-md)); /* Pull up to reduce gap with title */
+  margin-top: calc(20px - var(--space-md)); /* Pull up to reduce gap with title */
   margin-bottom: var(--space-md);
   padding: 16px 20px;
   background-color: #fff;
@@ -3011,7 +3011,7 @@ input[type="submit"].nav-link-text.cta.simple {
   margin-bottom: 32px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  scroll-margin-top: 122px; /* header (~90px) + card gap (32px) - prev card hides under header */
+  scroll-margin-top: 130px; /* header (~90px) + card gap + buffer to fully hide prev card */
 }
 
 .metric-card ul {
