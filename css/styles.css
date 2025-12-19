@@ -3016,7 +3016,13 @@ input[type="submit"].nav-link-text.cta.simple {
 
 .metric-card h3 {
   font-size: var(--type-heading);
+  margin-top: 0;
   margin-bottom: 8px;
+}
+
+.metric-card > p:last-child,
+.metric-card > *:last-child p:last-child {
+  margin-bottom: 0;
 }
 
 .metric-card h4 {
