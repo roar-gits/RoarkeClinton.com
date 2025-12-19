@@ -3518,9 +3518,9 @@ input[type="submit"].nav-link-text.cta.simple {
     top: 0;
   }
 
-  /* When header is appearing, delay quick-nav so header arrives first */
+  /* When header is appearing, keep quick-nav visible above header during transition */
   body.header-appearing .metrics-quick-nav {
-    transition-delay: 0.2s;
+    z-index: 250; /* Above header's 200 during transition */
   }
 
   /* Hide-on-scroll header */
