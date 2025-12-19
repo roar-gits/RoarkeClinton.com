@@ -3104,6 +3104,25 @@ input[type="submit"].nav-link-text.cta.simple {
   margin: 16px 0 12px;
 }
 
+/* Left fade indicator when scrolled right */
+.metrics-quick-nav::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 100%;
+  background: linear-gradient(to left, transparent, var(--latte-base));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.metrics-quick-nav.scrolled-right::before {
+  opacity: 1;
+}
+
 .quick-nav-scroll {
   overflow-x: auto;
   overflow-y: hidden;
@@ -3137,16 +3156,34 @@ input[type="submit"].nav-link-text.cta.simple {
   transition: color 0.15s ease;
 }
 
-.quick-nav-item:hover,
-.quick-nav-item:active {
+.quick-nav-item:hover {
   color: var(--latte-maroon);
   background: none;
+}
+
+/* Active state for current visible metric */
+.quick-nav-item.active {
+  color: var(--latte-maroon);
+  font-weight: 500;
+}
+
+/* Tap feedback on mobile */
+.quick-nav-item:active {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+/* Dot dividers between items */
+.quick-nav-item:not(:last-child)::after {
+  content: '·';
+  margin-left: 12px;
+  color: var(--latte-overlay0);
 }
 
 .quick-nav-fade {
   position: absolute;
   top: 0;
-  right: 32px;
+  right: 28px; /* Align with toggle edge to prevent text sliver */
   width: 48px;
   height: 100%;
   background: linear-gradient(to right, transparent 0%, var(--latte-base) 70%);

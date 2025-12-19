@@ -589,6 +589,40 @@
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll);
 
+    // IntersectionObserver for auto-highlighting active metric in quick-nav
+    const quickNavScroll = document.querySelector('.quick-nav-scroll');
+    const metricCards = document.querySelectorAll('.metric-card');
+
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const cardId = entry.target.id;
+          // Update active state on quick-nav items
+          quickNavItems.querySelectorAll('.quick-nav-item').forEach(item => {
+            item.classList.toggle('active', item.dataset.target === cardId);
+          });
+          // Scroll active item into view horizontally
+          const activeItem = quickNavItems.querySelector('.quick-nav-item.active');
+          if (activeItem && quickNavScroll) {
+            activeItem.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          }
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '-80px 0px -40% 0px'
+    });
+
+    metricCards.forEach(card => cardObserver.observe(card));
+
+    // Left fade indicator when quick-nav is scrolled right
+    if (quickNavScroll) {
+      quickNavScroll.addEventListener('scroll', () => {
+        const isScrolledRight = quickNavScroll.scrollLeft > 10;
+        quickNav.classList.toggle('scrolled-right', isScrolledRight);
+      }, { passive: true });
+    }
+
     // Initial sidebar population
     updateSidebar();
 
