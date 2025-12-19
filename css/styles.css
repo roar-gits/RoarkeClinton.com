@@ -3004,7 +3004,7 @@ input[type="submit"].nav-link-text.cta.simple {
 .metric-card {
   background-color: #fff;
   border-radius: 12px;
-  padding: 4px var(--space-sm) 16px;
+  padding: 16px var(--space-sm) 20px;
   margin-bottom: 16px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   transition: opacity 0.3s ease, transform 0.3s ease;
