@@ -2934,7 +2934,7 @@ input[type="submit"].nav-link-text.cta.simple {
 
 @media screen and (min-width: 768px) {
   .metrics-controls {
-    margin-top: var(--space-sm);
+    margin-top: 8px;
   }
 }
 
@@ -3011,9 +3011,10 @@ input[type="submit"].nav-link-text.cta.simple {
   background-color: #fff;
   border-radius: 12px;
   padding: 20px var(--space-sm) 24px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  scroll-margin-top: 80px;
 }
 
 .metric-card ul {
@@ -3172,6 +3173,10 @@ input[type="submit"].nav-link-text.cta.simple {
     justify-content: flex-start;
     padding-top: 12px;
     border-top: 1px solid var(--latte-surface0);
+  }
+
+  .metric-card h3 {
+    font-size: clamp(1.5rem, 4vw + 1rem, 1.875rem);
   }
 }
 
