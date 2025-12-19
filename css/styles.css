@@ -3029,10 +3029,11 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 .metrics-sidebar {
-  position: fixed;
+  position: sticky;
   top: 120px;
-  left: max(20px, calc((100vw - 680px) / 2 - 180px));
-  width: 150px;
+  float: left;
+  width: 200px;
+  margin-left: calc(-200px - 40px);
   max-height: calc(100vh - 140px);
   overflow-y: auto;
 }
