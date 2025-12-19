@@ -2710,6 +2710,7 @@ input[type="submit"].nav-link-text.cta.simple {
   margin-bottom: var(--space-md);
 }
 
+
 .post-back-link {
   display: inline-flex;
   align-items: center;
@@ -2926,17 +2927,13 @@ input[type="submit"].nav-link-text.cta.simple {
   display: flex;
   flex-direction: column;
   gap: 0;
-  margin: var(--space-md) 0;
+  margin-top: calc(12px - var(--space-md)); /* Pull up to reduce gap with title */
+  margin-bottom: var(--space-md);
   padding: 16px 20px;
   background-color: #fff;
   border-radius: 12px;
 }
 
-@media screen and (min-width: 768px) {
-  .metrics-controls {
-    margin-top: 8px;
-  }
-}
 
 .controls-row {
   display: flex;
@@ -3014,7 +3011,7 @@ input[type="submit"].nav-link-text.cta.simple {
   margin-bottom: 32px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 122px; /* header (~90px) + card gap (32px) - prev card hides under header */
 }
 
 .metric-card ul {
@@ -3157,6 +3154,12 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 /* Responsive adjustments */
+@media screen and (max-width: 991px) {
+  .metric-card {
+    scroll-margin-top: 107px; /* tablet header (~75px) + gap */
+  }
+}
+
 @media screen and (max-width: 767px) {
   .controls-row {
     flex-direction: column;
@@ -3177,6 +3180,10 @@ input[type="submit"].nav-link-text.cta.simple {
 
   .metric-card h3 {
     font-size: clamp(1.5rem, 4vw + 1rem, 1.875rem);
+  }
+
+  .metric-card {
+    scroll-margin-top: 92px; /* mobile header (~60px) + gap */
   }
 }
 
