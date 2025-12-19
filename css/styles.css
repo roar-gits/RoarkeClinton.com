@@ -3124,21 +3124,23 @@ input[type="submit"].nav-link-text.cta.simple {
 
 .quick-nav-item {
   flex-shrink: 0;
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  background: var(--latte-surface0);
-  color: var(--latte-text);
+  padding: 0 12px;
+  background: none;
   border: none;
+  border-radius: 0;
+  font-size: var(--type-body-nav);
+  font-weight: 400;
+  color: var(--latte-text);
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+  transition: color 0.15s ease;
 }
 
 .quick-nav-item:hover,
 .quick-nav-item:active {
-  background: var(--latte-surface1);
+  color: var(--latte-maroon);
+  background: none;
 }
 
 .quick-nav-fade {
@@ -3147,7 +3149,7 @@ input[type="submit"].nav-link-text.cta.simple {
   right: 32px;
   width: 48px;
   height: 100%;
-  background: linear-gradient(to right, transparent 0%, #fff 70%);
+  background: linear-gradient(to right, transparent 0%, var(--latte-base) 70%);
   pointer-events: none;
   transition: opacity 0.2s ease;
 }
@@ -3162,12 +3164,12 @@ input[type="submit"].nav-link-text.cta.simple {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  border: 1px solid var(--latte-surface1);
-  border-radius: 50%;
+  background: none;
+  border: none;
+  border-radius: 0;
   cursor: pointer;
   color: var(--latte-subtext0);
-  transition: transform 0.2s ease, color 0.15s ease;
+  transition: color 0.15s ease;
 }
 
 .quick-nav-toggle:hover {
