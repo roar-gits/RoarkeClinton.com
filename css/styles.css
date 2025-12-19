@@ -3023,22 +3023,17 @@ input[type="submit"].nav-link-text.cta.simple {
   transform: translateY(-10px);
 }
 
-/* Metrics Layout - Two Column with Sidebar */
-.post-page:has(.metrics-layout) .post-container {
-  max-width: 920px;
-}
-
+/* Metrics Layout with Floating Sidebar */
 .metrics-layout {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 32px;
+  position: relative;
 }
 
 .metrics-sidebar {
-  position: sticky;
-  top: 100px;
-  height: fit-content;
-  max-height: calc(100vh - 120px);
+  position: fixed;
+  top: 120px;
+  left: max(20px, calc((100vw - 680px) / 2 - 180px));
+  width: 150px;
+  max-height: calc(100vh - 140px);
   overflow-y: auto;
 }
 
@@ -3071,7 +3066,7 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 .metrics-main {
-  min-width: 0;
+  width: 100%;
 }
 
 /* Tag Description - Educational context for each filter */
@@ -3246,14 +3241,6 @@ input[type="submit"].nav-link-text.cta.simple {
   .post-container {
     width: 90%;
     padding-top: calc(var(--space-xl) * 0.8);
-  }
-
-  .post-page:has(.metrics-layout) .post-container {
-    max-width: 680px;
-  }
-
-  .metrics-layout {
-    display: block;
   }
 
   .metrics-sidebar {
