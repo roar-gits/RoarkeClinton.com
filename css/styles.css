@@ -2976,6 +2976,12 @@ input[type="submit"].nav-link-text.cta.simple {
   border-color: var(--latte-surface2);
 }
 
+.filter-btn:focus-visible,
+.sort-btn:focus-visible {
+  outline: 2px solid var(--latte-sapphire);
+  outline-offset: 2px;
+}
+
 .filter-btn.active {
   background-color: var(--latte-sapphire);
   color: white;
