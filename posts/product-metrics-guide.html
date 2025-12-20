@@ -658,11 +658,15 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const cardId = entry.target.id;
-          // Update active state on quick-nav items
+          // Update active state on quick-nav items (mobile)
           quickNavItems.querySelectorAll('.quick-nav-item').forEach(item => {
             item.classList.toggle('active', item.dataset.target === cardId);
           });
-          // Scroll active item into view horizontally
+          // Update active state on sidebar items (desktop)
+          sidebarNav.querySelectorAll('.metrics-nav-item').forEach(item => {
+            item.classList.toggle('active', item.dataset.target === cardId);
+          });
+          // Scroll active item into view horizontally (mobile quick-nav)
           const activeItem = quickNavItems.querySelector('.quick-nav-item.active');
           if (activeItem && quickNavScroll) {
             activeItem.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
