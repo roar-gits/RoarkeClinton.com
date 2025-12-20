@@ -74,14 +74,14 @@
       <div class="post-content">
         <div class="metrics-controls">
           <div class="controls-row">
-            <div class="filter-group">
-              <button class="filter-btn active" data-filter="all">All</button>
-              <button class="filter-btn" data-filter="growth">Growth</button>
-              <button class="filter-btn" data-filter="engagement">Engagement</button>
-              <button class="filter-btn" data-filter="retention">Retention</button>
-              <button class="filter-btn" data-filter="monetization">Monetization</button>
-              <button class="filter-btn" data-filter="leading">Leading</button>
-              <button class="filter-btn" data-filter="health">Health</button>
+            <div class="filter-group" role="group" aria-label="Filter metrics by category">
+              <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter-btn" data-filter="growth" aria-pressed="false">Growth</button>
+              <button class="filter-btn" data-filter="engagement" aria-pressed="false">Engagement</button>
+              <button class="filter-btn" data-filter="retention" aria-pressed="false">Retention</button>
+              <button class="filter-btn" data-filter="monetization" aria-pressed="false">Monetization</button>
+              <button class="filter-btn" data-filter="leading" aria-pressed="false">Leading</button>
+              <button class="filter-btn" data-filter="health" aria-pressed="false">Health</button>
             </div>
           </div>
           <div class="tag-description" aria-live="polite"></div>
@@ -444,9 +444,13 @@
     // Filter functionality
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Update active state
-        filterBtns.forEach(b => b.classList.remove('active'));
+        // Update active state and aria-pressed
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
 
         currentFilter = btn.dataset.filter;
         applyFilter();
