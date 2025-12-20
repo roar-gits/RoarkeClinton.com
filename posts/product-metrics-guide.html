@@ -74,14 +74,14 @@
       <div class="post-content">
         <div class="metrics-controls">
           <div class="controls-row">
-            <div class="filter-group">
-              <button class="filter-btn active" data-filter="all">All</button>
-              <button class="filter-btn" data-filter="growth">Growth</button>
-              <button class="filter-btn" data-filter="engagement">Engagement</button>
-              <button class="filter-btn" data-filter="retention">Retention</button>
-              <button class="filter-btn" data-filter="monetization">Monetization</button>
-              <button class="filter-btn" data-filter="leading">Leading</button>
-              <button class="filter-btn" data-filter="health">Health</button>
+            <div class="filter-group" role="group" aria-label="Filter metrics by category">
+              <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter-btn" data-filter="growth" aria-pressed="false">Growth</button>
+              <button class="filter-btn" data-filter="engagement" aria-pressed="false">Engagement</button>
+              <button class="filter-btn" data-filter="retention" aria-pressed="false">Retention</button>
+              <button class="filter-btn" data-filter="monetization" aria-pressed="false">Monetization</button>
+              <button class="filter-btn" data-filter="leading" aria-pressed="false">Leading</button>
+              <button class="filter-btn" data-filter="health" aria-pressed="false">Health</button>
             </div>
           </div>
           <div class="tag-description" aria-live="polite"></div>
@@ -394,6 +394,7 @@
     const quickNavToggle = document.querySelector('.quick-nav-toggle');
 
     let currentFilter = 'all';
+    const pendingHideTimeouts = new Map(); // Track pending hide animations to prevent race conditions
 
     // Tag descriptions - educational context for each filter
     const tagDescriptions = {
@@ -444,9 +445,13 @@
     // Filter functionality
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Update active state
-        filterBtns.forEach(b => b.classList.remove('active'));
+        // Update active state and aria-pressed
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
 
         currentFilter = btn.dataset.filter;
         applyFilter();
@@ -478,6 +483,12 @@
 
     function applyFilter() {
       cards.forEach(card => {
+        // Cancel any pending hide timeout for this card
+        if (pendingHideTimeouts.has(card)) {
+          clearTimeout(pendingHideTimeouts.get(card));
+          pendingHideTimeouts.delete(card);
+        }
+
         const tags = card.dataset.tags.split(',');
         const shouldShow = currentFilter === 'all' || tags.includes(currentFilter);
 
@@ -486,9 +497,11 @@
           card.classList.remove('fade-out');
         } else {
           card.classList.add('fade-out');
-          setTimeout(() => {
+          const timeoutId = setTimeout(() => {
             card.classList.add('hidden');
+            pendingHideTimeouts.delete(card);
           }, 300);
+          pendingHideTimeouts.set(card, timeoutId);
         }
       });
     }
@@ -505,7 +518,7 @@
       sidebarNav.innerHTML = visibleCards.map(card => {
         const name = card.dataset.name;
         const id = card.id;
-        return `<li class="metrics-nav-item" data-target="${id}">${name}</li>`;
+        return `<li class="metrics-nav-item" data-target="${id}" tabindex="0" role="button">${name}</li>`;
       }).join('');
 
       // Update mobile quick-nav
@@ -519,6 +532,18 @@
     // Click handler for sidebar navigation
     sidebarNav.addEventListener('click', (e) => {
       if (e.target.classList.contains('metrics-nav-item')) {
+        const targetId = e.target.dataset.target;
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+
+    // Keyboard handler for sidebar navigation (Enter/Space)
+    sidebarNav.addEventListener('keydown', (e) => {
+      if (e.target.classList.contains('metrics-nav-item') && (e.key === 'Enter' || e.key === ' ')) {
+        e.preventDefault();
         const targetId = e.target.dataset.target;
         const target = document.getElementById(targetId);
         if (target) {
@@ -658,11 +683,15 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const cardId = entry.target.id;
-          // Update active state on quick-nav items
+          // Update active state on quick-nav items (mobile)
           quickNavItems.querySelectorAll('.quick-nav-item').forEach(item => {
             item.classList.toggle('active', item.dataset.target === cardId);
           });
-          // Scroll active item into view horizontally
+          // Update active state on sidebar items (desktop)
+          sidebarNav.querySelectorAll('.metrics-nav-item').forEach(item => {
+            item.classList.toggle('active', item.dataset.target === cardId);
+          });
+          // Scroll active item into view horizontally (mobile quick-nav)
           const activeItem = quickNavItems.querySelector('.quick-nav-item.active');
           if (activeItem && quickNavScroll) {
             activeItem.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
