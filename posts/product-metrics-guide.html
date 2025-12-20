@@ -394,6 +394,7 @@
     const quickNavToggle = document.querySelector('.quick-nav-toggle');
 
     let currentFilter = 'all';
+    const pendingHideTimeouts = new Map(); // Track pending hide animations to prevent race conditions
 
     // Tag descriptions - educational context for each filter
     const tagDescriptions = {
@@ -482,6 +483,12 @@
 
     function applyFilter() {
       cards.forEach(card => {
+        // Cancel any pending hide timeout for this card
+        if (pendingHideTimeouts.has(card)) {
+          clearTimeout(pendingHideTimeouts.get(card));
+          pendingHideTimeouts.delete(card);
+        }
+
         const tags = card.dataset.tags.split(',');
         const shouldShow = currentFilter === 'all' || tags.includes(currentFilter);
 
@@ -490,9 +497,11 @@
           card.classList.remove('fade-out');
         } else {
           card.classList.add('fade-out');
-          setTimeout(() => {
+          const timeoutId = setTimeout(() => {
             card.classList.add('hidden');
+            pendingHideTimeouts.delete(card);
           }, 300);
+          pendingHideTimeouts.set(card, timeoutId);
         }
       });
     }
