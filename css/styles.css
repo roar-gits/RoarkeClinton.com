@@ -3170,13 +3170,13 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 .quick-nav-item:hover {
-  color: var(--latte-maroon);
+  color: var(--latte-sapphire);
   background: none;
 }
 
 /* Active state for current visible metric */
 .quick-nav-item.active {
-  color: var(--latte-maroon);
+  color: var(--latte-sapphire);
   font-weight: 500;
 }
 
@@ -3184,13 +3184,6 @@ input[type="submit"].nav-link-text.cta.simple {
 .quick-nav-item:active {
   opacity: 0.7;
   transform: scale(0.98);
-}
-
-/* Dot dividers between items */
-.quick-nav-item:not(:last-child)::after {
-  content: '·';
-  margin-left: 12px;
-  color: var(--latte-overlay0);
 }
 
 .quick-nav-fade {
@@ -3230,9 +3223,11 @@ input[type="submit"].nav-link-text.cta.simple {
   transition: transform 0.2s ease;
 }
 
-/* Expanded state */
+/* Expanded state - vertical list */
 .metrics-quick-nav.expanded .quick-nav-items {
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
   padding-right: 0;
 }
 
