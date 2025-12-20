@@ -505,7 +505,7 @@
       sidebarNav.innerHTML = visibleCards.map(card => {
         const name = card.dataset.name;
         const id = card.id;
-        return `<li class="metrics-nav-item" data-target="${id}">${name}</li>`;
+        return `<li class="metrics-nav-item" data-target="${id}" tabindex="0" role="button">${name}</li>`;
       }).join('');
 
       // Update mobile quick-nav
@@ -519,6 +519,18 @@
     // Click handler for sidebar navigation
     sidebarNav.addEventListener('click', (e) => {
       if (e.target.classList.contains('metrics-nav-item')) {
+        const targetId = e.target.dataset.target;
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+
+    // Keyboard handler for sidebar navigation (Enter/Space)
+    sidebarNav.addEventListener('keydown', (e) => {
+      if (e.target.classList.contains('metrics-nav-item') && (e.key === 'Enter' || e.key === ' ')) {
+        e.preventDefault();
         const targetId = e.target.dataset.target;
         const target = document.getElementById(targetId);
         if (target) {

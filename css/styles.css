@@ -3088,6 +3088,13 @@ input[type="submit"].nav-link-text.cta.simple {
   color: var(--latte-sapphire);
 }
 
+.metrics-nav-item:focus-visible {
+  color: var(--latte-sapphire);
+  outline: 2px solid var(--latte-sapphire);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .metrics-nav-item.active {
   color: var(--latte-sapphire);
   font-weight: 600;
