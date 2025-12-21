@@ -89,6 +89,12 @@
 
         <!-- Mobile sticky quick navigation -->
         <div class="metrics-quick-nav">
+          <button class="back-to-top-btn" aria-label="Back to top">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+            <span>Top</span>
+          </button>
           <div class="quick-nav-scroll">
             <div class="quick-nav-items">
               <!-- Populated by JS -->
@@ -573,6 +579,37 @@
       quickNavToggle.setAttribute('aria-label', isExpanded ? 'Collapse metrics list' : 'Show all metrics');
     });
 
+    // Back to Top functionality
+    const backToTopBtn = document.querySelector('.back-to-top-btn');
+
+    // Create desktop sidebar back-to-top button
+    const sidebarBackToTop = document.createElement('button');
+    sidebarBackToTop.className = 'sidebar-back-to-top';
+    sidebarBackToTop.setAttribute('aria-label', 'Back to top');
+    sidebarBackToTop.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+      <span>Top</span>
+    `;
+    sidebarNav.parentNode.insertBefore(sidebarBackToTop, sidebarNav);
+
+    // Scroll to top function
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Collapse quick-nav if expanded
+      quickNav.classList.remove('expanded');
+      quickNavToggle.setAttribute('aria-expanded', 'false');
+      quickNavToggle.setAttribute('aria-label', 'Show all metrics');
+    }
+
+    // Click handlers for back-to-top buttons
+    backToTopBtn.addEventListener('click', scrollToTop);
+    sidebarBackToTop.addEventListener('click', scrollToTop);
+
+    // Desktop scroll threshold for showing sidebar back-to-top
+    const desktopScrollThreshold = 300;
+
     // Mobile header hide-on-scroll with delta threshold
     const header = document.querySelector('.navbar-symbol');
     let lastScrollY = 0;
@@ -601,8 +638,16 @@
     });
 
     function handleScroll() {
-      // Only apply on mobile
+      const currentScrollY = window.scrollY;
+
+      // Desktop: show/hide sidebar back-to-top based on scroll position
       if (window.innerWidth > mobileBreakpoint) {
+        if (currentScrollY > desktopScrollThreshold) {
+          sidebarBackToTop.classList.add('visible');
+        } else {
+          sidebarBackToTop.classList.remove('visible');
+        }
+
         if (headerHidden) {
           header.classList.remove('header-hidden');
           document.body.classList.remove('header-hidden');
@@ -618,8 +663,6 @@
         lastDirection = null;
         return;
       }
-
-      const currentScrollY = window.scrollY;
 
       // Check if quick-nav should be stuck (scrolled past its original position)
       const stickThreshold = quickNavOriginalTop - HEADER_HEIGHT;

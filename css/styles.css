@@ -3197,6 +3197,81 @@ input[type="submit"].nav-link-text.cta.simple {
   transition: opacity 0.2s ease;
 }
 
+/* Back to Top Button - Hidden by default, visible when scrolled past quick-nav */
+.back-to-top-btn {
+  display: none; /* Hidden until quick-nav is stuck */
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding: 0 12px 0 0;
+  margin-right: 8px;
+  background: none;
+  border: none;
+  border-right: 1px solid var(--latte-surface1);
+  font-size: var(--type-body-nav);
+  font-weight: 500;
+  color: var(--latte-subtext0);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s ease, opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0;
+  transform: translateX(-8px);
+}
+
+.back-to-top-btn svg {
+  flex-shrink: 0;
+}
+
+.back-to-top-btn:hover {
+  color: var(--latte-sapphire);
+}
+
+.back-to-top-btn:active {
+  opacity: 0.7;
+  transform: scale(0.96) translateX(0);
+}
+
+/* Show back-to-top when quick-nav is stuck (scrolled past original position) */
+.metrics-quick-nav.quick-nav-stuck .back-to-top-btn {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Desktop sidebar back-to-top */
+.sidebar-back-to-top {
+  display: none; /* Hidden until scrolled */
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--latte-surface1);
+  font-size: var(--type-body-nav);
+  font-weight: 500;
+  color: var(--latte-subtext0);
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: left;
+  transition: color 0.15s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.sidebar-back-to-top svg {
+  flex-shrink: 0;
+}
+
+.sidebar-back-to-top:hover {
+  color: var(--latte-sapphire);
+}
+
+.sidebar-back-to-top.visible {
+  display: flex;
+  opacity: 1;
+}
+
 .quick-nav-toggle {
   position: absolute;
   top: 50%;
