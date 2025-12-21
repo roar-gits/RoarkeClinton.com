@@ -541,6 +541,7 @@
         const targetId = e.target.dataset.target;
         const target = document.getElementById(targetId);
         if (target) {
+          markProgrammaticScroll();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
@@ -553,6 +554,7 @@
         const targetId = e.target.dataset.target;
         const target = document.getElementById(targetId);
         if (target) {
+          markProgrammaticScroll();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
@@ -564,6 +566,7 @@
         const targetId = e.target.dataset.target;
         const target = document.getElementById(targetId);
         if (target) {
+          markProgrammaticScroll();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           // Collapse after navigation
           quickNav.classList.remove('expanded');
@@ -596,6 +599,7 @@
 
     // Scroll to top function
     function scrollToTop() {
+      markProgrammaticScroll();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       // Collapse quick-nav if expanded
       quickNav.classList.remove('expanded');
@@ -620,6 +624,24 @@
     let scrollAccumulator = 0;
     let lastDirection = null;
     const HEADER_HEIGHT = 95; // Measured actual header height on mobile
+
+    // Track programmatic scrolls (link clicks) - don't show header on these
+    let isProgrammaticScroll = false;
+    let programmaticScrollTimer = null;
+
+    // Mark scroll as programmatic (from link click, not finger drag)
+    function markProgrammaticScroll() {
+      isProgrammaticScroll = true;
+      // Clear any existing timer
+      if (programmaticScrollTimer) {
+        clearTimeout(programmaticScrollTimer);
+      }
+      // Clear flag after smooth scroll animation completes (~500ms)
+      programmaticScrollTimer = setTimeout(() => {
+        isProgrammaticScroll = false;
+        programmaticScrollTimer = null;
+      }, 600);
+    }
 
     // Create placeholder for when quick-nav becomes fixed
     const quickNavPlaceholder = document.createElement('div');
@@ -706,8 +728,8 @@
         headerHidden = true;
         scrollAccumulator = 0;
       }
-      // Show header when scrolling up
-      else if (currentDirection === 'up' && headerHidden) {
+      // Show header when scrolling up (only on finger drag, not programmatic scroll)
+      else if (currentDirection === 'up' && headerHidden && !isProgrammaticScroll) {
         header.classList.remove('header-hidden');
         document.body.classList.remove('header-hidden');
         headerHidden = false;
@@ -734,10 +756,10 @@
           sidebarNav.querySelectorAll('.metrics-nav-item').forEach(item => {
             item.classList.toggle('active', item.dataset.target === cardId);
           });
-          // Scroll active item into view horizontally (mobile quick-nav)
+          // Scroll active item into view horizontally (mobile quick-nav) - align left
           const activeItem = quickNavItems.querySelector('.quick-nav-item.active');
           if (activeItem && quickNavScroll) {
-            activeItem.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            activeItem.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
           }
         }
       });
