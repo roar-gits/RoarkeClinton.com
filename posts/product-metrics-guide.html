@@ -671,6 +671,7 @@
     // Track quick-nav's original position (calculated after page load)
     let quickNavOriginalTop = quickNav.offsetTop;
     let quickNavStuck = false;
+    let activeStatesCleared = false; // Track if we've cleared active states at top
 
     // Recalculate on resize
     window.addEventListener('resize', () => {
@@ -681,6 +682,16 @@
 
     function handleScroll() {
       const currentScrollY = window.scrollY;
+
+      // Clear active states when at the very top (applies to both desktop and mobile)
+      if (currentScrollY <= 5) {
+        if (!activeStatesCleared) {
+          clearActiveStates();
+          activeStatesCleared = true;
+        }
+      } else {
+        activeStatesCleared = false;
+      }
 
       // Desktop: show/hide sidebar back-to-top based on scroll position
       if (window.innerWidth > mobileBreakpoint) {
@@ -725,11 +736,6 @@
         header.classList.remove('header-hidden');
         document.body.classList.remove('header-hidden');
         headerHidden = false;
-      }
-
-      // Clear active states when at the very top (no metric card is primary)
-      if (currentScrollY <= 5) {
-        clearActiveStates();
       }
 
       const delta = currentScrollY - lastScrollY;
