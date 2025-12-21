@@ -605,6 +605,16 @@
       quickNav.classList.remove('expanded');
       quickNavToggle.setAttribute('aria-expanded', 'false');
       quickNavToggle.setAttribute('aria-label', 'Show all metrics');
+      // Clear active states and show header after scroll animation completes
+      setTimeout(() => {
+        clearActiveStates();
+        // Ensure header is visible when at top
+        if (window.scrollY <= 5 && headerHidden) {
+          header.classList.remove('header-hidden');
+          document.body.classList.remove('header-hidden');
+          headerHidden = false;
+        }
+      }, 650); // Slightly after programmatic scroll timer
     }
 
     // Click handlers for back-to-top buttons
@@ -641,6 +651,16 @@
         isProgrammaticScroll = false;
         programmaticScrollTimer = null;
       }, 600);
+    }
+
+    // Clear all active states from nav items
+    function clearActiveStates() {
+      quickNavItems.querySelectorAll('.quick-nav-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      sidebarNav.querySelectorAll('.metrics-nav-item').forEach(item => {
+        item.classList.remove('active');
+      });
     }
 
     // Create placeholder for when quick-nav becomes fixed
@@ -698,6 +718,18 @@
         quickNavStuck = false;
         // Recalculate original position
         quickNavOriginalTop = quickNav.offsetTop;
+      }
+
+      // Show header when at the very top of the page (even after programmatic scroll)
+      if (currentScrollY <= 5 && headerHidden) {
+        header.classList.remove('header-hidden');
+        document.body.classList.remove('header-hidden');
+        headerHidden = false;
+      }
+
+      // Clear active states when at the very top (no metric card is primary)
+      if (currentScrollY <= 5) {
+        clearActiveStates();
       }
 
       const delta = currentScrollY - lastScrollY;
