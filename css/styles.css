@@ -1696,16 +1696,16 @@ input[type="submit"].nav-link-text.cta.simple {
   }
 
   .page-title.home-pg {
-    text-align: center;
+    text-align: left;
   }
 
   .page-sub-message {
-    text-align: center;
+    text-align: left;
   }
 
   .contact-card-wrapper {
-    text-align: center;
-    place-items: center;
+    text-align: left;
+    place-items: start;
     width: 100%;
   }
 
@@ -2007,15 +2007,15 @@ input[type="submit"].nav-link-text.cta.simple {
   }
 
   .content-wrapper.column.title {
-    align-self: center;
+    align-self: flex-start;
   }
 
   .page-title.home-pg {
-    text-align: center;
+    text-align: left;
   }
 
   .page-sub-message {
-    text-align: center;
+    text-align: left;
     line-height: 1.6;
   }
 
@@ -2052,7 +2052,7 @@ input[type="submit"].nav-link-text.cta.simple {
   }
 
   .contact-card-wrapper {
-    place-items: center;
+    place-items: start;
   }
 
   .content-wrapper.column.profile-photo {
