@@ -1575,7 +1575,7 @@ input[type="submit"].nav-link-text.cta.simple {
   }
 
   .section-title.major-section {
-    text-align: center;
+    text-align: left;
     flex-flow: column;
     justify-content: flex-start;
     align-items: stretch;
@@ -1688,7 +1688,12 @@ input[type="submit"].nav-link-text.cta.simple {
   }
 
   .section-title {
-    text-align: center;
+    text-align: left;
+  }
+
+  .block.centered {
+    text-align: left;
+    align-items: flex-start;
   }
 
   .page-title {
@@ -1721,16 +1726,21 @@ input[type="submit"].nav-link-text.cta.simple {
   }
 
   .companylogowrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 3vw;
     margin-top: clamp(16px, 3vw, 30px);
-    padding: 0 5%;
+    padding: 0;
+    width: 100%;
   }
 
   .brandlogos {
-    width: 18vw;
+    width: calc((100% - 6vw) / 3);
     max-width: none;
-    height: 9vw;
+    height: auto;
     max-height: none;
-    margin: 2.5vw 2vw;
+    margin: 0;
   }
 
   .vw.horizontal-spreader {
@@ -1746,7 +1756,7 @@ input[type="submit"].nav-link-text.cta.simple {
   }
 
   .rte-article.home-pg {
-    text-align: center;
+    text-align: left;
   }
 
   .rte-article.home-pg.bullets {
@@ -1806,6 +1816,7 @@ input[type="submit"].nav-link-text.cta.simple {
   }
 
   .competencie {
+    text-align: left;
     padding-right: 10px;
   }
 
@@ -1822,6 +1833,8 @@ input[type="submit"].nav-link-text.cta.simple {
   }
 
   .section-title.major-section {
+    text-align: left;
+    justify-content: flex-start;
     width: 100%;
     display: inline-flex;
   }
