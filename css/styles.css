@@ -3065,6 +3065,141 @@ input[type="submit"].nav-link-text.cta.simple {
 }
 
 /* --------------------------------------------------------------------------
+   Journey Infographic Page (Full Version)
+   -------------------------------------------------------------------------- */
+
+.journey-infographic {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: var(--space-lg) 0;
+}
+
+.journey-stage-card {
+  background: #fff;
+  border: 1px solid var(--latte-surface0);
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+}
+
+.stage-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.stage-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--type-xs);
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.stage-title {
+  font-size: var(--type-md);
+  font-weight: 600;
+  color: var(--latte-text);
+  margin: 0;
+}
+
+/* Stage color variants */
+.stage-acquisition .stage-number { background-color: #8839ef; }
+.stage-activation .stage-number { background-color: #1e66f5; }
+.stage-retention .stage-number { background-color: #40a02b; }
+.stage-revenue .stage-number { background-color: #df8e1d; }
+.stage-referral .stage-number { background-color: #e64553; }
+
+.stage-question {
+  font-size: var(--type-sm);
+  font-weight: 600;
+  color: var(--latte-mauve);
+  margin-bottom: 8px;
+}
+
+.stage-description {
+  font-size: var(--type-sm);
+  color: var(--latte-subtext0);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.stage-metrics-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.metric-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  background-color: var(--latte-surface0);
+  color: var(--latte-text);
+  border-radius: 4px;
+}
+
+.journey-connector {
+  width: 2px;
+  height: 24px;
+  background-color: var(--latte-surface1);
+  margin: 0 auto;
+}
+
+/* Cross-filter cards */
+.cross-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin: var(--space-md) 0;
+}
+
+.cross-filter-card {
+  background: linear-gradient(135deg, #f8f9fc 0%, #fff 100%);
+  border: 1px solid var(--latte-surface0);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.cross-filter-card h3 {
+  font-size: var(--type-sm);
+  font-weight: 600;
+  color: var(--latte-text);
+  margin: 0 0 8px 0;
+}
+
+.cross-filter-card p {
+  font-size: var(--type-sm);
+  color: var(--latte-subtext0);
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+}
+
+.filter-examples {
+  font-size: var(--type-xs);
+  color: var(--latte-subtext1);
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 767px) {
+  .journey-stage-card {
+    padding: 20px;
+  }
+
+  .stage-title {
+    font-size: var(--type-sm);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Metrics Catalog - Filter/Sort Controls
    -------------------------------------------------------------------------- */
 
