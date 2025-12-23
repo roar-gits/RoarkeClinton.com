@@ -3972,3 +3972,87 @@ input[type="submit"].nav-link-text.cta.simple {
     font-size: var(--type-small);
   }
 }
+
+/* ===========================================
+   MOBILE SWIPE NAVIGATION
+   =========================================== */
+
+/* Swipe indicator - appears at screen edge during swipe */
+.swipe-indicator {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.swipe-indicator.visible {
+  opacity: 1;
+}
+
+.swipe-indicator.left {
+  left: 0;
+}
+
+.swipe-indicator.right {
+  right: 0;
+}
+
+.swipe-indicator-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 12px;
+  background: var(--latte-surface0);
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.swipe-indicator.right .swipe-indicator-content {
+  border-radius: 12px 0 0 12px;
+}
+
+.swipe-indicator-arrow {
+  font-size: 24px;
+  color: var(--cta);
+  font-weight: 700;
+}
+
+.swipe-indicator-text {
+  font-size: 11px;
+  color: var(--latte-text);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  max-height: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Page exit animation */
+.swipe-navigating {
+  animation: swipeOut 0.15s ease-out forwards;
+}
+
+@keyframes swipeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0.5;
+    transform: translateX(0);
+  }
+}
+
+/* Only show swipe navigation on mobile */
+@media screen and (min-width: 768px) {
+  .swipe-indicator {
+    display: none !important;
+  }
+}
