@@ -133,6 +133,7 @@
         </ul>
         <h4>In practice</h4>
         <p> After launching push notifications, a productivity app saw DAU jump 40% in week one. But sessions per user dropped from 3.2 to 1.8. <strong>Users opened the app more but did less each time.</strong> The team shifted to weekly digest notifications, which recovered session depth while maintaining the DAU gain.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-nday">Retention</a> — viral spikes mean nothing without retention.</p>
         </section>
 
         <section class="metric-card" id="metric-spu" data-tags="acquisition" data-name="Sessions Per User">
@@ -163,6 +164,7 @@
         </ul>
         <h4>In practice</h4>
         <p> An e-commerce site simplified checkout from 5 pages to 1 and saw conversion jump from 2.1% to 3.4%. But average order value dropped 15%. <strong>Users were impulse-buying smaller items.</strong> They added a "frequently bought together" prompt, which recovered AOV while keeping most of the conversion gain.</p>
+        <p class="metric-tools"><strong>Tools:</strong> Session Recording (Hotjar, FullStory), Funnel Analysis.</p>
         </section>
 
         <section class="metric-card" id="metric-far" data-tags="acquisition,leading" data-name="Feature Adoption Rate">
@@ -185,7 +187,12 @@
         <p><em>Total cost to acquire a paying customer. The key ratio: LTV:CAC should be 3:1 or better.</em></p>
         <blockquote>CAC = (Sales + Marketing costs) / New customers acquired</blockquote>
         <h4>What it measures</h4>
-        <p> Total cost to acquire a new paying customer, including marketing spend, sales salaries, tools, and overhead allocated to acquisition. Decide whether to include just direct costs (blended CAC) or fully-loaded costs including salaries. Note: no standardized calculation method exists—companies calculate CAC differently, making benchmarking imprecise.</p>
+        <p> Total cost to acquire a new paying customer, including marketing spend, sales salaries, tools, and overhead allocated to acquisition. Note: no standardized calculation method exists—companies calculate CAC differently, making benchmarking imprecise.</p>
+        <h4>Calculation methods</h4>
+        <ul>
+          <li><strong>Paid CAC</strong>: Ad spend / New customers via paid channels. Best for measuring channel efficiency and optimizing specific acquisition campaigns.</li>
+          <li><strong>Blended CAC</strong>: Total acquisition cost / Total new customers. Best for measuring overall business health and unit economics across all channels.</li>
+        </ul>
         <h4>Industry benchmarks</h4>
         <ul>
           <li><strong>SaaS (Overall)</strong>: $702 average</li>
@@ -225,6 +232,8 @@
         <blockquote>Activation Rate = (Users who activated / Total new users) × 100%</blockquote>
         <h4>What it measures</h4>
         <p> Percentage of new users who complete a predefined action that correlates with long-term retention. The "activation event" varies by product. Famous examples: <strong>Facebook</strong> (adding 7 friends within 10 days), <strong>Dropbox</strong> (uploading first file), <strong>Slack</strong> (2,000 messages sent by team), <strong>Twitter</strong> (following 30 users). Activation is the only part of your product that 100% of users touch—poor activation cascades into poor retention regardless of product quality.</p>
+        <h4>Finding your activation metric</h4>
+        <p> Use regression analysis to identify the user action that most strongly correlates with long-term retention. This "magic number" becomes your activation goal—like Facebook's discovery that users who added 7 friends in 10 days retained dramatically better than those who didn't.</p>
         <h4>What to watch</h4>
         <ul>
           <li><strong>Above 60%</strong>: Strong activation. You're converting most new users to engaged users. Exceptional products reach 80%+.</li>
@@ -232,6 +241,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A project management tool defined activation as "create first project." After reducing the setup flow from 8 steps to 3, activation rose from 34% to 52%. But when they analyzed retention, <strong>users who also invited a teammate had 3× better retention</strong>, so they added teammate invitation to their activation definition.</p>
+        <p class="metric-tools"><strong>Tools:</strong> User Onboarding Flows, Progress Bars, A/B Testing.</p>
         </section>
 
         <section class="metric-card" id="metric-ttv" data-tags="activation,leading" data-name="Time-to-Value">
@@ -332,6 +342,8 @@
         </ul>
         <h4>In practice</h4>
         <p> An online learning platform saw monthly churn spike from 6% to 11% after a price increase. But when they segmented by engagement, high-engagement users actually churned less. <strong>The spike came from "zombie" subscribers who rarely used the product.</strong> The team let them churn and focused on converting engaged free users instead.</p>
+        <p class="metric-tools"><strong>Tools:</strong> Cohort Analysis, Exit Surveys, Churn Prediction Models.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-activation">Activation Rate</a> — poor activation leads to poor retention.</p>
         </section>
 
         <section class="metric-card" id="metric-crr" data-tags="retention,health" data-name="Customer Retention Rate">
@@ -478,6 +490,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A B2C subscription had 2.4:1 LTV:CAC, breakeven territory. They couldn't profitably scale paid acquisition. <strong>Instead of cutting CAC, they added a premium tier that increased average LTV by 40%, pushing the ratio to 3.4:1.</strong> The same acquisition spend now generated profitable returns.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-payback">CAC Payback Period</a>, <a href="#metric-cac">Customer Acquisition Cost</a>.</p>
         </section>
 
         <section class="metric-card" id="metric-payback" data-tags="revenue,health" data-name="CAC Payback Period">
