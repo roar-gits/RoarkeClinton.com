@@ -1068,6 +1068,63 @@
     // Initial sidebar population
     updateSidebar();
 
+    // Share link functionality - inject buttons and handle copy
+    function addShareButtons() {
+      const linkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+      </svg>`;
+
+      cards.forEach(card => {
+        const btn = document.createElement('button');
+        btn.className = 'share-link-btn';
+        btn.setAttribute('aria-label', 'Copy link to this metric');
+        btn.innerHTML = linkIcon;
+        btn.dataset.cardId = card.id;
+        card.appendChild(btn);
+      });
+    }
+
+    function copyToClipboard(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      }
+      // Fallback for older browsers
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Copy failed:', err);
+      }
+      document.body.removeChild(textarea);
+      return Promise.resolve();
+    }
+
+    function handleShareClick(e) {
+      const btn = e.target.closest('.share-link-btn');
+      if (!btn) return;
+
+      const cardId = btn.dataset.cardId;
+      const url = window.location.origin + window.location.pathname + '#' + cardId;
+
+      copyToClipboard(url).then(() => {
+        // Show copied feedback
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.classList.remove('copied');
+        }, 1500);
+      });
+    }
+
+    // Initialize share buttons
+    addShareButtons();
+    container.addEventListener('click', handleShareClick);
+
   })();
   </script>
 
