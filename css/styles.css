@@ -3394,6 +3394,76 @@ input[type="submit"].nav-link-text.cta.simple {
   margin-top: 6px;
 }
 
+/* Share Link Button */
+.metric-card {
+  position: relative;
+}
+
+.share-link-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--latte-subtext0);
+  opacity: 0.5;
+  transition: opacity 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.share-link-btn:hover {
+  opacity: 1;
+  background-color: var(--latte-surface0);
+  color: var(--latte-sapphire);
+}
+
+.share-link-btn:active {
+  background-color: var(--latte-surface1);
+}
+
+.share-link-btn:focus-visible {
+  opacity: 1;
+  outline: 2px solid var(--latte-sapphire);
+  outline-offset: 2px;
+}
+
+.share-link-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Copied tooltip */
+.share-link-btn::after {
+  content: 'Copied!';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: var(--latte-text);
+  color: var(--latte-base);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+  pointer-events: none;
+  margin-bottom: 4px;
+}
+
+.share-link-btn.copied::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Metrics Layout with Floating Sidebar */
 .metrics-layout {
   position: relative;
