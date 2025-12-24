@@ -149,14 +149,20 @@
         </ul>
         <h4>In practice</h4>
         <p> A news app saw SPU rise from 1.4 to 2.1 after launching personalized feeds, but average session duration dropped 30%. <strong>Users were snacking on headlines rather than reading articles.</strong> The team added a "deep read" mode and saw both metrics improve together.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-dau">DAU</a> — frequency without depth can be hollow; <a href="#metric-stickiness">DAU/MAU Stickiness</a> — measures habit strength across a month.</p>
         </section>
 
         <section class="metric-card" id="metric-conversion" data-tags="acquisition" data-name="Conversion Rate">
         <h3>Conversion Rate</h3>
-        <p><em>Percentage of users who complete a goal action. Benchmarks: 2-3% e-commerce, 15-25% SaaS trial-to-paid.</em></p>
+        <p><em>Percentage of users who complete a goal action.</em></p>
         <blockquote>Conversion Rate = (Users who completed action / Users who could have) × 100%</blockquote>
         <h4>What it measures</h4>
         <p> Percentage of users who complete a specific goal action. "Conversion" is context-dependent: it might mean signing up, subscribing, purchasing, or completing any defined step. Always specify what you're measuring (visitor-to-signup, trial-to-paid).</p>
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><strong>E-commerce</strong>: 2-3% (visitor to purchase)</li>
+          <li><strong>SaaS trial-to-paid</strong>: 15-25% (opt-in trials)</li>
+        </ul>
         <h4>What to watch</h4>
         <ul>
           <li><strong>Rising</strong>: Your funnel is more effective. But check volume: optimizing for conversion can sometimes attract lower-intent visitors who inflate the denominator.</li>
@@ -170,10 +176,15 @@
 
         <section class="metric-card" id="metric-far" data-tags="acquisition,leading" data-name="Feature Adoption Rate">
         <h3>Feature Adoption Rate (FAR)</h3>
-        <p><em>Percentage of eligible users who use a feature. Target: 50%+ for core features, 10-30% for secondary.</em></p>
+        <p><em>Percentage of eligible users who use a feature.</em></p>
         <blockquote>FAR = (Users who used the feature / Eligible users exposed to it) × 100%</blockquote>
         <h4>What it measures</h4>
         <p> Percentage of eligible users who use a specific feature. "Eligible" is key: measure against users who could use the feature (had access, saw it), not your entire user base.</p>
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><strong>Core features</strong>: Target 50%+ adoption</li>
+          <li><strong>Secondary features</strong>: 10-30% adoption is typical</li>
+        </ul>
         <h4>What to watch</h4>
         <ul>
           <li><strong>Rising</strong>: The feature is finding its audience. Low adoption isn't always bad, as some features are for power users only.</li>
@@ -181,11 +192,12 @@
         </ul>
         <h4>In practice</h4>
         <p> A project management tool launched a time-tracking feature with 45% adoption in week one, dropping to 12% by week four. <strong>Users liked the idea but found manual time entry tedious.</strong> The team added automatic tracking, and adoption stabilized at 38%: lower than the spike but sustainable.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-activation">Activation Rate</a> — feature adoption often correlates with activation success.</p>
         </section>
 
         <section class="metric-card" id="metric-cac" data-tags="acquisition,health" data-name="Customer Acquisition Cost">
         <h3>Customer Acquisition Cost (CAC)</h3>
-        <p><em>Total cost to acquire a paying customer. The key ratio: LTV:CAC should be 3:1 or better.</em></p>
+        <p><em>Total cost to acquire a paying customer.</em></p>
         <blockquote>CAC = (Sales + Marketing costs) / New customers acquired</blockquote>
         <h4>What it measures</h4>
         <p> Total cost to acquire a new paying customer, including marketing spend, sales salaries, tools, and overhead allocated to acquisition. Note: no standardized calculation method exists—companies calculate CAC differently, making benchmarking imprecise.</p>
@@ -207,6 +219,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A SaaS company saw paid search CAC rise from $120 to $180 over six months as competition increased. Content marketing CAC was $95 but took 6 months to show results. <strong>They maintained paid search for immediate pipeline while investing in content for long-term CAC reduction.</strong> Blended CAC stabilized at $135.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-ltvcac">LTV:CAC Ratio</a> — the fundamental unit economics equation; <a href="#metric-payback">CAC Payback</a> — how fast you recover acquisition costs.</p>
         </section>
 
         <section class="metric-card" id="metric-growth-accounting" data-tags="acquisition,leading" data-name="Growth Accounting">
@@ -223,18 +236,24 @@
         </ul>
         <h4>In practice</h4>
         <p> A mobile game showed 15% MAU growth, but growth accounting revealed 60% of "active" users each month were resurrected players who churned again within weeks. <strong>True retained users were declining.</strong> They shifted focus from re-engagement campaigns to fixing the core gameplay loop that caused churn in the first place.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-dau">DAU</a> — the daily input to growth accounting; <a href="#metric-churn">Churn Rate</a> — understanding why users leave.</p>
         </section>
 
         <!-- ACTIVATION: Do users reach their aha moment? -->
 
         <section class="metric-card" id="metric-activation" data-tags="activation,leading,health" data-name="Activation Rate">
         <h3>Activation Rate</h3>
-        <p><em>Percentage of new users who reach a meaningful first milestone. Target: 60-70%+, excellent is 80%+.</em></p>
+        <p><em>Percentage of new users who reach a meaningful first milestone.</em></p>
         <blockquote>Activation Rate = (Users who activated / Total new users) × 100%</blockquote>
         <h4>What it measures</h4>
         <p> Percentage of new users who complete a predefined action that correlates with long-term retention. The "activation event" varies by product. Famous examples: <strong>Facebook</strong> (adding 7 friends within 10 days), <strong>Dropbox</strong> (uploading first file), <strong>Slack</strong> (2,000 messages sent by team), <strong>Twitter</strong> (following 30 users). Activation is the only part of your product that 100% of users touch—poor activation cascades into poor retention regardless of product quality.</p>
         <h4>Finding your activation metric</h4>
         <p> Use regression analysis to identify the user action that most strongly correlates with long-term retention. This "magic number" becomes your activation goal—like Facebook's discovery that users who added 7 friends in 10 days retained dramatically better than those who didn't.</p>
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><strong>Good</strong>: 60-70% activation rate</li>
+          <li><strong>Excellent</strong>: 80%+ activation rate</li>
+        </ul>
         <h4>What to watch</h4>
         <ul>
           <li><strong>Above 60%</strong>: Strong activation. You're converting most new users to engaged users. Exceptional products reach 80%+.</li>
@@ -243,14 +262,20 @@
         <h4>In practice</h4>
         <p> A project management tool defined activation as "create first project." After reducing the setup flow from 8 steps to 3, activation rose from 34% to 52%. But when they analyzed retention, <strong>users who also invited a teammate had 3× better retention</strong>, so they added teammate invitation to their activation definition.</p>
         <p class="metric-tools"><strong>Tools:</strong> User Onboarding Flows, Progress Bars, A/B Testing.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-ttv">Time-to-Value</a> — how fast users reach activation; <a href="#metric-nday">N-day Retention</a> — activated users retain dramatically better.</p>
         </section>
 
         <section class="metric-card" id="metric-ttv" data-tags="activation,leading" data-name="Time-to-Value">
         <h3>Time-to-Value (TTV)</h3>
-        <p><em>Time from signup to first "aha moment." Target: first session for consumer, hours/days for B2B.</em></p>
+        <p><em>Time from signup to first "aha moment."</em></p>
         <blockquote>TTV = Median time from signup to first value event</blockquote>
         <h4>What it measures</h4>
         <p> Elapsed time from signup to a user's first meaningful value moment. You must define what "value" means for your product: completing a task, achieving a result, or reaching an "aha moment" feature. Use median to avoid outliers skewing results.</p>
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><strong>Consumer apps</strong>: Within first session (minutes)</li>
+          <li><strong>B2B SaaS</strong>: Hours to days depending on complexity</li>
+        </ul>
         <h4>What to watch</h4>
         <ul>
           <li><strong>Shorter</strong>: Users reach value faster, which strongly correlates with retention. Best-in-class products aim for value within the first session.</li>
@@ -258,6 +283,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A budgeting app had a median TTV of 4 days because users signed up but didn't link accounts until later. They added a "quick demo mode" with sample data so users could explore immediately. <strong>TTV for demo users was 8 minutes, and those users linked real accounts at 2× the rate.</strong></p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-activation">Activation Rate</a> — TTV measures velocity to activation; <a href="#metric-trial">Trial-to-Paid</a> — shorter TTV improves conversion.</p>
         </section>
 
         <section class="metric-card" id="metric-trial" data-tags="activation,revenue" data-name="Trial-to-Paid Conversion">
@@ -273,6 +299,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A project management tool offered 30-day trials with 22% conversion. When they analyzed user behavior, most converters decided within 7 days; non-converters rarely returned after Day 10. <strong>They switched to 14-day trials with more aggressive onboarding emails. Conversion rose to 31%</strong>: shorter timeline created urgency and focused the team on faster activation.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-activation">Activation Rate</a> — trial conversion depends on activation; <a href="#metric-pql">PQLs</a> — identify high-intent trial users.</p>
         </section>
 
         <section class="metric-card" id="metric-pql" data-tags="activation,leading" data-name="Product-Qualified Leads">
@@ -288,6 +315,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A SaaS company defined PQLs as "created 3+ projects and invited 1+ teammates." Sales closed 35% of PQLs vs. 8% of all trial users. When they added "used integration feature" to the criteria, <strong>PQL volume dropped 40% but close rate jumped to 52%</strong>. Better targeting made their sales team more efficient.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-trial">Trial-to-Paid</a> — PQLs predict trial conversion; <a href="#metric-activation">Activation Rate</a> — PQL criteria often mirror activation events.</p>
         </section>
 
         <!-- RETENTION: Are users staying? -->
@@ -328,6 +356,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A fitness app saw overall retention of 15% at 6 months but noticed cohort curves never flattened, just declined more slowly. When they segmented by workout type, <strong>users who tried strength training in week 1 had curves that flattened at 35%, while cardio-only users declined to 5%.</strong> They redesigned onboarding to introduce strength training earlier.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-nday">N-day Retention</a> — point-in-time retention snapshots; <a href="#metric-churn">Churn Rate</a> — the inverse view of retention.</p>
         </section>
 
         <section class="metric-card" id="metric-churn" data-tags="retention,health,leading" data-name="Customer Churn Rate">
@@ -350,10 +379,15 @@
 
         <section class="metric-card" id="metric-crr" data-tags="retention,health" data-name="Customer Retention Rate">
         <h3>Customer Retention Rate (CRR)</h3>
-        <p><em>Percentage of existing customers who stay. Target: 90%+ monthly for subscriptions.</em></p>
+        <p><em>Percentage of existing customers who stay.</em></p>
         <blockquote>CRR = ((Customers at end − New customers) / Customers at start) × 100%</blockquote>
         <h4>What it measures</h4>
         <p> Percentage of existing customers who remain active over a period. The key is excluding new customers: you're measuring whether people who were already customers stayed.</p>
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><strong>Subscription businesses</strong>: Target 90%+ monthly retention</li>
+          <li><strong>Enterprise SaaS</strong>: Target 95%+ monthly retention</li>
+        </ul>
         <h4>What to watch</h4>
         <ul>
           <li><strong>Rising</strong>: Your existing customers are stickier. Even small retention improvements compound dramatically over time.</li>
@@ -361,6 +395,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A fitness app saw CRR drop from 85% to 78% after adding new workout types. <strong>The new content overwhelmed the home screen, and existing users couldn't find their saved workouts.</strong> Restoring a "My Workouts" quick-access tab recovered retention to 87%.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-churn">Churn Rate</a> — the inverse of retention; <a href="#metric-nday">N-day Retention</a> — early warning signals.</p>
         </section>
 
         <section class="metric-card" id="metric-stickiness" data-tags="retention" data-name="DAU/MAU Ratio (Stickiness)">
@@ -380,6 +415,7 @@
         <p> Products designed for infrequent use—Airbnb, TurboTax, travel booking apps—will naturally show low stickiness without indicating problems. If your product solves a periodic need, low DAU/MAU is expected and healthy.</p>
         <h4>In practice</h4>
         <p> A note-taking app had 15% stickiness, solid but not habit-forming. Analysis showed users only opened the app when they had something specific to capture. <strong>They added a daily review feature that surfaced old notes, raising stickiness to 28%.</strong> Users now had a reason to open the app even without new input.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-dau">DAU</a> — the numerator in stickiness; <a href="#metric-nday">N-day Retention</a> — cohort-based view of engagement.</p>
         </section>
 
         <section class="metric-card" id="metric-ces" data-tags="retention,leading" data-name="Customer Effort Score">
@@ -395,14 +431,20 @@
         </ul>
         <h4>In practice</h4>
         <p> A SaaS company tracked CSAT at 85% but saw unexpected churn. When they added CES surveys after support tickets, they discovered resolution required an average of 2.3 contacts per issue. <strong>Customers were satisfied with agent interactions but exhausted by the process.</strong> They implemented first-contact resolution targets, and CES rose from 4.2 to 6.1 while churn dropped 18%.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-csat">CSAT</a> — satisfaction with specific interactions; <a href="#metric-churn">Churn Rate</a> — CES predicts churn better than CSAT.</p>
         </section>
 
         <section class="metric-card" id="metric-csat" data-tags="retention" data-name="Customer Satisfaction Rate">
         <h3>Customer Satisfaction Rate (CSAT)</h3>
-        <p><em>Satisfaction with a specific interaction. Target: 80%+ for B2C, 90%+ for B2B enterprise.</em></p>
+        <p><em>Satisfaction with a specific interaction.</em></p>
         <blockquote>CSAT = (Satisfied responses / Total responses) × 100%</blockquote>
         <h4>What it measures</h4>
         <p> Satisfaction score for a specific interaction or experience, typically via a survey ("How satisfied were you?" on a 1-5 scale). Unlike NPS, which gauges overall loyalty, CSAT is best for evaluating specific touchpoints.</p>
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><strong>B2C</strong>: Target 80%+</li>
+          <li><strong>B2B enterprise</strong>: Target 90%+</li>
+        </ul>
         <h4>What to watch</h4>
         <ul>
           <li><strong>Rising</strong>: The specific experience you're measuring is improving. Watch response rates, as low participation can skew results toward extremes.</li>
@@ -410,6 +452,7 @@
         </ul>
         <h4>In practice</h4>
         <p> An online education platform added video transcripts and saw course CSAT rise from 72% to 86%. But completion rates didn't improve. <strong>Learners were more satisfied but using transcripts to skim rather than engage.</strong> They redesigned transcripts as a supplement rather than an alternative to video.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-ces">CES</a> — effort-based satisfaction; <a href="#metric-nps">NPS</a> — overall loyalty measure.</p>
         </section>
 
         <!-- REVENUE: Are we making money? -->
@@ -427,6 +470,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A B2B SaaS company saw MRR grow 8% month-over-month, but when they decomposed it, <strong>70% came from expansion revenue and only 30% from new sales</strong>. They doubled down on upsell features while rebuilding their top-of-funnel acquisition.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-arpu">ARPU</a> — revenue per user; <a href="#metric-nrr">NRR</a> — revenue retention from existing customers; <a href="#metric-churn">Churn Rate</a> — the leak in MRR.</p>
         </section>
 
         <section class="metric-card" id="metric-arpu" data-tags="revenue,health" data-name="Average Revenue Per User">
@@ -442,6 +486,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A streaming service launched a lower-priced ad-supported tier, causing ARPU to drop from $14 to $11. But total revenue grew 40% because the subscriber base doubled. <strong>The ARPU decline was intentional, a trade-off for market expansion.</strong></p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-ltv">LTV</a> — lifetime revenue projection; <a href="#metric-mrr">MRR</a> — total recurring revenue.</p>
         </section>
 
         <section class="metric-card" id="metric-ltv" data-tags="revenue,health" data-name="Lifetime Value">
@@ -457,6 +502,7 @@
         </ul>
         <h4>In practice</h4>
         <p> An e-commerce company launched a loyalty program and saw LTV rise from $180 to $245, a 36% increase. But CAC also rose 25% because the loyalty program's marketing costs weren't attributed. <strong>When they calculated LTV:CAC, it only improved from 2.4:1 to 2.6:1</strong>, prompting them to optimize the program's costs.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-ltvcac">LTV:CAC Ratio</a> — the fundamental unit economics equation; <a href="#metric-churn">Churn Rate</a> — directly impacts LTV.</p>
         </section>
 
         <section class="metric-card" id="metric-nrr" data-tags="revenue,health" data-name="Net Revenue Retention">
@@ -476,6 +522,7 @@
         <p> Companies with NRR above 100% grow at <strong>twice the rate</strong> of those below. Best-in-class SaaS companies hit 120%+ through usage-based pricing or strong upsell motions. If you're below 100%, no amount of acquisition can outrun a leaky bucket at scale—prioritize reducing churn and contraction before investing in growth.</p>
         <h4>In practice</h4>
         <p> A B2B SaaS company had 95% NRR, meaning they lost 5% of revenue from existing customers each year. After analyzing cohorts, they found mid-market accounts churned at 2× the rate of enterprise. <strong>They rebuilt onboarding for mid-market and added a customer success tier, raising NRR to 108%.</strong> The same sales team now generated faster growth because each new customer compounded rather than leaked.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-churn">Churn Rate</a> — the denominator drag on NRR; <a href="#metric-mrr">MRR</a> — the base for NRR calculation; <a href="#metric-quickratio">Quick Ratio</a> — growth efficiency view.</p>
         </section>
 
         <section class="metric-card" id="metric-ltvcac" data-tags="revenue,health" data-name="LTV:CAC Ratio">
@@ -509,6 +556,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A SaaS company had 18-month payback, limiting growth to what fundraising allowed. They analyzed segments and found enterprise deals had 24-month payback but SMB was 10 months. <strong>They launched a self-serve SMB tier with 8-month payback, using that cash flow to fund slower-burning enterprise sales.</strong> Blended payback dropped to 13 months.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-ltvcac">LTV:CAC Ratio</a> — total return on acquisition; <a href="#metric-cac">CAC</a> — the numerator in payback.</p>
         </section>
 
         <section class="metric-card" id="metric-quickratio" data-tags="revenue,health" data-name="Quick Ratio (SaaS)">
@@ -525,16 +573,23 @@
         </ul>
         <h4>In practice</h4>
         <p> A startup celebrated 40% YoY growth but had a Quick Ratio of 1.8. For every $1.80 they added, $1 churned out. <strong>When they reduced churn by 20%, Quick Ratio jumped to 2.9 with the same sales effort.</strong> They realized churn reduction was higher-leverage than acquisition.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-nrr">NRR</a> — related efficiency measure; <a href="#metric-mrr">MRR</a> — the revenue being measured; <a href="#metric-churn">Churn Rate</a> — the denominator in Quick Ratio.</p>
         </section>
 
         <!-- REFERRAL: Do users recommend us? -->
 
         <section class="metric-card" id="metric-nps" data-tags="referral,retention,leading" data-name="Net Promoter Score">
         <h3>Net Promoter Score (NPS)</h3>
-        <p><em>How likely customers are to recommend you. Benchmark: 30+ good, 50+ excellent, 70+ world-class.</em></p>
+        <p><em>How likely customers are to recommend you.</em></p>
         <blockquote>NPS = % Promoters − % Detractors (ranges from −100 to +100)</blockquote>
         <h4>What it measures</h4>
         <p> A loyalty metric based on one question: "How likely are you to recommend us?" (0-10 scale). Respondents are grouped as Promoters (9-10), Passives (7-8), or Detractors (0-6).</p>
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><strong>Good</strong>: 30+</li>
+          <li><strong>Excellent</strong>: 50+</li>
+          <li><strong>World-class</strong>: 70+</li>
+        </ul>
         <h4>What to watch</h4>
         <ul>
           <li><strong>Rising</strong>: Improving loyalty. But NPS varies by industry, so compare to competitors rather than absolute benchmarks.</li>
@@ -542,6 +597,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A hospitality app redesigned its booking flow and saw NPS jump from 32 to 48. But when they segmented by user type, <strong>power users' NPS actually dropped</strong> (they missed removed shortcuts). The team added back keyboard shortcuts for frequent bookers while keeping the simplified flow for casual users.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-pmf">PMF Score</a> — deeper product-market fit signal; <a href="#metric-csat">CSAT</a> — interaction-specific satisfaction.</p>
         </section>
 
         <section class="metric-card" id="metric-pmf" data-tags="referral,leading" data-name="Product-Market Fit Score">
@@ -557,6 +613,7 @@
         </ul>
         <h4>In practice</h4>
         <p> A productivity tool launched with 28% PMF score. The team analyzed the "very disappointed" segment and found they all used one specific feature: automated time blocking. <strong>They rebuilt the entire product around that feature, and PMF score rose to 47%.</strong> The pivot was informed by users who already loved them, not average users.</p>
+        <p class="related-metrics"><strong>Related:</strong> <a href="#metric-nps">NPS</a> — loyalty measure; <a href="#metric-activation">Activation Rate</a> — PMF depends on users experiencing core value.</p>
         </section>
 
         </div><!-- /.metrics-container -->
