@@ -3349,6 +3349,51 @@ input[type="submit"].nav-link-text.cta.simple {
   transform: translateY(-10px);
 }
 
+/* Metric Card Footer Elements (Tools & Related) */
+.metric-tools,
+.metric-card .related-metrics {
+  font-size: var(--type-xs);
+  line-height: 1.5;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--latte-surface0);
+}
+
+.metric-tools {
+  color: var(--latte-subtext0);
+}
+
+.metric-tools strong {
+  color: var(--latte-teal);
+  font-weight: 600;
+}
+
+.metric-card .related-metrics {
+  color: var(--latte-subtext1);
+}
+
+.metric-card .related-metrics strong {
+  color: var(--latte-sapphire);
+  font-weight: 600;
+}
+
+.metric-card .related-metrics a {
+  color: var(--latte-sapphire);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.metric-card .related-metrics a:hover {
+  text-decoration: underline;
+}
+
+/* When both Tools and Related appear together */
+.metric-tools + .related-metrics {
+  border-top: none;
+  padding-top: 6px;
+  margin-top: 6px;
+}
+
 /* Metrics Layout with Floating Sidebar */
 .metrics-layout {
   position: relative;
