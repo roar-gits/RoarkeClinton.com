@@ -3413,8 +3413,13 @@ input[type="submit"].nav-link-text.cta.simple {
   border-radius: 6px;
   cursor: pointer;
   color: var(--latte-subtext0);
-  opacity: 0.5;
+  opacity: 0;
   transition: opacity 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Show on card hover (desktop only) */
+.metric-card:hover .share-link-btn {
+  opacity: 0.5;
 }
 
 .share-link-btn:hover {
@@ -3818,6 +3823,11 @@ input[type="submit"].nav-link-text.cta.simple {
 
   .metric-card {
     scroll-margin-top: 92px; /* mobile header (~60px) + gap */
+  }
+
+  /* Hide share link button on mobile (no hover available) */
+  .share-link-btn {
+    display: none;
   }
 }
 
