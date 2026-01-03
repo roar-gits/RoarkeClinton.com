@@ -22,7 +22,7 @@ echo $ROARKECLINTON_GITHUB_TOKEN  # Required
 
 Personal website for Roarke Clinton.
 
-- **`Website/`** - Production site hosted on GitHub Pages
+- **`docs/`** - Production site hosted on GitHub Pages
 
 ---
 
@@ -34,7 +34,7 @@ RoarkeClinton.com/
 ├── .mcp.json                 # MCP server config
 ├── CLAUDE.md                 # This file
 ├── .claude/docs/             # Project documentation
-└── Website/                  # Production (GitHub Pages)
+└── docs/                     # Production (GitHub Pages)
     ├── css/styles.css        # Main stylesheet
     ├── index.html            # Homepage
     ├── contact.html          # Contact page
@@ -52,7 +52,7 @@ RoarkeClinton.com/
 
 - **Branch**: Work directly on `main` for this simple site
 - **Remote**: `origin` → `github.com/roar-gits/RoarkeClinton.com`
-- **Hosting**: GitHub Pages serves from `Website/` directory
+- **Hosting**: GitHub Pages serves from `docs/` directory
 
 ### Commit Format
 ```
@@ -71,7 +71,7 @@ Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 
 | Task | Tool | Why |
 |------|------|-----|
-| Edit styles | Edit `Website/css/styles.css` | Main stylesheet |
+| Edit styles | Edit `docs/css/styles.css` | Main stylesheet |
 | Verify changes | Playwright screenshot | Quick visual confirmation |
 | Test form submission | Playwright | Functional testing |
 
@@ -81,9 +81,9 @@ Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 
 | File | Purpose |
 |------|---------|
-| `Website/css/styles.css` | Main production stylesheet |
-| `Website/index.html` | Production homepage |
-| `Website/contact.html` | Production contact page |
+| `docs/css/styles.css` | Main production stylesheet |
+| `docs/index.html` | Production homepage |
+| `docs/contact.html` | Production contact page |
 
 ---
 
