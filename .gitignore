@@ -7,6 +7,8 @@ Thumbs.db
 .vscode/
 
 # Claude Code
-.claude/
+.claude/*
+!.claude/CLAUDE.md
+!.claude/docs/
 .mcp.json
 .playwright-mcp/
