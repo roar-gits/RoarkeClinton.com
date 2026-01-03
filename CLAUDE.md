@@ -20,9 +20,7 @@ echo $ROARKECLINTON_GITHUB_TOKEN  # Required
 
 ## Project Overview
 
-Personal website for Roarke Clinton.
-
-- **`docs/`** - Production site hosted on GitHub Pages
+Personal website for Roarke Clinton. Site files live in root (served by GitHub Pages).
 
 ---
 
@@ -34,16 +32,15 @@ RoarkeClinton.com/
 ├── .mcp.json                 # MCP server config
 ├── CLAUDE.md                 # This file
 ├── .claude/docs/             # Project documentation
-└── docs/                     # Production (GitHub Pages)
-    ├── css/styles.css        # Main stylesheet
-    ├── index.html            # Homepage
-    ├── contact.html          # Contact page
-    ├── about.html            # About page
-    ├── 404.html              # Error page
-    ├── images/               # Optimized images
-    ├── posts/                # Blog posts
-    ├── CNAME                 # Custom domain config
-    └── robots.txt, sitemap.xml
+├── css/styles.css            # Main stylesheet
+├── index.html                # Homepage
+├── contact.html              # Contact page
+├── about.html                # About page
+├── 404.html                  # Error page
+├── images/                   # Optimized images
+├── posts/                    # Blog posts
+├── CNAME                     # Custom domain config
+└── robots.txt, sitemap.xml
 ```
 
 ---
@@ -52,7 +49,7 @@ RoarkeClinton.com/
 
 - **Branch**: Work directly on `main` for this simple site
 - **Remote**: `origin` → `github.com/roar-gits/RoarkeClinton.com`
-- **Hosting**: GitHub Pages serves from `docs/` directory
+- **Hosting**: GitHub Pages serves from root (`/`)
 
 ### Commit Format
 ```
@@ -71,7 +68,7 @@ Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 
 | Task | Tool | Why |
 |------|------|-----|
-| Edit styles | Edit `docs/css/styles.css` | Main stylesheet |
+| Edit styles | Edit `css/styles.css` | Main stylesheet |
 | Verify changes | Playwright screenshot | Quick visual confirmation |
 | Test form submission | Playwright | Functional testing |
 
@@ -81,9 +78,9 @@ Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 
 | File | Purpose |
 |------|---------|
-| `docs/css/styles.css` | Main production stylesheet |
-| `docs/index.html` | Production homepage |
-| `docs/contact.html` | Production contact page |
+| `css/styles.css` | Main stylesheet |
+| `index.html` | Homepage |
+| `contact.html` | Contact page |
 
 ---
 
